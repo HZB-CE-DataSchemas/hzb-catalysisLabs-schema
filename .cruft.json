@@ -1,0 +1,27 @@
+{
+  "template": "https://github.com/linkml/linkml-project-cookiecutter",
+  "commit": "b2da87eb7835bfec748a76823d098cac85e8363a",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "hzb-catalysisLabs-schema",
+      "__project_slug": "hzb_catalysislabs_schema",
+      "github_org": "https://github.com/HZB-CE-DataSchemas/",
+      "__source_path": "src/hzb_catalysislabs_schema/schema/hzb_catalysislabs_schema.yaml",
+      "project_description": "A datamodel for describing entities and their semantic associations (vocabularies/ontologies) for scientific (particularly catalytic) data at HZB, particularly for operando and in situ characterization of catalytic materials.",
+      "full_name": "Ana Velazquez",
+      "email": "ana.velazquez_sanchez@helmholtz-berlin.de",
+      "__author": "Ana Velazquez <ana.velazquez_sanchez@helmholtz-berlin.de>",
+      "license": "MIT",
+      "main_schema_class": "Person",
+      "create_python_classes": "Yes",
+      "use_schemasheets": "No",
+      "google_sheet_id": "1wVoaiFg47aT9YWNeRfTZ8tYHN8s8PAuDx5i2HUcDpvQ",
+      "google_sheet_tabs": "personinfo enums",
+      "__google_sheet_module": "personinfo_enums",
+      "github_token_for_pypi_deployment": "PYPI_PASSWORD",
+      "_template": "https://github.com/linkml/linkml-project-cookiecutter"
+    }
+  },
+  "directory": null
+}

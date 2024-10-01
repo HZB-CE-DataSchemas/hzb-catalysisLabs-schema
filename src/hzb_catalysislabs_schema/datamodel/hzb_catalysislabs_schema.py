@@ -1,5 +1,5 @@
 # Auto generated from hzb_catalysislabs_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-10-01T13:08:56
+# Generation date: 2024-10-01T14:59:27
 # Schema: hzb-catalysisLabs-schema
 #
 # id: https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema

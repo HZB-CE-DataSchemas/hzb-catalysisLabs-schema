@@ -1,0 +1,112 @@
+---
+id: https://w3id.org/anak-velazquez/BESSY/ #this is a persitant ID- not working atm
+name: BESSY
+
+description: |-
+    Here are the classes needed for catalysis labs.
+
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  biolink: https://w3id.org/biolink/
+  schema: http://schema.org/
+  PATO: http://purl.obolibrary.org/obo/PATO_ #broken links
+  ORCID: https://orcid.org/
+
+imports: 
+- linkml:types
+- core
+
+default_range: string
+
+classes:
+ 
+#####Beamline
+#
+  Beamline:
+    is_a: NamedEntity
+    description: >-
+      System within a facility designed to direct a beam of radiation toward a sample for 
+      the purpose of analysis or experimentation.
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####BeamlineExperiment
+#lorem ipsum
+  BeamlineExperiment:
+    is_a: Experiment
+    description: >-
+      An experimental investigation conducted using a beamline.
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+#####BeamlineScientist
+#lorem ipsum
+  BeamlineScientist:
+    is_a: Person
+    description: >-
+      An expert responsible for the operation and scientific application of beamlines 
+      in a research facility.
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+######Experimental hall##############    
+
+#####mySpot
+#lorem ipsum
+  mySpot:
+    is_a: Beamline
+    description: >-
+      Myspot beamline description.
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+#####EMIL_Pink
+#lorem ipsum
+  EMIL_Pink:
+    is_a: Beamline
+    description: >-
+      Pink beamline description.
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####EMIL_OAESE
+#lorem ipsum
+  EMIL_OAESE:
+    is_a: Beamline
+    description: >-
+      OAESE beamline description.
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being

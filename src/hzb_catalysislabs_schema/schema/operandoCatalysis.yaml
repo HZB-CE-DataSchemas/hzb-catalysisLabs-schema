@@ -1,0 +1,83 @@
+---
+id: https://w3id.org/anak-velazquez/operandoCatalysis/ #this is a persitant ID- not working atm
+name: operandoCatalysis
+
+description: |-
+    Here are the classes needed for catalysis labs.
+
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  biolink: https://w3id.org/biolink/
+  schema: http://schema.org/
+  PATO: http://purl.obolibrary.org/obo/PATO_ #broken links
+  ORCID: https://orcid.org/
+
+imports: 
+- linkml:types
+- core
+
+default_range: string
+
+classes:
+ 
+#####SampleEnvironment
+#
+  SampleEnvironment:
+    is_a: NamedEntity
+    description: >-
+      Controlled environment in which the sample is studied (operando research).
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####EnvironmentDynamics
+#
+  EnvironmentDynamics:
+    is_a: NamedEntity
+    description: >-
+      Dynamic or time-resolved environmental conditions during an 
+      experiment (e.g.for in-situ measurements).
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####SamplePositioning
+#
+  SamplePositioning:
+    is_a: NamedEntity
+    description: >-
+      The arrangement or location of samples within an experimental setup, 
+      critical for ensuring accurate data collection and analysis. 
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####File
+#
+  File:
+    is_a: NamedEntity
+    description: >-
+      Stores data related to the experiment (e.g. images, videos, or other files).
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being

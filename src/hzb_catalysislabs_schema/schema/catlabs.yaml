@@ -1,0 +1,283 @@
+---
+id: https://w3id.org/anak-velazquez/catlabs/ #this is a persitant ID- not working atm
+name: catlabs
+
+description: |-
+    Here are the classes needed for catalysis labs.
+
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  biolink: https://w3id.org/biolink/
+  schema: http://schema.org/
+  PATO: http://purl.obolibrary.org/obo/PATO_ #broken links
+  ORCID: https://orcid.org/
+
+imports: 
+- linkml:types
+- core
+
+default_range: string
+
+classes:
+
+#####Scientist
+#
+  Scientist:
+    is_a: Person
+    description: >-
+      An individual involved in research activities, and their details that are important 
+      to be referenced on experiments, projects, publivations, etc.
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####CatalysisSample
+#
+  CatalysisSample:
+    is_a: Sample
+    description: >-
+      Core properties of a catalysis sample.
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####Catalyst
+#
+  Catalyst:
+    is_a: CatalysisSample
+    description: >-
+      A substance or material that increases the rate of a chemical reaction. 
+      Class including core properties of the synthesis characterization, and other experiments. 
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####ThinFilmCatalyst
+#
+  ThinFilmCatalyst:
+    is_a: Catalyst
+    description: >-
+      Catalyst type. Core properties of a thin film.
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####PowderCatalyst
+#
+  PowderCatalyst:
+    is_a: Catalyst
+    description: >-
+      Catalyst type. Core properties of a powder catalyst.
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####Recipe
+#
+  Recipe:
+    is_a: NamedEntity
+    description: >-
+      A detailed set of instructions outlining the materials, quantities, and procedures 
+      required to perform a specific chemical reaction or experimental process.
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####Mixture
+#
+  Mixture:
+    is_a: NamedEntity
+    description: >-
+      A combination of two or more substances that are mixed together, 
+      which may retain their individual properties or interact chemically. 
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####Workflow
+#
+  Workflow:
+    is_a: NamedEntity
+    description: >-
+      A structured sequence of tasks, activities, or processes designed to accomplish a 
+      specific research objective or experimental goal.
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####Process
+#
+  Process:
+    is_a: NamedEntity
+    description: >-
+      A defined series of actions, steps, or operations undertaken to achieve a 
+      specific scientific or experimental outcome (e.g. atomic layer deposition).
+    class_uri: 
+    mixins:
+    #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####Experiment
+#
+  Experiment:
+    is_a: NamedEntity
+    description: >-
+      A systematic investigation designed to test hypotheses, gather data, or explore 
+      scientific principles through controlled conditions.
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####Measurement
+#
+  Measurement:
+    is_a: NamedEntity
+    description: >-
+      Storing and describing measurements to perform on a sample.
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####Parameter
+#
+  Parameter:
+    is_a: NamedEntity
+    description: >-
+      Associates parameters on demand to a certain experiment or measurement.
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####Reaction
+#
+  Reaction:
+    is_a: NamedEntity
+    description: >-
+      A chemical process in which one or more substances (reactants) undergo transformation to produce new substances (products). 
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####ReactionProduct
+#
+  ReactionProduct:
+    is_a: NamedEntity
+    description: >-
+      A substance formed as a result of a chemical reaction, representing the end products 
+      generated from the transformation of reactants.
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####Reactor
+#lorem ipsum
+  Reactor:
+    is_a: NamedEntity
+    description: >-
+      Equipment designed to facilitate and control chemical reactions under specified 
+      conditions, such as temperature, pressure, and flow rates. 
+    class_uri: 
+    mixins:
+      #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+
+
+##############
+#Collections
+###############    
+  #CatalysisSample array
+  CatalysisSampleCollection:
+    tree_root: true
+    description: >-
+      A holder for CatalysisSample objects
+    attributes:
+      entries:
+        range: CatalysisSample
+        multivalued: true
+        inlined: true    
+
+  #ReactionProduct array
+  ReactionProductCollection:
+    tree_root: true
+    description: >-
+      A holder for ReactionProduct objects
+    attributes:
+      entries:
+        range: ReactionProduct
+        multivalued: true
+        inlined: true   

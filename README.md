@@ -15,7 +15,7 @@ At the moment, this schema is organized into 2 separate modules:
 
 ## Website
 
-[https://https://github.com/HZB-CE-DataSchemas/hzb-catalysisLabs-schema](https://https://github.com/HZB-CE-DataSchemas/hzb-catalysisLabs-schema)
+[https://github.com/HZB-CE-DataSchemas/hzb-catalysisLabs-schema](https://github.com/HZB-CE-DataSchemas/hzb-catalysisLabs-schema)
 
 ## Repository Structure
 

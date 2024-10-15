@@ -474,7 +474,7 @@ classes:
 
 #####Sputtering: generic
 #
-  sputtering:
+  Sputtering:
     is_a: SynthesisProcess
     description: >-
       Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate.
@@ -493,8 +493,8 @@ classes:
 
 #####Sputtering: Prevac
 #
-  sputtering_prevac:
-    is_a: SynthesisProcess
+  Sputtering_prevac:
+    is_a: Sputtering
     description: >-
       Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly 
       with the Prevac sputtering machine. 
@@ -514,7 +514,7 @@ classes:
 #####Sputtering: von Adenne (PC3)
 #
   sputtering_vonAdenne:
-    is_a: SynthesisProcess
+    is_a: Sputtering
     description: >-
       Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly 
       with the von Adenne (PC3 chamber) machine.  

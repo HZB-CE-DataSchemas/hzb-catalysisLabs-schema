@@ -205,8 +205,8 @@
 <div class="mermaid"> classDiagram
     class SputteringVonAdenne
     click SputteringVonAdenne href "../SputteringVonAdenne"
-      SynthesisProcess &lt;|-- SputteringVonAdenne
-        click SynthesisProcess href "../SynthesisProcess"
+      Sputtering &lt;|-- SputteringVonAdenne
+        click Sputtering href "../Sputtering"
 
       SputteringVonAdenne : id
 
@@ -222,7 +222,10 @@
 <li><a href="../NamedEntity/">NamedEntity</a><ul>
 <li><a href="../Process/">Process</a><ul>
 <li><a href="../SynthesisProcess/">SynthesisProcess</a><ul>
+<li><a href="../Sputtering/">Sputtering</a><ul>
 <li><strong>SputteringVonAdenne</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -247,7 +250,7 @@
 <td><a href="../name/">name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable name for a thing</td>
-<td><a href="../Entity/">Entity</a>, <a href="../NamedEntity/">NamedEntity</a></td>
+<td><a href="../NamedEntity/">NamedEntity</a>, <a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
@@ -295,7 +298,7 @@
 description: 'Physical vapor deposition (PVD) technique used to deposit thin films
   onto a substrate, particularly  with the von Adenne (PC3 chamber) machine.  '
 from_schema: https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema
-is_a: SynthesisProcess
+is_a: Sputtering
 
 </code></pre>
 </details>
@@ -305,7 +308,7 @@ is_a: SynthesisProcess
 description: 'Physical vapor deposition (PVD) technique used to deposit thin films
   onto a substrate, particularly  with the von Adenne (PC3 chamber) machine.  '
 from_schema: https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema
-is_a: SynthesisProcess
+is_a: Sputtering
 attributes:
   name:
     name: name

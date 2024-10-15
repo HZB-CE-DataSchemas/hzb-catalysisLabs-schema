@@ -208,6 +208,13 @@
       SynthesisProcess &lt;|-- Sputtering
         click SynthesisProcess href "../SynthesisProcess"
 
+
+      Sputtering &lt;|-- SputteringPrevac
+        click SputteringPrevac href "../SputteringPrevac"
+      Sputtering &lt;|-- SputteringVonAdenne
+        click SputteringVonAdenne href "../SputteringVonAdenne"
+
+
       Sputtering : id
 
       Sputtering : iri
@@ -222,7 +229,11 @@
 <li><a href="../NamedEntity/">NamedEntity</a><ul>
 <li><a href="../Process/">Process</a><ul>
 <li><a href="../SynthesisProcess/">SynthesisProcess</a><ul>
-<li><strong>Sputtering</strong></li>
+<li><strong>Sputtering</strong><ul>
+<li><a href="../SputteringPrevac/">SputteringPrevac</a></li>
+<li><a href="../SputteringVonAdenne/">SputteringVonAdenne</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -247,7 +258,7 @@
 <td><a href="../name/">name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable name for a thing</td>
-<td><a href="../Entity/">Entity</a>, <a href="../NamedEntity/">NamedEntity</a></td>
+<td><a href="../NamedEntity/">NamedEntity</a>, <a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
@@ -291,7 +302,7 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: sputtering
+<pre><code class="language-yaml">name: Sputtering
 description: 'Physical vapor deposition (PVD) technique used to deposit thin films
   onto a substrate. In sputtering, high-energy ions (usually from a plasma) bombard
   a target material,  causing atoms from the target to be ejected. These ejected atoms
@@ -303,7 +314,7 @@ is_a: SynthesisProcess
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: sputtering
+<pre><code class="language-yaml">name: Sputtering
 description: 'Physical vapor deposition (PVD) technique used to deposit thin films
   onto a substrate. In sputtering, high-energy ions (usually from a plasma) bombard
   a target material,  causing atoms from the target to be ejected. These ejected atoms
@@ -318,7 +329,7 @@ attributes:
     rank: 1000
     slot_uri: schema:name
     alias: name
-    owner: sputtering
+    owner: Sputtering
     domain_of:
     - Entity
     - NamedEntity
@@ -331,7 +342,7 @@ attributes:
     slot_uri: schema:identifier
     identifier: true
     alias: id
-    owner: sputtering
+    owner: Sputtering
     domain_of:
     - Entity
     range: uriorcurie
@@ -342,7 +353,7 @@ attributes:
     from_schema: https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema
     rank: 1000
     alias: iri
-    owner: sputtering
+    owner: Sputtering
     domain_of:
     - Entity
     range: string

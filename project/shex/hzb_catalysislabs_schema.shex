@@ -47,6 +47,14 @@ linkml:Jsonpath xsd:string
 
 linkml:Sparqlpath xsd:string
 
+<https://w3id.org/anak-velazquez/catlabs/AnalyticsProcess> CLOSED {
+    (  $<https://w3id.org/anak-velazquez/catlabs/AnalyticsProcess_tes> (  &<https://w3id.org/anak-velazquez/catlabs/Process_tes> ;
+          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/Process> ] ?
+       ) ;
+       rdf:type [ <https://w3id.org/anak-velazquez/catlabs/AnalyticsProcess> ]
+    )
+}
+
 <https://w3id.org/anak-velazquez/BESSY/Beamline>  (
     CLOSED {
        (  $<https://w3id.org/anak-velazquez/BESSY/Beamline_tes> (  &<https://w3id.org/anak-velazquez/core/NamedEntity_tes> ;
@@ -134,9 +142,73 @@ linkml:Sparqlpath xsd:string
     } OR @<https://w3id.org/anak-velazquez/catlabs/PowderCatalyst> OR @<https://w3id.org/anak-velazquez/catlabs/ThinFilmCatalyst>
 )
 
+<https://w3id.org/anak-velazquez/catlabs/CatalyticActivityAssesmentProcess> CLOSED {
+    (  $<https://w3id.org/anak-velazquez/catlabs/CatalyticActivityAssesmentProcess_tes> ( 
+          &<https://w3id.org/anak-velazquez/catlabs/Process_tes> ;
+          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/Process> ] ?
+       ) ;
+       rdf:type [ <https://w3id.org/anak-velazquez/catlabs/CatalyticActivityAssesmentProcess> ]
+    )
+}
+
+<https://w3id.org/anak-velazquez/catlabs/CharacterizationProcess> CLOSED {
+    (  $<https://w3id.org/anak-velazquez/catlabs/CharacterizationProcess_tes> ( 
+          &<https://w3id.org/anak-velazquez/catlabs/Process_tes> ;
+          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/Process> ] ?
+       ) ;
+       rdf:type [ <https://w3id.org/anak-velazquez/catlabs/CharacterizationProcess> ]
+    )
+}
+
 <ChemicalOrDrugOrTreatment> {
     (  $<ChemicalOrDrugOrTreatment_tes> rdf:type . * ;
        rdf:type [ <ChemicalOrDrugOrTreatment> ] ?
+    )
+}
+
+<https://w3id.org/anak-velazquez/catlabs/CleaningProcess>  (
+    CLOSED {
+       (  $<https://w3id.org/anak-velazquez/catlabs/CleaningProcess_tes> (  &<https://w3id.org/anak-velazquez/catlabs/Process_tes>
+             ;
+             rdf:type [ <https://w3id.org/anak-velazquez/catlabs/Process> ] ?
+          ) ;
+          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/CleaningProcess> ]
+       )
+    } OR @<https://w3id.org/anak-velazquez/catlabs/OzoneCleaning>
+)
+
+<https://w3id.org/anak-velazquez/catlabs/CVD>  (
+    CLOSED {
+       (  $<https://w3id.org/anak-velazquez/catlabs/CVD_tes> (  &<https://w3id.org/anak-velazquez/catlabs/SynthesisProcess_tes> ;
+             rdf:type [ <https://w3id.org/anak-velazquez/catlabs/SynthesisProcess> ] ?
+          ) ;
+          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/CVD> ]
+       )
+    } OR @<https://w3id.org/anak-velazquez/catlabs/CVDNanofab> OR @<https://w3id.org/anak-velazquez/catlabs/CVDPc1> OR
+    @<https://w3id.org/anak-velazquez/catlabs/CVDPc2>
+)
+
+<https://w3id.org/anak-velazquez/catlabs/CVDNanofab> CLOSED {
+    (  $<https://w3id.org/anak-velazquez/catlabs/CVDNanofab_tes> (  &<https://w3id.org/anak-velazquez/catlabs/CVD_tes> ;
+          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/CVD> ] ?
+       ) ;
+       rdf:type [ <https://w3id.org/anak-velazquez/catlabs/CVDNanofab> ]
+    )
+}
+
+<https://w3id.org/anak-velazquez/catlabs/CVDPc1> CLOSED {
+    (  $<https://w3id.org/anak-velazquez/catlabs/CVDPc1_tes> (  &<https://w3id.org/anak-velazquez/catlabs/CVD_tes> ;
+          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/CVD> ] ?
+       ) ;
+       rdf:type [ <https://w3id.org/anak-velazquez/catlabs/CVDPc1> ]
+    )
+}
+
+<https://w3id.org/anak-velazquez/catlabs/CVDPc2> CLOSED {
+    (  $<https://w3id.org/anak-velazquez/catlabs/CVDPc2_tes> (  &<https://w3id.org/anak-velazquez/catlabs/CVD_tes> ;
+          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/CVD> ] ?
+       ) ;
+       rdf:type [ <https://w3id.org/anak-velazquez/catlabs/CVDPc2> ]
     )
 }
 
@@ -301,6 +373,15 @@ linkml:Sparqlpath xsd:string
     @<https://w3id.org/anak-velazquez/operandoCatalysis/SamplePositioning> OR @<https://w3id.org/anak-velazquez/catlabs/Workflow>
 )
 
+<https://w3id.org/anak-velazquez/catlabs/OzoneCleaning> CLOSED {
+    (  $<https://w3id.org/anak-velazquez/catlabs/OzoneCleaning_tes> ( 
+          &<https://w3id.org/anak-velazquez/catlabs/CleaningProcess_tes> ;
+          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/CleaningProcess> ] ?
+       ) ;
+       rdf:type [ <https://w3id.org/anak-velazquez/catlabs/OzoneCleaning> ]
+    )
+}
+
 <https://w3id.org/anak-velazquez/catlabs/Parameter> CLOSED {
     (  $<https://w3id.org/anak-velazquez/catlabs/Parameter_tes> (  &<https://w3id.org/anak-velazquez/core/NamedEntity_tes> ;
           rdf:type [ <https://w3id.org/anak-velazquez/core/NamedEntity> ] ?
@@ -344,13 +425,18 @@ linkml:Sparqlpath xsd:string
     )
 }
 
-<https://w3id.org/anak-velazquez/catlabs/Process> CLOSED {
-    (  $<https://w3id.org/anak-velazquez/catlabs/Process_tes> (  &<https://w3id.org/anak-velazquez/core/NamedEntity_tes> ;
-          rdf:type [ <https://w3id.org/anak-velazquez/core/NamedEntity> ] ?
-       ) ;
-       rdf:type [ <https://w3id.org/anak-velazquez/catlabs/Process> ]
-    )
-}
+<https://w3id.org/anak-velazquez/catlabs/Process>  (
+    CLOSED {
+       (  $<https://w3id.org/anak-velazquez/catlabs/Process_tes> (  &<https://w3id.org/anak-velazquez/core/NamedEntity_tes> ;
+             rdf:type [ <https://w3id.org/anak-velazquez/core/NamedEntity> ] ?
+          ) ;
+          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/Process> ]
+       )
+    } OR @<https://w3id.org/anak-velazquez/catlabs/AnalyticsProcess> OR
+    @<https://w3id.org/anak-velazquez/catlabs/CatalyticActivityAssesmentProcess> OR
+    @<https://w3id.org/anak-velazquez/catlabs/CharacterizationProcess> OR
+    @<https://w3id.org/anak-velazquez/catlabs/CleaningProcess> OR @<https://w3id.org/anak-velazquez/catlabs/SynthesisProcess>
+)
 
 <https://w3id.org/anak-velazquez/core/Project> CLOSED {
     (  $<https://w3id.org/anak-velazquez/core/Project_tes> (  &<https://w3id.org/anak-velazquez/core/NamedEntity_tes> ;
@@ -461,6 +547,45 @@ linkml:Sparqlpath xsd:string
        rdf:type [ <https://w3id.org/anak-velazquez/catlabs/Scientist> ]
     )
 }
+
+<https://w3id.org/anak-velazquez/catlabs/Sputtering> CLOSED {
+    (  $<https://w3id.org/anak-velazquez/catlabs/Sputtering_tes> (  &<https://w3id.org/anak-velazquez/catlabs/SynthesisProcess_tes>
+          ;
+          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/SynthesisProcess> ] ?
+       ) ;
+       rdf:type [ <https://w3id.org/anak-velazquez/catlabs/Sputtering> ]
+    )
+}
+
+<https://w3id.org/anak-velazquez/catlabs/SputteringPrevac> CLOSED {
+    (  $<https://w3id.org/anak-velazquez/catlabs/SputteringPrevac_tes> ( 
+          &<https://w3id.org/anak-velazquez/catlabs/SynthesisProcess_tes> ;
+          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/SynthesisProcess> ] ?
+       ) ;
+       rdf:type [ <https://w3id.org/anak-velazquez/catlabs/SputteringPrevac> ]
+    )
+}
+
+<https://w3id.org/anak-velazquez/catlabs/SputteringVonAdenne> CLOSED {
+    (  $<https://w3id.org/anak-velazquez/catlabs/SputteringVonAdenne_tes> ( 
+          &<https://w3id.org/anak-velazquez/catlabs/SynthesisProcess_tes> ;
+          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/SynthesisProcess> ] ?
+       ) ;
+       rdf:type [ <https://w3id.org/anak-velazquez/catlabs/SputteringVonAdenne> ]
+    )
+}
+
+<https://w3id.org/anak-velazquez/catlabs/SynthesisProcess>  (
+    CLOSED {
+       (  $<https://w3id.org/anak-velazquez/catlabs/SynthesisProcess_tes> (  &<https://w3id.org/anak-velazquez/catlabs/Process_tes>
+             ;
+             rdf:type [ <https://w3id.org/anak-velazquez/catlabs/Process> ] ?
+          ) ;
+          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/SynthesisProcess> ]
+       )
+    } OR @<https://w3id.org/anak-velazquez/catlabs/CVD> OR @<https://w3id.org/anak-velazquez/catlabs/Sputtering> OR
+    @<https://w3id.org/anak-velazquez/catlabs/SputteringPrevac> OR @<https://w3id.org/anak-velazquez/catlabs/SputteringVonAdenne>
+)
 
 <https://w3id.org/anak-velazquez/catlabs/ThinFilmCatalyst> CLOSED {
     (  $<https://w3id.org/anak-velazquez/catlabs/ThinFilmCatalyst_tes> (  &<https://w3id.org/anak-velazquez/catlabs/Catalyst_tes> ;

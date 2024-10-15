@@ -12,6 +12,9 @@
    "prov": "http://www.w3.org/ns/prov#",
    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
    "schema": "http://schema.org/",
+   "AnalyticsProcess": {
+      "@id": "https://w3id.org/anak-velazquez/catlabs/AnalyticsProcess"
+   },
    "Beamline": {
       "@id": "https://w3id.org/anak-velazquez/BESSY/Beamline"
    },
@@ -29,6 +32,27 @@
    },
    "Catalyst": {
       "@id": "https://w3id.org/anak-velazquez/catlabs/Catalyst"
+   },
+   "CatalyticActivityAssesmentProcess": {
+      "@id": "https://w3id.org/anak-velazquez/catlabs/CatalyticActivityAssesmentProcess"
+   },
+   "CharacterizationProcess": {
+      "@id": "https://w3id.org/anak-velazquez/catlabs/CharacterizationProcess"
+   },
+   "CleaningProcess": {
+      "@id": "https://w3id.org/anak-velazquez/catlabs/CleaningProcess"
+   },
+   "CVD": {
+      "@id": "https://w3id.org/anak-velazquez/catlabs/CVD"
+   },
+   "CVDNanofab": {
+      "@id": "https://w3id.org/anak-velazquez/catlabs/CVDNanofab"
+   },
+   "CVDPc1": {
+      "@id": "https://w3id.org/anak-velazquez/catlabs/CVDPc1"
+   },
+   "CVDPc2": {
+      "@id": "https://w3id.org/anak-velazquez/catlabs/CVDPc2"
    },
    "DataCite": {
       "@id": "https://w3id.org/anak-velazquez/core/DataCite"
@@ -65,6 +89,9 @@
    },
    "NamedEntity": {
       "@id": "https://w3id.org/anak-velazquez/core/NamedEntity"
+   },
+   "OzoneCleaning": {
+      "@id": "https://w3id.org/anak-velazquez/catlabs/OzoneCleaning"
    },
    "Parameter": {
       "@id": "https://w3id.org/anak-velazquez/catlabs/Parameter"
@@ -110,6 +137,18 @@
    },
    "Scientist": {
       "@id": "https://w3id.org/anak-velazquez/catlabs/Scientist"
+   },
+   "Sputtering": {
+      "@id": "https://w3id.org/anak-velazquez/catlabs/Sputtering"
+   },
+   "SputteringPrevac": {
+      "@id": "https://w3id.org/anak-velazquez/catlabs/SputteringPrevac"
+   },
+   "SputteringVonAdenne": {
+      "@id": "https://w3id.org/anak-velazquez/catlabs/SputteringVonAdenne"
+   },
+   "SynthesisProcess": {
+      "@id": "https://w3id.org/anak-velazquez/catlabs/SynthesisProcess"
    },
    "ThinFilmCatalyst": {
       "@id": "https://w3id.org/anak-velazquez/catlabs/ThinFilmCatalyst"

@@ -3259,6 +3259,214 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "SynthesisProcess",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//SynthesisProcess",
+      "description": "A defined series of actions, steps, or operations undertaken to achieve a  synthesis process. Update this definition.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "Process",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/SynthesisProcess",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CleaningProcess",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//CleaningProcess",
+      "description": "A defined series of actions, steps, or operations undertaken to achieve a  cleaning process.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "Process",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/CleaningProcess",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CharacterizationProcess",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//CharacterizationProcess",
+      "description": "A defined series of actions, steps, or operations undertaken to achieve a  analysis of a Catalysis sample process.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "Process",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/CharacterizationProcess",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CatalyticActivityAssesmentProcess",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//CatalyticActivityAssesmentProcess",
+      "description": "A defined series of actions, steps, or operations undertaken to achieve a  analysis of a Catalysis sample process.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "Process",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/CatalyticActivityAssesmentProcess",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "AnalyticsProcess",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//AnalyticsProcess",
+      "description": "A defined series of actions, steps, or operations undertaken to achieve a  analysis of a Catalysis sample process.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "Process",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/AnalyticsProcess",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "OzoneCleaning",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//OzoneCleaning",
+      "description": "Surface treatment technique used in thin-film catalysis, especially for preparing or  regenerating catalyst surfaces. It involves using ozone (O\u2083), a highly reactive form  of oxygen, to clean and modify the surface properties of thin films.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "CleaningProcess",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/OzoneCleaning",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CVD",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//CVD",
+      "description": "Chemical Vapor Deposition (CVD) is a process used to produce thin films and coatings by depositing  material onto a substrate through chemical reactions of vapor-phase precursors. ",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "SynthesisProcess",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/CVD",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CVDNanofab",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//CVDNanofab",
+      "description": "Chemical Vapor Deposition (CVD) performed in the Nanofab chamber from the Oxford Cluster. ",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "CVD",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/CVDNanofab",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CVDPc1",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//CVDPc1",
+      "description": "Chemical Vapor Deposition (CVD) performed in the pc1 chamber from the von Adenne cluster. ",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "CVD",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/CVDPc1",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CVDPc2",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//CVDPc2",
+      "description": "Chemical Vapor Deposition (CVD) performed in the pc2 chamber from the von Adenne cluster. ",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "CVD",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/CVDPc2",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Sputtering",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//Sputtering",
+      "description": "Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate. In sputtering, high-energy ions (usually from a plasma) bombard a target material,  causing atoms from the target to be ejected. These ejected atoms then travel through a vacuum chamber and settle on a substrate, forming a thin film. ",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "SynthesisProcess",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/Sputtering",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SputteringPrevac",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//SputteringPrevac",
+      "description": "Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly  with the Prevac sputtering machine.  In sputtering, high-energy ions (usually from a plasma) bombard a target material,  causing atoms from the target to be ejected. These ejected atoms then travel through a vacuum chamber and settle on a substrate, forming a thin film. ",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "SynthesisProcess",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/SputteringPrevac",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SputteringVonAdenne",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//SputteringVonAdenne",
+      "description": "Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly  with the von Adenne (PC3 chamber) machine.  ",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "SynthesisProcess",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/SputteringVonAdenne",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "Experiment",
       "definition_uri": "https://w3id.org/anak-velazquez/catlabs//Experiment",
       "description": "A systematic investigation designed to test hypotheses, gather data, or explore  scientific principles through controlled conditions.",
@@ -3651,7 +3859,7 @@
   "source_file": "hzb_catalysislabs_schema.yaml",
   "source_file_date": "2024-10-01T15:18:38",
   "source_file_size": 1950,
-  "generation_date": "2024-10-02T17:00:59",
+  "generation_date": "2024-10-15T16:44:36",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/hzb_catalysislabs_schema.context.jsonld",

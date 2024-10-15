@@ -295,6 +295,238 @@ classes:
     aliases:
     #  - human being
 
+##############
+#Process types
+
+#####Process: Synthesis
+#
+  SynthesisProcess:
+    is_a: Process
+    description: >-
+      A defined series of actions, steps, or operations undertaken to achieve a 
+      synthesis process. Update this definition.
+    #category: "CatLabs"
+    class_uri: 
+    mixins:
+    #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+#####Process: Synthesis
+#
+  CleaningProcess:
+    is_a: Process
+    description: >-
+      A defined series of actions, steps, or operations undertaken to achieve a 
+      cleaning process.
+    #category: "CatLabs"
+    class_uri: 
+    mixins:
+    #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####Characterization: Process
+#
+  CharacterizationProcess:
+    is_a: Process
+    description: >-
+      A defined series of actions, steps, or operations undertaken to achieve a 
+      analysis of a Catalysis sample process.
+    #category: "CatLabs"
+    class_uri: 
+    mixins:
+    #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####CatalyticActivityAssesment: Process
+#
+  CatalyticActivityAssesmentProcess:
+    is_a: Process
+    description: >-
+      A defined series of actions, steps, or operations undertaken to achieve a 
+      analysis of a Catalysis sample process.
+    #category: "CatLabs"
+    class_uri: 
+    mixins:
+    #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####Analytics: Process
+#
+  AnalyticsProcess:
+    is_a: Process
+    description: >-
+      A defined series of actions, steps, or operations undertaken to achieve a 
+      analysis of a Catalysis sample process.
+    #category: "CatLabs"
+    class_uri: 
+    mixins:
+    #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+###############################
+# Cleaning processes
+################################
+
+#####
+#
+  OzoneCleaning:
+    is_a: CleaningProcess
+    description: >-
+      Surface treatment technique used in thin-film catalysis, especially for preparing or 
+      regenerating catalyst surfaces. It involves using ozone (O₃), a highly reactive form 
+      of oxygen, to clean and modify the surface properties of thin films.
+    #category: "CatLabs"
+    class_uri: 
+    mixins:
+    #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+###############################
+# Synthesis processes
+################################
+
+#####CVD: generic
+#
+  CVD:
+    is_a: SynthesisProcess
+    description: >-
+      Chemical Vapor Deposition (CVD) is a process used to produce thin films and coatings by depositing 
+      material onto a substrate through chemical reactions of vapor-phase precursors. 
+    #category: "CatLabs"
+    class_uri: 
+    mixins:
+    #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+
+#####CVD: nanofab (Oxford cluster)
+#
+  CVD_nanofab:
+    is_a: CVD
+    description: >-
+      Chemical Vapor Deposition (CVD) performed in the Nanofab chamber from the Oxford Cluster. 
+    #category: "CatLabs"
+    class_uri: 
+    mixins:
+    #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####CVD: pc1 (von Adenne)
+#
+  CVD_pc1:
+    is_a: CVD
+    description: >-
+      Chemical Vapor Deposition (CVD) performed in the pc1 chamber from the von Adenne cluster. 
+    #category: "CatLabs"
+    class_uri: 
+    mixins:
+    #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####CVD: pc1 (von Adenne)
+#
+  CVD_pc2:
+    is_a: CVD
+    description: >-
+      Chemical Vapor Deposition (CVD) performed in the pc2 chamber from the von Adenne cluster. 
+    #category: "CatLabs"
+    class_uri: 
+    mixins:
+    #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####Sputtering: generic
+#
+  sputtering:
+    is_a: SynthesisProcess
+    description: >-
+      Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate.
+      In sputtering, high-energy ions (usually from a plasma) bombard a target material, 
+      causing atoms from the target to be ejected. These ejected atoms then travel through
+      a vacuum chamber and settle on a substrate, forming a thin film. 
+    #category: "CatLabs"
+    class_uri: 
+    mixins:
+    #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####Sputtering: Prevac
+#
+  sputtering_prevac:
+    is_a: SynthesisProcess
+    description: >-
+      Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly 
+      with the Prevac sputtering machine. 
+      In sputtering, high-energy ions (usually from a plasma) bombard a target material, 
+      causing atoms from the target to be ejected. These ejected atoms then travel through
+      a vacuum chamber and settle on a substrate, forming a thin film. 
+    #category: "CatLabs"
+    class_uri: 
+    mixins:
+    #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
+
+#####Sputtering: von Adenne (PC3)
+#
+  sputtering_vonAdenne:
+    is_a: SynthesisProcess
+    description: >-
+      Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly 
+      with the von Adenne (PC3 chamber) machine.  
+    #category: "CatLabs"
+    class_uri: 
+    mixins:
+    #- HasAliases
+    slots:
+    #  - id
+    aliases:
+    #  - human being
+
 
 #####Experiment
 #
@@ -430,7 +662,6 @@ classes:
     #  - id
     aliases:
     #  - human being
-
 
 
 

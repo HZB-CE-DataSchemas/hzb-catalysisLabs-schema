@@ -1,5 +1,34 @@
 {
     "$defs": {
+        "AnalyticsProcess": {
+            "additionalProperties": false,
+            "description": "A defined series of actions, steps, or operations undertaken to achieve a  analysis of a Catalysis sample process.",
+            "properties": {
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "iri": {
+                    "description": "Internationalized Resource Identifier",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "AnalyticsProcess",
+            "type": "object"
+        },
         "Beamline": {
             "additionalProperties": false,
             "description": "System within a facility designed to direct a beam of radiation toward a sample for  the purpose of analysis or experimentation.",
@@ -262,6 +291,122 @@
                 "id"
             ],
             "title": "BeamlineScientist",
+            "type": "object"
+        },
+        "CVD": {
+            "additionalProperties": false,
+            "description": "Chemical Vapor Deposition (CVD) is a process used to produce thin films and coatings by depositing  material onto a substrate through chemical reactions of vapor-phase precursors.",
+            "properties": {
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "iri": {
+                    "description": "Internationalized Resource Identifier",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "CVD",
+            "type": "object"
+        },
+        "CVDNanofab": {
+            "additionalProperties": false,
+            "description": "Chemical Vapor Deposition (CVD) performed in the Nanofab chamber from the Oxford Cluster.",
+            "properties": {
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "iri": {
+                    "description": "Internationalized Resource Identifier",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "CVDNanofab",
+            "type": "object"
+        },
+        "CVDPc1": {
+            "additionalProperties": false,
+            "description": "Chemical Vapor Deposition (CVD) performed in the pc1 chamber from the von Adenne cluster.",
+            "properties": {
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "iri": {
+                    "description": "Internationalized Resource Identifier",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "CVDPc1",
+            "type": "object"
+        },
+        "CVDPc2": {
+            "additionalProperties": false,
+            "description": "Chemical Vapor Deposition (CVD) performed in the pc2 chamber from the von Adenne cluster.",
+            "properties": {
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "iri": {
+                    "description": "Internationalized Resource Identifier",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "CVDPc2",
             "type": "object"
         },
         "CatalysisSample": {
@@ -1192,6 +1337,93 @@
             "title": "Catalyst",
             "type": "object"
         },
+        "CatalyticActivityAssesmentProcess": {
+            "additionalProperties": false,
+            "description": "A defined series of actions, steps, or operations undertaken to achieve a  analysis of a Catalysis sample process.",
+            "properties": {
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "iri": {
+                    "description": "Internationalized Resource Identifier",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "CatalyticActivityAssesmentProcess",
+            "type": "object"
+        },
+        "CharacterizationProcess": {
+            "additionalProperties": false,
+            "description": "A defined series of actions, steps, or operations undertaken to achieve a  analysis of a Catalysis sample process.",
+            "properties": {
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "iri": {
+                    "description": "Internationalized Resource Identifier",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "CharacterizationProcess",
+            "type": "object"
+        },
+        "CleaningProcess": {
+            "additionalProperties": false,
+            "description": "A defined series of actions, steps, or operations undertaken to achieve a  cleaning process.",
+            "properties": {
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "iri": {
+                    "description": "Internationalized Resource Identifier",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "CleaningProcess",
+            "type": "object"
+        },
         "DataCite": {
             "additionalProperties": false,
             "description": "Represents metadata for datasets according to DataCite standard. Core properties of DataCite standard (basics for citation/publications.) DataCite already considers DublinCore elements.",
@@ -1858,6 +2090,35 @@
                 "id"
             ],
             "title": "NamedEntity",
+            "type": "object"
+        },
+        "OzoneCleaning": {
+            "additionalProperties": false,
+            "description": "Surface treatment technique used in thin-film catalysis, especially for preparing or  regenerating catalyst surfaces. It involves using ozone (O\u2083), a highly reactive form  of oxygen, to clean and modify the surface properties of thin films.",
+            "properties": {
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "iri": {
+                    "description": "Internationalized Resource Identifier",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "OzoneCleaning",
             "type": "object"
         },
         "Parameter": {
@@ -3047,6 +3308,122 @@
                 "id"
             ],
             "title": "Scientist",
+            "type": "object"
+        },
+        "Sputtering": {
+            "additionalProperties": false,
+            "description": "Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate. In sputtering, high-energy ions (usually from a plasma) bombard a target material,  causing atoms from the target to be ejected. These ejected atoms then travel through a vacuum chamber and settle on a substrate, forming a thin film.",
+            "properties": {
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "iri": {
+                    "description": "Internationalized Resource Identifier",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Sputtering",
+            "type": "object"
+        },
+        "SputteringPrevac": {
+            "additionalProperties": false,
+            "description": "Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly  with the Prevac sputtering machine.  In sputtering, high-energy ions (usually from a plasma) bombard a target material,  causing atoms from the target to be ejected. These ejected atoms then travel through a vacuum chamber and settle on a substrate, forming a thin film.",
+            "properties": {
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "iri": {
+                    "description": "Internationalized Resource Identifier",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "SputteringPrevac",
+            "type": "object"
+        },
+        "SputteringVonAdenne": {
+            "additionalProperties": false,
+            "description": "Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly  with the von Adenne (PC3 chamber) machine.",
+            "properties": {
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "iri": {
+                    "description": "Internationalized Resource Identifier",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "SputteringVonAdenne",
+            "type": "object"
+        },
+        "SynthesisProcess": {
+            "additionalProperties": false,
+            "description": "A defined series of actions, steps, or operations undertaken to achieve a  synthesis process. Update this definition.",
+            "properties": {
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "iri": {
+                    "description": "Internationalized Resource Identifier",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "SynthesisProcess",
             "type": "object"
         },
         "ThinFilmCatalyst": {

@@ -1,5 +1,5 @@
 # Auto generated from hzb_catalysislabs_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-10-02T17:01:02
+# Generation date: 2024-10-15T16:44:38
 # Schema: hzb-catalysisLabs-schema
 #
 # id: https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema
@@ -120,6 +120,58 @@ class WorkflowId(NamedEntityId):
 
 
 class ProcessId(NamedEntityId):
+    pass
+
+
+class SynthesisProcessId(ProcessId):
+    pass
+
+
+class CleaningProcessId(ProcessId):
+    pass
+
+
+class CharacterizationProcessId(ProcessId):
+    pass
+
+
+class CatalyticActivityAssesmentProcessId(ProcessId):
+    pass
+
+
+class AnalyticsProcessId(ProcessId):
+    pass
+
+
+class OzoneCleaningId(CleaningProcessId):
+    pass
+
+
+class CVDId(SynthesisProcessId):
+    pass
+
+
+class CVDNanofabId(CVDId):
+    pass
+
+
+class CVDPc1Id(CVDId):
+    pass
+
+
+class CVDPc2Id(CVDId):
+    pass
+
+
+class SputteringId(SynthesisProcessId):
+    pass
+
+
+class SputteringPrevacId(SynthesisProcessId):
+    pass
+
+
+class SputteringVonAdenneId(SynthesisProcessId):
     pass
 
 
@@ -1034,6 +1086,315 @@ class Process(NamedEntity):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ProcessId):
             self.id = ProcessId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class SynthesisProcess(Process):
+    """
+    A defined series of actions, steps, or operations undertaken to achieve a synthesis process. Update this
+    definition.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/anak-velazquez/catlabs/SynthesisProcess")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "SynthesisProcess"
+    class_model_uri: ClassVar[URIRef] = HZB_METADATA_SCHEMA.SynthesisProcess
+
+    id: Union[str, SynthesisProcessId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, SynthesisProcessId):
+            self.id = SynthesisProcessId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class CleaningProcess(Process):
+    """
+    A defined series of actions, steps, or operations undertaken to achieve a  cleaning process.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/anak-velazquez/catlabs/CleaningProcess")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "CleaningProcess"
+    class_model_uri: ClassVar[URIRef] = HZB_METADATA_SCHEMA.CleaningProcess
+
+    id: Union[str, CleaningProcessId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, CleaningProcessId):
+            self.id = CleaningProcessId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class CharacterizationProcess(Process):
+    """
+    A defined series of actions, steps, or operations undertaken to achieve a  analysis of a Catalysis sample process.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/anak-velazquez/catlabs/CharacterizationProcess")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "CharacterizationProcess"
+    class_model_uri: ClassVar[URIRef] = HZB_METADATA_SCHEMA.CharacterizationProcess
+
+    id: Union[str, CharacterizationProcessId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, CharacterizationProcessId):
+            self.id = CharacterizationProcessId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class CatalyticActivityAssesmentProcess(Process):
+    """
+    A defined series of actions, steps, or operations undertaken to achieve a  analysis of a Catalysis sample process.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/anak-velazquez/catlabs/CatalyticActivityAssesmentProcess")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "CatalyticActivityAssesmentProcess"
+    class_model_uri: ClassVar[URIRef] = HZB_METADATA_SCHEMA.CatalyticActivityAssesmentProcess
+
+    id: Union[str, CatalyticActivityAssesmentProcessId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, CatalyticActivityAssesmentProcessId):
+            self.id = CatalyticActivityAssesmentProcessId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class AnalyticsProcess(Process):
+    """
+    A defined series of actions, steps, or operations undertaken to achieve a  analysis of a Catalysis sample process.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/anak-velazquez/catlabs/AnalyticsProcess")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "AnalyticsProcess"
+    class_model_uri: ClassVar[URIRef] = HZB_METADATA_SCHEMA.AnalyticsProcess
+
+    id: Union[str, AnalyticsProcessId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, AnalyticsProcessId):
+            self.id = AnalyticsProcessId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class OzoneCleaning(CleaningProcess):
+    """
+    Surface treatment technique used in thin-film catalysis, especially for preparing or regenerating catalyst
+    surfaces. It involves using ozone (O₃), a highly reactive form of oxygen, to clean and modify the surface
+    properties of thin films.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/anak-velazquez/catlabs/OzoneCleaning")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "OzoneCleaning"
+    class_model_uri: ClassVar[URIRef] = HZB_METADATA_SCHEMA.OzoneCleaning
+
+    id: Union[str, OzoneCleaningId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, OzoneCleaningId):
+            self.id = OzoneCleaningId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class CVD(SynthesisProcess):
+    """
+    Chemical Vapor Deposition (CVD) is a process used to produce thin films and coatings by depositing material onto a
+    substrate through chemical reactions of vapor-phase precursors.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/anak-velazquez/catlabs/CVD")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "CVD"
+    class_model_uri: ClassVar[URIRef] = HZB_METADATA_SCHEMA.CVD
+
+    id: Union[str, CVDId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, CVDId):
+            self.id = CVDId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class CVDNanofab(CVD):
+    """
+    Chemical Vapor Deposition (CVD) performed in the Nanofab chamber from the Oxford Cluster.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/anak-velazquez/catlabs/CVDNanofab")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "CVD_nanofab"
+    class_model_uri: ClassVar[URIRef] = HZB_METADATA_SCHEMA.CVDNanofab
+
+    id: Union[str, CVDNanofabId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, CVDNanofabId):
+            self.id = CVDNanofabId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class CVDPc1(CVD):
+    """
+    Chemical Vapor Deposition (CVD) performed in the pc1 chamber from the von Adenne cluster.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/anak-velazquez/catlabs/CVDPc1")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "CVD_pc1"
+    class_model_uri: ClassVar[URIRef] = HZB_METADATA_SCHEMA.CVDPc1
+
+    id: Union[str, CVDPc1Id] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, CVDPc1Id):
+            self.id = CVDPc1Id(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class CVDPc2(CVD):
+    """
+    Chemical Vapor Deposition (CVD) performed in the pc2 chamber from the von Adenne cluster.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/anak-velazquez/catlabs/CVDPc2")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "CVD_pc2"
+    class_model_uri: ClassVar[URIRef] = HZB_METADATA_SCHEMA.CVDPc2
+
+    id: Union[str, CVDPc2Id] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, CVDPc2Id):
+            self.id = CVDPc2Id(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class Sputtering(SynthesisProcess):
+    """
+    Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate. In sputtering, high-energy
+    ions (usually from a plasma) bombard a target material, causing atoms from the target to be ejected. These ejected
+    atoms then travel through a vacuum chamber and settle on a substrate, forming a thin film.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/anak-velazquez/catlabs/Sputtering")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "sputtering"
+    class_model_uri: ClassVar[URIRef] = HZB_METADATA_SCHEMA.Sputtering
+
+    id: Union[str, SputteringId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, SputteringId):
+            self.id = SputteringId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class SputteringPrevac(SynthesisProcess):
+    """
+    Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly with the
+    Prevac sputtering machine. In sputtering, high-energy ions (usually from a plasma) bombard a target material,
+    causing atoms from the target to be ejected. These ejected atoms then travel through a vacuum chamber and settle
+    on a substrate, forming a thin film.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/anak-velazquez/catlabs/SputteringPrevac")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "sputtering_prevac"
+    class_model_uri: ClassVar[URIRef] = HZB_METADATA_SCHEMA.SputteringPrevac
+
+    id: Union[str, SputteringPrevacId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, SputteringPrevacId):
+            self.id = SputteringPrevacId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class SputteringVonAdenne(SynthesisProcess):
+    """
+    Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly with the von
+    Adenne (PC3 chamber) machine.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/anak-velazquez/catlabs/SputteringVonAdenne")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "sputtering_vonAdenne"
+    class_model_uri: ClassVar[URIRef] = HZB_METADATA_SCHEMA.SputteringVonAdenne
+
+    id: Union[str, SputteringVonAdenneId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, SputteringVonAdenneId):
+            self.id = SputteringVonAdenneId(self.id)
 
         super().__post_init__(**kwargs)
 

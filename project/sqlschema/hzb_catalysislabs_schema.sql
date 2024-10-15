@@ -310,6 +310,58 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: id Description: A unique identifier for a thing
 --     * Slot: iri Description: Internationalized Resource Identifier
+-- # Class: "SynthesisProcess" Description: "A defined series of actions, steps, or operations undertaken to achieve a  synthesis process. Update this definition."
+--     * Slot: name Description: A human-readable name for a thing
+--     * Slot: id Description: A unique identifier for a thing
+--     * Slot: iri Description: Internationalized Resource Identifier
+-- # Class: "CleaningProcess" Description: "A defined series of actions, steps, or operations undertaken to achieve a  cleaning process."
+--     * Slot: name Description: A human-readable name for a thing
+--     * Slot: id Description: A unique identifier for a thing
+--     * Slot: iri Description: Internationalized Resource Identifier
+-- # Class: "CharacterizationProcess" Description: "A defined series of actions, steps, or operations undertaken to achieve a  analysis of a Catalysis sample process."
+--     * Slot: name Description: A human-readable name for a thing
+--     * Slot: id Description: A unique identifier for a thing
+--     * Slot: iri Description: Internationalized Resource Identifier
+-- # Class: "CatalyticActivityAssesmentProcess" Description: "A defined series of actions, steps, or operations undertaken to achieve a  analysis of a Catalysis sample process."
+--     * Slot: name Description: A human-readable name for a thing
+--     * Slot: id Description: A unique identifier for a thing
+--     * Slot: iri Description: Internationalized Resource Identifier
+-- # Class: "AnalyticsProcess" Description: "A defined series of actions, steps, or operations undertaken to achieve a  analysis of a Catalysis sample process."
+--     * Slot: name Description: A human-readable name for a thing
+--     * Slot: id Description: A unique identifier for a thing
+--     * Slot: iri Description: Internationalized Resource Identifier
+-- # Class: "OzoneCleaning" Description: "Surface treatment technique used in thin-film catalysis, especially for preparing or  regenerating catalyst surfaces. It involves using ozone (O₃), a highly reactive form  of oxygen, to clean and modify the surface properties of thin films."
+--     * Slot: name Description: A human-readable name for a thing
+--     * Slot: id Description: A unique identifier for a thing
+--     * Slot: iri Description: Internationalized Resource Identifier
+-- # Class: "CVD" Description: "Chemical Vapor Deposition (CVD) is a process used to produce thin films and coatings by depositing  material onto a substrate through chemical reactions of vapor-phase precursors. "
+--     * Slot: name Description: A human-readable name for a thing
+--     * Slot: id Description: A unique identifier for a thing
+--     * Slot: iri Description: Internationalized Resource Identifier
+-- # Class: "CVD_nanofab" Description: "Chemical Vapor Deposition (CVD) performed in the Nanofab chamber from the Oxford Cluster. "
+--     * Slot: name Description: A human-readable name for a thing
+--     * Slot: id Description: A unique identifier for a thing
+--     * Slot: iri Description: Internationalized Resource Identifier
+-- # Class: "CVD_pc1" Description: "Chemical Vapor Deposition (CVD) performed in the pc1 chamber from the von Adenne cluster. "
+--     * Slot: name Description: A human-readable name for a thing
+--     * Slot: id Description: A unique identifier for a thing
+--     * Slot: iri Description: Internationalized Resource Identifier
+-- # Class: "CVD_pc2" Description: "Chemical Vapor Deposition (CVD) performed in the pc2 chamber from the von Adenne cluster. "
+--     * Slot: name Description: A human-readable name for a thing
+--     * Slot: id Description: A unique identifier for a thing
+--     * Slot: iri Description: Internationalized Resource Identifier
+-- # Class: "sputtering" Description: "Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate. In sputtering, high-energy ions (usually from a plasma) bombard a target material,  causing atoms from the target to be ejected. These ejected atoms then travel through a vacuum chamber and settle on a substrate, forming a thin film. "
+--     * Slot: name Description: A human-readable name for a thing
+--     * Slot: id Description: A unique identifier for a thing
+--     * Slot: iri Description: Internationalized Resource Identifier
+-- # Class: "sputtering_prevac" Description: "Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly  with the Prevac sputtering machine.  In sputtering, high-energy ions (usually from a plasma) bombard a target material,  causing atoms from the target to be ejected. These ejected atoms then travel through a vacuum chamber and settle on a substrate, forming a thin film. "
+--     * Slot: name Description: A human-readable name for a thing
+--     * Slot: id Description: A unique identifier for a thing
+--     * Slot: iri Description: Internationalized Resource Identifier
+-- # Class: "sputtering_vonAdenne" Description: "Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly  with the von Adenne (PC3 chamber) machine.  "
+--     * Slot: name Description: A human-readable name for a thing
+--     * Slot: id Description: A unique identifier for a thing
+--     * Slot: iri Description: Internationalized Resource Identifier
 -- # Class: "Experiment" Description: "A systematic investigation designed to test hypotheses, gather data, or explore  scientific principles through controlled conditions."
 --     * Slot: experiment_id Description: The Identifier is a unique string that identifies a resource (i.e., DOI).
 --     * Slot: experiment_name Description: The ORCID Identifier is a unique string that identifies a researcher.
@@ -537,6 +589,84 @@ CREATE TABLE "Workflow" (
 	PRIMARY KEY (id)
 );
 CREATE TABLE "Process" (
+	name TEXT, 
+	id TEXT NOT NULL, 
+	iri TEXT, 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "SynthesisProcess" (
+	name TEXT, 
+	id TEXT NOT NULL, 
+	iri TEXT, 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "CleaningProcess" (
+	name TEXT, 
+	id TEXT NOT NULL, 
+	iri TEXT, 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "CharacterizationProcess" (
+	name TEXT, 
+	id TEXT NOT NULL, 
+	iri TEXT, 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "CatalyticActivityAssesmentProcess" (
+	name TEXT, 
+	id TEXT NOT NULL, 
+	iri TEXT, 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "AnalyticsProcess" (
+	name TEXT, 
+	id TEXT NOT NULL, 
+	iri TEXT, 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "OzoneCleaning" (
+	name TEXT, 
+	id TEXT NOT NULL, 
+	iri TEXT, 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "CVD" (
+	name TEXT, 
+	id TEXT NOT NULL, 
+	iri TEXT, 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "CVD_nanofab" (
+	name TEXT, 
+	id TEXT NOT NULL, 
+	iri TEXT, 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "CVD_pc1" (
+	name TEXT, 
+	id TEXT NOT NULL, 
+	iri TEXT, 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "CVD_pc2" (
+	name TEXT, 
+	id TEXT NOT NULL, 
+	iri TEXT, 
+	PRIMARY KEY (id)
+);
+CREATE TABLE sputtering (
+	name TEXT, 
+	id TEXT NOT NULL, 
+	iri TEXT, 
+	PRIMARY KEY (id)
+);
+CREATE TABLE sputtering_prevac (
+	name TEXT, 
+	id TEXT NOT NULL, 
+	iri TEXT, 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "sputtering_vonAdenne" (
 	name TEXT, 
 	id TEXT NOT NULL, 
 	iri TEXT, 

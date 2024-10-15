@@ -1,4 +1,12 @@
 # metamodel_version: 1.7.0
+type AnalyticsProcess
+  {
+    id: Uriorcurie!
+    iri: String
+    name: String
+    category: String
+  }
+
 type Beamline
   {
     id: Uriorcurie!
@@ -147,8 +155,64 @@ type Catalyst
     catalystActivity: String
   }
 
+type CatalyticActivityAssesmentProcess
+  {
+    id: Uriorcurie!
+    iri: String
+    name: String
+    category: String
+  }
+
+type CharacterizationProcess
+  {
+    id: Uriorcurie!
+    iri: String
+    name: String
+    category: String
+  }
+
 interface ChemicalOrDrugOrTreatment
   {
+  }
+
+type CleaningProcess
+  {
+    id: Uriorcurie!
+    iri: String
+    name: String
+    category: String
+  }
+
+type CVD
+  {
+    id: Uriorcurie!
+    iri: String
+    name: String
+    category: String
+  }
+
+type CVDNanofab
+  {
+    id: Uriorcurie!
+    iri: String
+    name: String
+    category: String
+  }
+
+type CVDPc1
+  {
+    id: Uriorcurie!
+    iri: String
+    name: String
+    category: String
+  }
+
+type CVDPc2
+  {
+    id: Uriorcurie!
+    iri: String
+    name: String
+    category: String
   }
 
 type DataCite
@@ -287,6 +351,14 @@ type MySpot
   }
 
 type NamedEntity
+  {
+    id: Uriorcurie!
+    iri: String
+    name: String
+    category: String
+  }
+
+type OzoneCleaning
   {
     id: Uriorcurie!
     iri: String
@@ -497,6 +569,38 @@ type Scientist
     researchFocus: String
     laboratoryName: String
     projects: [Project]
+  }
+
+type Sputtering
+  {
+    id: Uriorcurie!
+    iri: String
+    name: String
+    category: String
+  }
+
+type SputteringPrevac
+  {
+    id: Uriorcurie!
+    iri: String
+    name: String
+    category: String
+  }
+
+type SputteringVonAdenne
+  {
+    id: Uriorcurie!
+    iri: String
+    name: String
+    category: String
+  }
+
+type SynthesisProcess
+  {
+    id: Uriorcurie!
+    iri: String
+    name: String
+    category: String
   }
 
 type ThinFilmCatalyst

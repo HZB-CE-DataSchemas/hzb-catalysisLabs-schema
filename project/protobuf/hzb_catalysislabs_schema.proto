@@ -1,6 +1,14 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
+// A defined series of actions, steps, or operations undertaken to achieve a  analysis of a Catalysis sample process.
+message AnalyticsProcess
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
 // System within a facility designed to direct a beam of radiation toward a sample for  the purpose of analysis or experimentation.
 message Beamline
  {
@@ -149,6 +157,62 @@ message Catalyst
   string catalystStability = 0
   string catalystActivity = 0
  }
+// A defined series of actions, steps, or operations undertaken to achieve a  analysis of a Catalysis sample process.
+message CatalyticActivityAssesmentProcess
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// A defined series of actions, steps, or operations undertaken to achieve a  analysis of a Catalysis sample process.
+message CharacterizationProcess
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// A defined series of actions, steps, or operations undertaken to achieve a  cleaning process.
+message CleaningProcess
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// Chemical Vapor Deposition (CVD) is a process used to produce thin films and coatings by depositing  material onto a substrate through chemical reactions of vapor-phase precursors. 
+message CVD
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// Chemical Vapor Deposition (CVD) performed in the Nanofab chamber from the Oxford Cluster. 
+message CVDNanofab
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// Chemical Vapor Deposition (CVD) performed in the pc1 chamber from the von Adenne cluster. 
+message CVDPc1
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// Chemical Vapor Deposition (CVD) performed in the pc2 chamber from the von Adenne cluster. 
+message CVDPc2
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
 // Represents metadata for datasets according to DataCite standard. Core properties of DataCite standard (basics for citation/publications.) DataCite already considers DublinCore elements. 
 message DataCite
  {
@@ -279,6 +343,14 @@ message MySpot
  }
 // a databased entity or concept/class
 message NamedEntity
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// Surface treatment technique used in thin-film catalysis, especially for preparing or  regenerating catalyst surfaces. It involves using ozone (O₃), a highly reactive form  of oxygen, to clean and modify the surface properties of thin films.
+message OzoneCleaning
  {
   uriorcurie id = 0
   string iri = 0
@@ -489,6 +561,38 @@ message Scientist
   string researchFocus = 0
   string laboratoryName = 0
  repeated  project projects = 0
+ }
+// Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate. In sputtering, high-energy ions (usually from a plasma) bombard a target material,  causing atoms from the target to be ejected. These ejected atoms then travel through a vacuum chamber and settle on a substrate, forming a thin film. 
+message Sputtering
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly  with the Prevac sputtering machine.  In sputtering, high-energy ions (usually from a plasma) bombard a target material,  causing atoms from the target to be ejected. These ejected atoms then travel through a vacuum chamber and settle on a substrate, forming a thin film. 
+message SputteringPrevac
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly  with the von Adenne (PC3 chamber) machine.  
+message SputteringVonAdenne
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// A defined series of actions, steps, or operations undertaken to achieve a  synthesis process. Update this definition.
+message SynthesisProcess
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
  }
 // Catalyst type. Core properties of a thin film.
 message ThinFilmCatalyst

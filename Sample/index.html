@@ -218,11 +218,27 @@
         click CatalysisSample href "../CatalysisSample"
 
 
+      Sample : batch_number
+
+      Sample : composition
+
       Sample : id
 
       Sample : iri
 
       Sample : name
+
+      Sample : phase
+
+      Sample : preparation_method
+
+      Sample : sample_id
+
+      Sample : sample_description
+
+      Sample : sample_name
+
+      Sample : size
 
 
 </div>
@@ -251,10 +267,58 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../sample_id/">sample_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The Identifier is a unique string that identifies a resource (i</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sample_name/">sample_name</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The ORCID Identifier is a unique string that identifies a researcher</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sample_description/">sample_description</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The ORCID Identifier is a unique string that identifies a researcher</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../phase/">phase</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The ORCID Identifier is a unique string that identifies a researcher</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../composition/">composition</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Academic or professional title of the researcher (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../size/">size</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Research institution or university the person is affiliated with (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../preparation_method/">preparation_method</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Research institution or university the person is affiliated with (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../batch_number/">batch_number</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Research institution or university the person is affiliated with (e</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../name/">name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable name for a thing</td>
-<td><a href="../Entity/">Entity</a>, <a href="../NamedEntity/">NamedEntity</a></td>
+<td><a href="../NamedEntity/">NamedEntity</a>, <a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
@@ -284,6 +348,18 @@
 <tr>
 <td><a href="../SampleCollection/">SampleCollection</a></td>
 <td><a href="../entries/">entries</a></td>
+<td>range</td>
+<td><a href="./">Sample</a></td>
+</tr>
+<tr>
+<td><a href="../Experiment/">Experiment</a></td>
+<td><a href="../sample/">sample</a></td>
+<td>range</td>
+<td><a href="./">Sample</a></td>
+</tr>
+<tr>
+<td><a href="../BeamlineExperiment/">BeamlineExperiment</a></td>
+<td><a href="../sample/">sample</a></td>
 <td>range</td>
 <td><a href="./">Sample</a></td>
 </tr>
@@ -321,6 +397,83 @@
 description: Core properties of a sample, discipline agnostic.
 from_schema: https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema
 is_a: NamedEntity
+attributes:
+  sample id:
+    name: sample id
+    description: The Identifier is a unique string that identifies a resource (i.e.,
+      DOI).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Sample
+    range: string
+    required: false
+  sample_name:
+    name: sample_name
+    description: The ORCID Identifier is a unique string that identifies a researcher.
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Sample
+    range: string
+    required: false
+  sample_description:
+    name: sample_description
+    description: The ORCID Identifier is a unique string that identifies a researcher.
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Sample
+    range: string
+    required: false
+  phase:
+    name: phase
+    description: The ORCID Identifier is a unique string that identifies a researcher.
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Sample
+    range: string
+    required: false
+  composition:
+    name: composition
+    description: Academic or professional title of the researcher (e.g., "Dr.", "Professor").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Sample
+    range: string
+    required: false
+  size:
+    name: size
+    description: Research institution or university the person is affiliated with
+      (e.g., "HZB").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Sample
+    range: string
+    required: false
+  preparation_method:
+    name: preparation_method
+    description: Research institution or university the person is affiliated with
+      (e.g., "HZB").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Sample
+    range: string
+    required: false
+  batch_number:
+    name: batch_number
+    description: Research institution or university the person is affiliated with
+      (e.g., "HZB").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Sample
+    range: string
+    required: false
 
 </code></pre>
 </details>
@@ -331,6 +484,98 @@ description: Core properties of a sample, discipline agnostic.
 from_schema: https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema
 is_a: NamedEntity
 attributes:
+  sample id:
+    name: sample id
+    description: The Identifier is a unique string that identifies a resource (i.e.,
+      DOI).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: sample_id
+    owner: Sample
+    domain_of:
+    - Sample
+    range: string
+    required: false
+  sample_name:
+    name: sample_name
+    description: The ORCID Identifier is a unique string that identifies a researcher.
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: sample_name
+    owner: Sample
+    domain_of:
+    - Sample
+    range: string
+    required: false
+  sample_description:
+    name: sample_description
+    description: The ORCID Identifier is a unique string that identifies a researcher.
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: sample_description
+    owner: Sample
+    domain_of:
+    - Sample
+    range: string
+    required: false
+  phase:
+    name: phase
+    description: The ORCID Identifier is a unique string that identifies a researcher.
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: phase
+    owner: Sample
+    domain_of:
+    - Sample
+    range: string
+    required: false
+  composition:
+    name: composition
+    description: Academic or professional title of the researcher (e.g., "Dr.", "Professor").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: composition
+    owner: Sample
+    domain_of:
+    - Sample
+    range: string
+    required: false
+  size:
+    name: size
+    description: Research institution or university the person is affiliated with
+      (e.g., "HZB").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: size
+    owner: Sample
+    domain_of:
+    - Sample
+    range: string
+    required: false
+  preparation_method:
+    name: preparation_method
+    description: Research institution or university the person is affiliated with
+      (e.g., "HZB").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: preparation_method
+    owner: Sample
+    domain_of:
+    - Sample
+    range: string
+    required: false
+  batch_number:
+    name: batch_number
+    description: Research institution or university the person is affiliated with
+      (e.g., "HZB").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: batch_number
+    owner: Sample
+    domain_of:
+    - Sample
+    range: string
+    required: false
   name:
     name: name
     description: A human-readable name for a thing

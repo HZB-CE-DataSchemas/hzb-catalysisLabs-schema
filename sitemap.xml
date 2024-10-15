@@ -2,374 +2,718 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://https://github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/AlternateIdentifier/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Beamline/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/BeamlineExperiment/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/BeamlineScientist/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Boolean/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/CatalysisSample/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/CatalysisSampleCollection/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Catalyst/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/ChemicalFormulaValue/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/ChemicalOrDrugOrTreatment/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Contributor/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Curie/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/DataCite/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Date/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/DateOrDatetime/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Datetime/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Decimal/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Description/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Device/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Double/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/EMILOAESE/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/EMILPink/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Entity/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/EnvironmentDynamics/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Experiment/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/File/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Float/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Format/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/FundingReference/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/GenderEnum/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/GeoLocation/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Integer/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Jsonpath/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Jsonpointer/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Language/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Measurement/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Mixture/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/MySpot/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/NamedEntity/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Ncname/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Nodeidentifier/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Objectidentifier/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Parameter/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Person/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/PersonStatus/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/PowderCatalyst/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Process/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Project/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Publisher/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Reaction/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/ReactionProduct/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/ReactionProductCollection/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Reactor/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Recipe/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/RelatedIdentifier/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/RelatedItem/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/ResourceType/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Rights/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Sample/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/SampleCollection/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/SampleEnvironment/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/SamplePositioning/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Scientist/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Size/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Sparqlpath/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/String/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Subject/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/ThinFilmCatalyst/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Time/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Uri/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Uriorcurie/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Version/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/Workflow/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/about/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/acronym/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/active_site/</loc>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/age_in_years/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/assigned_lab/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/batch_number/</loc>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/birth_date/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/catalyst/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/catalyst_activity/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/catalyst_components/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/catalyst_form/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/catalyst_handling_capability/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/catalyst_name/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/catalyst_phase/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/catalyst_stability/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/catalyst_structure/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/catalyst_type/</loc>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/category/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/characterization_method/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/chemical__formula/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/chemical_composition/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/collaborators/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/commission_date/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/composition/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/creator_institution/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/creator_name/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/creator_role/</loc>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/creators/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/crystalline_structure/</loc>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/current_address/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/department/</loc>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/description/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/device_id/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/device_name/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/device_status/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/device_type/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/eln_name/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/end_date/</loc>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/entries/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/experiment_id/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/experiment_name/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/first_name/</loc>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/gender/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/has_employment_history/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/hzb-catalysisLabs-schema/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/id/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/identifier/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/identifierType/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/input_gases/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/institution/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/institution_abbreviation/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/institution_name/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/institutions/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/ip_address/</loc>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/iri/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/laboratory_name/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/last_name/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/loading/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/location/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/mac_address/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/manufacturer/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/model_number/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/morphology/</loc>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/name/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/operating_system/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/orcid_id/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/ownership/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/particle_size/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/performed_by/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/person_id/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/phase/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/pore_size_distribution/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/preparation_method/</loc>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/primary_email/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/principal_investigator/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/project_code/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/project_id/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/project_name/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/project_sample/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/projects/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/purchase_date/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/purity/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/reaction/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/related_project/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/research_area/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/research_focus/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/responsible_person/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/role/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/sample/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/sample_ELN_id/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/sample_description/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/sample_id/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/sample_name/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/serial_number/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/size/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/specifications/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/start_date/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/status/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/support/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/surface_area/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/surface_chemistry/</loc>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/synthesis_method/</loc>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/title/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
     </url>
     <url>
          <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/vital_status/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/github.com/HZB-CE-DataSchemas/.github.io/hzb-catalysisLabs-schema/warranty_expiration_date/</loc>
+         <lastmod>2024-10-15</lastmod>
     </url>
 </urlset>

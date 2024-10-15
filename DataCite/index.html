@@ -217,7 +217,7 @@
 
 
 
-    DataCite --&gt; "1" Person : creators
+    DataCite --&gt; "0..1" Person : creators
     click Person href "../Person"
 
 
@@ -286,7 +286,7 @@
 <tbody>
 <tr>
 <td><a href="../identifier/">identifier</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The Identifier is a unique string that identifies a resource (i</td>
 <td>direct</td>
 </tr>
@@ -298,32 +298,32 @@
 </tr>
 <tr>
 <td><a href="../creators/">creators</a></td>
-<td>1 <br/> <a href="../Person/">Person</a></td>
+<td>0..1 <br/> <a href="../Person/">Person</a></td>
 <td>Creator(s) of the resource</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../title/">title</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Title of the resource/dataset</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../Publisher/">Publisher</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Creator of the resource</td>
+<td>lorem</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../ResourceType/">ResourceType</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Creator of the resource</td>
+<td>lorem</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../Subject/">Subject</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Creator of the resource</td>
+<td>lorem</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -408,7 +408,7 @@
 <td><a href="../name/">name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable name for a thing</td>
-<td><a href="../Entity/">Entity</a>, <a href="../NamedEntity/">NamedEntity</a></td>
+<td><a href="../NamedEntity/">NamedEntity</a>, <a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
@@ -468,7 +468,7 @@ attributes:
     domain_of:
     - DataCite
     range: string
-    required: true
+    required: false
   identifierType:
     name: identifierType
     description: type of identifier.
@@ -485,7 +485,7 @@ attributes:
     domain_of:
     - DataCite
     range: Person
-    required: true
+    required: false
   title:
     name: title
     description: Title of the resource/dataset.
@@ -493,11 +493,12 @@ attributes:
     rank: 1000
     domain_of:
     - DataCite
+    - Person
     range: string
-    required: true
+    required: false
   Publisher:
     name: Publisher
-    description: Creator of the resource.
+    description: lorem.
     from_schema: https://w3id.org/anak-velazquez/core/
     rank: 1000
     domain_of:
@@ -505,7 +506,7 @@ attributes:
     range: string
   ResourceType:
     name: ResourceType
-    description: Creator of the resource.
+    description: lorem.
     from_schema: https://w3id.org/anak-velazquez/core/
     rank: 1000
     domain_of:
@@ -513,7 +514,7 @@ attributes:
     range: string
   Subject:
     name: Subject
-    description: Creator of the resource.
+    description: lorem.
     from_schema: https://w3id.org/anak-velazquez/core/
     rank: 1000
     domain_of:
@@ -652,7 +653,7 @@ attributes:
     domain_of:
     - DataCite
     range: string
-    required: true
+    required: false
   identifierType:
     name: identifierType
     description: type of identifier.
@@ -673,7 +674,7 @@ attributes:
     domain_of:
     - DataCite
     range: Person
-    required: true
+    required: false
   title:
     name: title
     description: Title of the resource/dataset.
@@ -683,11 +684,12 @@ attributes:
     owner: DataCite
     domain_of:
     - DataCite
+    - Person
     range: string
-    required: true
+    required: false
   Publisher:
     name: Publisher
-    description: Creator of the resource.
+    description: lorem.
     from_schema: https://w3id.org/anak-velazquez/core/
     rank: 1000
     alias: Publisher
@@ -697,7 +699,7 @@ attributes:
     range: string
   ResourceType:
     name: ResourceType
-    description: Creator of the resource.
+    description: lorem.
     from_schema: https://w3id.org/anak-velazquez/core/
     rank: 1000
     alias: ResourceType
@@ -707,7 +709,7 @@ attributes:
     range: string
   Subject:
     name: Subject
-    description: Creator of the resource.
+    description: lorem.
     from_schema: https://w3id.org/anak-velazquez/core/
     rank: 1000
     alias: Subject

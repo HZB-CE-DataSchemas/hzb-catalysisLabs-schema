@@ -229,6 +229,10 @@
 
       Person : birth_date
 
+      Person : department
+
+      Person : first_name
+
       Person : gender
 
 
@@ -242,11 +246,36 @@
 
       Person : id
 
+      Person : institution
+
       Person : iri
+
+      Person : laboratory_name
+
+      Person : last_name
 
       Person : name
 
+      Person : orcid_id
+
+      Person : person_id
+
       Person : primary_email
+
+      Person : projects
+
+
+
+
+    Person --&gt; "*" Project : projects
+    click Project href "../Project"
+
+
+      Person : research_focus
+
+      Person : role
+
+      Person : title
 
 
 </div>
@@ -306,10 +335,76 @@
 <td>direct</td>
 </tr>
 <tr>
+<td><a href="../person_id/">person_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The Identifier is a unique string that identifies a resource (i</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../orcid_id/">orcid_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The ORCID Identifier is a unique string that identifies a researcher</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../first_name/">first_name</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The ORCID Identifier is a unique string that identifies a researcher</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../last_name/">last_name</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The ORCID Identifier is a unique string that identifies a researcher</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../title/">title</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Academic or professional title of the researcher (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../institution/">institution</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Research institution or university the person is affiliated with (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../department/">department</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Department or division the researcher belongs to (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../role/">role</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Researcher's role in the department (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../research_focus/">research_focus</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Area of expertise (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../laboratory_name/">laboratory_name</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Working group (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../projects/">projects</a></td>
+<td>* <br/> <a href="../Project/">Project</a></td>
+<td>Project(s) that the researcher is involved in (e</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../name/">name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable name for a thing</td>
-<td><a href="../Entity/">Entity</a>, <a href="../NamedEntity/">NamedEntity</a></td>
+<td><a href="../NamedEntity/">NamedEntity</a>, <a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
@@ -339,6 +434,12 @@
 <tr>
 <td><a href="../DataCite/">DataCite</a></td>
 <td><a href="../creators/">creators</a></td>
+<td>range</td>
+<td><a href="./">Person</a></td>
+</tr>
+<tr>
+<td><a href="../Project/">Project</a></td>
+<td><a href="../collaborators/">collaborators</a></td>
 <td>range</td>
 <td><a href="./">Person</a></td>
 </tr>
@@ -391,6 +492,112 @@ slots:
 - age_in_years
 - gender
 - has_employment_history
+attributes:
+  person_id:
+    name: person_id
+    description: The Identifier is a unique string that identifies a resource (i.e.,
+      DOI).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Person
+    range: string
+    required: false
+  orcid_id:
+    name: orcid_id
+    description: The ORCID Identifier is a unique string that identifies a researcher.
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Person
+    range: string
+    required: false
+  first_name:
+    name: first_name
+    description: The ORCID Identifier is a unique string that identifies a researcher.
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Person
+    range: string
+    required: false
+  last_name:
+    name: last_name
+    description: The ORCID Identifier is a unique string that identifies a researcher.
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Person
+    range: string
+    required: false
+  title:
+    name: title
+    description: Academic or professional title of the researcher (e.g., "Dr.", "Professor").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    domain_of:
+    - DataCite
+    - Person
+    range: string
+    required: false
+  institution:
+    name: institution
+    description: Research institution or university the person is affiliated with
+      (e.g., "HZB").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Person
+    range: string
+    required: false
+  department:
+    name: department
+    description: Department or division the researcher belongs to (e.g., "Chemical
+      Energy").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Person
+    range: string
+    required: false
+  role:
+    name: role
+    description: Researcher's role in the department (e.g., "Principal Investigator",
+      "Research Assistant", "Postdoc").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Person
+    range: string
+    required: false
+  research_focus:
+    name: research_focus
+    description: Area of expertise (e.g. “Thermo-Catalysis”).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Person
+    range: string
+    required: false
+  laboratory_name:
+    name: laboratory_name
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Person
+    - CatalysisSample
+    range: string
+    required: false
+  projects:
+    name: projects
+    description: Project(s) that the researcher is involved in (e.g. CatLab)
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Person
+    range: Project
+    required: false
+    multivalued: true
 class_uri: schema:Person
 
 </code></pre>
@@ -406,6 +613,133 @@ aliases:
 - individual
 is_a: NamedEntity
 attributes:
+  person_id:
+    name: person_id
+    description: The Identifier is a unique string that identifies a resource (i.e.,
+      DOI).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: person_id
+    owner: Person
+    domain_of:
+    - Person
+    range: string
+    required: false
+  orcid_id:
+    name: orcid_id
+    description: The ORCID Identifier is a unique string that identifies a researcher.
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: orcid_id
+    owner: Person
+    domain_of:
+    - Person
+    range: string
+    required: false
+  first_name:
+    name: first_name
+    description: The ORCID Identifier is a unique string that identifies a researcher.
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: first_name
+    owner: Person
+    domain_of:
+    - Person
+    range: string
+    required: false
+  last_name:
+    name: last_name
+    description: The ORCID Identifier is a unique string that identifies a researcher.
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: last_name
+    owner: Person
+    domain_of:
+    - Person
+    range: string
+    required: false
+  title:
+    name: title
+    description: Academic or professional title of the researcher (e.g., "Dr.", "Professor").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    alias: title
+    owner: Person
+    domain_of:
+    - DataCite
+    - Person
+    range: string
+    required: false
+  institution:
+    name: institution
+    description: Research institution or university the person is affiliated with
+      (e.g., "HZB").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: institution
+    owner: Person
+    domain_of:
+    - Person
+    range: string
+    required: false
+  department:
+    name: department
+    description: Department or division the researcher belongs to (e.g., "Chemical
+      Energy").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: department
+    owner: Person
+    domain_of:
+    - Person
+    range: string
+    required: false
+  role:
+    name: role
+    description: Researcher's role in the department (e.g., "Principal Investigator",
+      "Research Assistant", "Postdoc").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: role
+    owner: Person
+    domain_of:
+    - Person
+    range: string
+    required: false
+  research_focus:
+    name: research_focus
+    description: Area of expertise (e.g. “Thermo-Catalysis”).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: research_focus
+    owner: Person
+    domain_of:
+    - Person
+    range: string
+    required: false
+  laboratory_name:
+    name: laboratory_name
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: laboratory_name
+    owner: Person
+    domain_of:
+    - Person
+    - CatalysisSample
+    range: string
+    required: false
+  projects:
+    name: projects
+    description: Project(s) that the researcher is involved in (e.g. CatLab)
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: projects
+    owner: Person
+    domain_of:
+    - Person
+    range: Project
+    required: false
+    multivalued: true
   primary_email:
     name: primary_email
     description: The main email address of a person

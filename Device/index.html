@@ -208,11 +208,49 @@
       NamedEntity &lt;|-- Device
         click NamedEntity href "../NamedEntity"
 
+      Device : catalyst_handling_capability
+
+      Device : commission_date
+
+      Device : device_id
+
+      Device : device_name
+
+      Device : device_status
+
+      Device : device_type
+
       Device : id
+
+      Device : input_gases
+
+      Device : ip_address
 
       Device : iri
 
+      Device : location
+
+      Device : mac_address
+
+      Device : manufacturer
+
+      Device : model_number
+
       Device : name
+
+      Device : operating_system
+
+      Device : ownership
+
+      Device : purchase_date
+
+      Device : responsible_person
+
+      Device : serial_number
+
+      Device : specifications
+
+      Device : warranty_expiration_date
 
 
 </div>
@@ -238,10 +276,124 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../device_id/">device_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The Identifier is a unique string that identifies a resource (i</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../serial_number/">serial_number</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The ORCID Identifier is a unique string that identifies a researcher</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../device_name/">device_name</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The ORCID Identifier is a unique string that identifies a researcher</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../device_type/">device_type</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The ORCID Identifier is a unique string that identifies a researcher</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../manufacturer/">manufacturer</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Academic or professional title of the researcher (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../model_number/">model_number</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Research institution or university the person is affiliated with (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../purchase_date/">purchase_date</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Department or division the researcher belongs to (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../commission_date/">commission_date</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Researcher's role in the department (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../warranty_expiration_date/">warranty_expiration_date</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Area of expertise (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../operating_system/">operating_system</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Working group (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../specifications/">specifications</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Working group (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../input_gases/">input_gases</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Working group (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../catalyst_handling_capability/">catalyst_handling_capability</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Working group (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ip_address/">ip_address</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Working group (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../mac_address/">mac_address</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Working group (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../location/">location</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Working group (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../responsible_person/">responsible_person</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Working group (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../device_status/">device_status</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Working group (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ownership/">ownership</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Working group (e</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../name/">name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable name for a thing</td>
-<td><a href="../Entity/">Entity</a>, <a href="../NamedEntity/">NamedEntity</a></td>
+<td><a href="../NamedEntity/">NamedEntity</a>, <a href="../Entity/">Entity</a></td>
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
@@ -300,6 +452,182 @@ narrow_mappings:
 - STY:T203
 - STY:T122
 is_a: NamedEntity
+attributes:
+  device_id:
+    name: device_id
+    description: The Identifier is a unique string that identifies a resource (i.e.,
+      DOI).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Device
+    range: string
+    required: false
+  serial_number:
+    name: serial_number
+    description: The ORCID Identifier is a unique string that identifies a researcher.
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Device
+    range: string
+    required: false
+  device_name:
+    name: device_name
+    description: The ORCID Identifier is a unique string that identifies a researcher.
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Device
+    range: string
+    required: false
+  device_type:
+    name: device_type
+    description: The ORCID Identifier is a unique string that identifies a researcher.
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Device
+    range: string
+    required: false
+  manufacturer:
+    name: manufacturer
+    description: Academic or professional title of the researcher (e.g., "Dr.", "Professor").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Device
+    range: string
+    required: false
+  model_number:
+    name: model_number
+    description: Research institution or university the person is affiliated with
+      (e.g., "HZB").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Device
+    range: string
+    required: false
+  purchase_date:
+    name: purchase_date
+    description: Department or division the researcher belongs to (e.g., "Chemical
+      Energy").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Device
+    range: string
+    required: false
+  commission_date:
+    name: commission_date
+    description: Researcher's role in the department (e.g., "Principal Investigator",
+      "Research Assistant", "Postdoc").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Device
+    range: string
+    required: false
+  warranty_expiration_date:
+    name: warranty_expiration_date
+    description: Area of expertise (e.g. “Thermo-Catalysis”).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Device
+    range: string
+    required: false
+  operating_system:
+    name: operating_system
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Device
+    range: string
+    required: false
+  specifications:
+    name: specifications
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Device
+    range: string
+    required: false
+  input_gases:
+    name: input_gases
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Device
+    range: string
+    required: false
+  catalyst_handling_capability:
+    name: catalyst_handling_capability
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Device
+    range: string
+    required: false
+  ip_address:
+    name: ip_address
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Device
+    range: string
+    required: false
+  mac_address:
+    name: mac_address
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Device
+    range: string
+    required: false
+  location:
+    name: location
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Device
+    range: string
+    required: false
+  responsible_person:
+    name: responsible_person
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Device
+    range: string
+    required: false
+  device_status:
+    name: device_status
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Device
+    range: string
+    required: false
+  ownership:
+    name: ownership
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    domain_of:
+    - Device
+    range: string
+    required: false
 
 </code></pre>
 </details>
@@ -317,6 +645,219 @@ narrow_mappings:
 - STY:T122
 is_a: NamedEntity
 attributes:
+  device_id:
+    name: device_id
+    description: The Identifier is a unique string that identifies a resource (i.e.,
+      DOI).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: device_id
+    owner: Device
+    domain_of:
+    - Device
+    range: string
+    required: false
+  serial_number:
+    name: serial_number
+    description: The ORCID Identifier is a unique string that identifies a researcher.
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: serial_number
+    owner: Device
+    domain_of:
+    - Device
+    range: string
+    required: false
+  device_name:
+    name: device_name
+    description: The ORCID Identifier is a unique string that identifies a researcher.
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: device_name
+    owner: Device
+    domain_of:
+    - Device
+    range: string
+    required: false
+  device_type:
+    name: device_type
+    description: The ORCID Identifier is a unique string that identifies a researcher.
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: device_type
+    owner: Device
+    domain_of:
+    - Device
+    range: string
+    required: false
+  manufacturer:
+    name: manufacturer
+    description: Academic or professional title of the researcher (e.g., "Dr.", "Professor").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: manufacturer
+    owner: Device
+    domain_of:
+    - Device
+    range: string
+    required: false
+  model_number:
+    name: model_number
+    description: Research institution or university the person is affiliated with
+      (e.g., "HZB").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: model_number
+    owner: Device
+    domain_of:
+    - Device
+    range: string
+    required: false
+  purchase_date:
+    name: purchase_date
+    description: Department or division the researcher belongs to (e.g., "Chemical
+      Energy").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: purchase_date
+    owner: Device
+    domain_of:
+    - Device
+    range: string
+    required: false
+  commission_date:
+    name: commission_date
+    description: Researcher's role in the department (e.g., "Principal Investigator",
+      "Research Assistant", "Postdoc").
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: commission_date
+    owner: Device
+    domain_of:
+    - Device
+    range: string
+    required: false
+  warranty_expiration_date:
+    name: warranty_expiration_date
+    description: Area of expertise (e.g. “Thermo-Catalysis”).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: warranty_expiration_date
+    owner: Device
+    domain_of:
+    - Device
+    range: string
+    required: false
+  operating_system:
+    name: operating_system
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: operating_system
+    owner: Device
+    domain_of:
+    - Device
+    range: string
+    required: false
+  specifications:
+    name: specifications
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: specifications
+    owner: Device
+    domain_of:
+    - Device
+    range: string
+    required: false
+  input_gases:
+    name: input_gases
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: input_gases
+    owner: Device
+    domain_of:
+    - Device
+    range: string
+    required: false
+  catalyst_handling_capability:
+    name: catalyst_handling_capability
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: catalyst_handling_capability
+    owner: Device
+    domain_of:
+    - Device
+    range: string
+    required: false
+  ip_address:
+    name: ip_address
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: ip_address
+    owner: Device
+    domain_of:
+    - Device
+    range: string
+    required: false
+  mac_address:
+    name: mac_address
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: mac_address
+    owner: Device
+    domain_of:
+    - Device
+    range: string
+    required: false
+  location:
+    name: location
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: location
+    owner: Device
+    domain_of:
+    - Device
+    range: string
+    required: false
+  responsible_person:
+    name: responsible_person
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: responsible_person
+    owner: Device
+    domain_of:
+    - Device
+    range: string
+    required: false
+  device_status:
+    name: device_status
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: device_status
+    owner: Device
+    domain_of:
+    - Device
+    range: string
+    required: false
+  ownership:
+    name: ownership
+    description: Working group (e.g. Amkreutz lab).
+    from_schema: https://w3id.org/anak-velazquez/core/
+    rank: 1000
+    alias: ownership
+    owner: Device
+    domain_of:
+    - Device
+    range: string
+    required: false
   name:
     name: name
     description: A human-readable name for a thing

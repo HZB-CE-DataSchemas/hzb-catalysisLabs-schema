@@ -1,26 +1,547 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// A generic grouping for any identifiable entity
-message NamedThing
+// System within a facility designed to direct a beam of radiation toward a sample for  the purpose of analysis or experimentation.
+message Beamline
  {
   uriorcurie id = 0
+  string iri = 0
   string name = 0
-  string description = 0
+  string category = 0
  }
-// Represents a Person
-message Person
+// An experimental investigation conducted using a beamline.
+message BeamlineExperiment
  {
   uriorcurie id = 0
+  string iri = 0
   string name = 0
-  string description = 0
+  string category = 0
+  string experimentId = 0
+  string experimentName = 0
+  scientist performedBy = 0
+  project relatedProject = 0
+  catalyst catalyst = 0
+  sample sample = 0
+  reaction reaction = 0
+  string startDate = 0
+  string endDate = 0
+ }
+// An expert responsible for the operation and scientific application of beamlines  in a research facility.
+message BeamlineScientist
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
   string primaryEmail = 0
   date birthDate = 0
   integer ageInYears = 0
-  personStatus vitalStatus = 0
+  genderEnum gender = 0
+ repeated  string hasEmploymentHistory = 0
+  string personId = 0
+  string orcidId = 0
+  string firstName = 0
+  string lastName = 0
+  string title = 0
+  string institution = 0
+  string department = 0
+  string role = 0
+  string researchFocus = 0
+  string laboratoryName = 0
+ repeated  project projects = 0
  }
-// A holder for Person objects
-message PersonCollection
+// Core properties of a catalysis sample.
+message CatalysisSample
  {
- repeated  person entries = 0
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+  string sampleId = 0
+  string sampleName = 0
+  string sampleDescription = 0
+  string phase = 0
+  string composition = 0
+  string size = 0
+  string preparationMethod = 0
+  string batchNumber = 0
+  string sampleELNId = 0
+  string elnName = 0
+  string creatorName = 0
+  string creatorInstitution = 0
+  string creatorRole = 0
+  string laboratoryName = 0
+  project projectSample = 0
+  string institutionName = 0
+  string institutionAbbreviation = 0
+  string catalystType = 0
+  string catalystPhase = 0
+  string catalystForm = 0
+  string catalystName = 0
+  string chemicalFormula = 0
+  string catalystComponents = 0
+  string catalystStructure = 0
+  string activeSite = 0
+  string support = 0
+  string loading = 0
+  string purity = 0
+  string synthesisMethod = 0
+  string characterizationMethod = 0
+  string surfaceArea = 0
+  string particleSize = 0
+  string morphology = 0
+  string poreSizeDistribution = 0
+  string crystallineStructure = 0
+  string chemicalComposition = 0
+  string surfaceChemistry = 0
+  string catalystStability = 0
+  string catalystActivity = 0
+ }
+// A holder for CatalysisSample objects
+message CatalysisSampleCollection
+ {
+ repeated  catalysisSample entries = 0
+ }
+// A substance or material that increases the rate of a chemical reaction.  Class including core properties of the synthesis characterization, and other experiments. 
+message Catalyst
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+  string sampleId = 0
+  string sampleName = 0
+  string sampleDescription = 0
+  string phase = 0
+  string composition = 0
+  string size = 0
+  string preparationMethod = 0
+  string batchNumber = 0
+  string sampleELNId = 0
+  string elnName = 0
+  string creatorName = 0
+  string creatorInstitution = 0
+  string creatorRole = 0
+  string laboratoryName = 0
+  project projectSample = 0
+  string institutionName = 0
+  string institutionAbbreviation = 0
+  string catalystType = 0
+  string catalystPhase = 0
+  string catalystForm = 0
+  string catalystName = 0
+  string chemicalFormula = 0
+  string catalystComponents = 0
+  string catalystStructure = 0
+  string activeSite = 0
+  string support = 0
+  string loading = 0
+  string purity = 0
+  string synthesisMethod = 0
+  string characterizationMethod = 0
+  string surfaceArea = 0
+  string particleSize = 0
+  string morphology = 0
+  string poreSizeDistribution = 0
+  string crystallineStructure = 0
+  string chemicalComposition = 0
+  string surfaceChemistry = 0
+  string catalystStability = 0
+  string catalystActivity = 0
+ }
+// Represents metadata for datasets according to DataCite standard. Core properties of DataCite standard (basics for citation/publications.) DataCite already considers DublinCore elements. 
+message DataCite
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+  string identifier = 0
+  string identifierType = 0
+  person creators = 0
+  string title = 0
+  string publisher = 0
+  string resourceType = 0
+  string subject = 0
+  string contributor = 0
+  string date = 0
+  string language = 0
+  string alternateIdentifier = 0
+  string relatedIdentifier = 0
+  string size = 0
+  string format = 0
+  string version = 0
+  string rights = 0
+  string description = 0
+  string geoLocation = 0
+  string fundingReference = 0
+  string relatedItem = 0
+ }
+// A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment.
+message Device
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+  string deviceId = 0
+  string serialNumber = 0
+  string deviceName = 0
+  string deviceType = 0
+  string manufacturer = 0
+  string modelNumber = 0
+  string purchaseDate = 0
+  string commissionDate = 0
+  string warrantyExpirationDate = 0
+  string operatingSystem = 0
+  string specifications = 0
+  string inputGases = 0
+  string catalystHandlingCapability = 0
+  string ipAddress = 0
+  string macAddress = 0
+  string location = 0
+  string responsiblePerson = 0
+  string deviceStatus = 0
+  string ownership = 0
+ }
+// OAESE beamline description.
+message EMILOAESE
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// Pink beamline description.
+message EMILPink
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// Dynamic or time-resolved environmental conditions during an  experiment (e.g.for in-situ measurements).
+message EnvironmentDynamics
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// A systematic investigation designed to test hypotheses, gather data, or explore  scientific principles through controlled conditions.
+message Experiment
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+  string experimentId = 0
+  string experimentName = 0
+  scientist performedBy = 0
+  project relatedProject = 0
+  catalyst catalyst = 0
+  sample sample = 0
+  reaction reaction = 0
+  string startDate = 0
+  string endDate = 0
+ }
+// Stores data related to the experiment (e.g. images, videos, or other files).
+message File
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// Storing and describing measurements to perform on a sample.
+message Measurement
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// A combination of two or more substances that are mixed together,  which may retain their individual properties or interact chemically. 
+message Mixture
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// Myspot beamline description.
+message MySpot
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// a databased entity or concept/class
+message NamedEntity
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// Associates parameters on demand to a certain experiment or measurement.
+message Parameter
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// A basic/standard definition of a person, which later can be further defined as scientist, beam scientist, user, etc.
+message Person
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+  string primaryEmail = 0
+  date birthDate = 0
+  integer ageInYears = 0
+  genderEnum gender = 0
+ repeated  string hasEmploymentHistory = 0
+  string personId = 0
+  string orcidId = 0
+  string firstName = 0
+  string lastName = 0
+  string title = 0
+  string institution = 0
+  string department = 0
+  string role = 0
+  string researchFocus = 0
+  string laboratoryName = 0
+ repeated  project projects = 0
+ }
+// Catalyst type. Core properties of a powder catalyst.
+message PowderCatalyst
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+  string sampleId = 0
+  string sampleName = 0
+  string sampleDescription = 0
+  string phase = 0
+  string composition = 0
+  string size = 0
+  string preparationMethod = 0
+  string batchNumber = 0
+  string sampleELNId = 0
+  string elnName = 0
+  string creatorName = 0
+  string creatorInstitution = 0
+  string creatorRole = 0
+  string laboratoryName = 0
+  project projectSample = 0
+  string institutionName = 0
+  string institutionAbbreviation = 0
+  string catalystType = 0
+  string catalystPhase = 0
+  string catalystForm = 0
+  string catalystName = 0
+  string chemicalFormula = 0
+  string catalystComponents = 0
+  string catalystStructure = 0
+  string activeSite = 0
+  string support = 0
+  string loading = 0
+  string purity = 0
+  string synthesisMethod = 0
+  string characterizationMethod = 0
+  string surfaceArea = 0
+  string particleSize = 0
+  string morphology = 0
+  string poreSizeDistribution = 0
+  string crystallineStructure = 0
+  string chemicalComposition = 0
+  string surfaceChemistry = 0
+  string catalystStability = 0
+  string catalystActivity = 0
+ }
+// A defined series of actions, steps, or operations undertaken to achieve a  specific scientific or experimental outcome (e.g. atomic layer deposition).
+message Process
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// A research activity or initiative with defined objectives, funding, and timelines, involving one or more researchers, designed to generate data, publications, and other outputs. The project may involve multiple experiments, datasets, and contributors, and can be linked to specific funding sources and institutions.
+message Project
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+  string projectId = 0
+  string projectCode = 0
+  string projectName = 0
+  string acronym = 0
+  string startDate = 0
+  string endDate = 0
+  string status = 0
+  string institutions = 0
+  scientist principalInvestigator = 0
+  string assignedLab = 0
+  string researchArea = 0
+ repeated  person collaborators = 0
+ }
+// A chemical process in which one or more substances (reactants) undergo transformation to produce new substances (products). 
+message Reaction
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// A substance formed as a result of a chemical reaction, representing the end products  generated from the transformation of reactants.
+message ReactionProduct
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// A holder for ReactionProduct objects
+message ReactionProductCollection
+ {
+ repeated  reactionProduct entries = 0
+ }
+// Equipment designed to facilitate and control chemical reactions under specified  conditions, such as temperature, pressure, and flow rates. 
+message Reactor
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// A detailed set of instructions outlining the materials, quantities, and procedures  required to perform a specific chemical reaction or experimental process.
+message Recipe
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// Core properties of a sample, discipline agnostic.
+message Sample
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+  string sampleId = 0
+  string sampleName = 0
+  string sampleDescription = 0
+  string phase = 0
+  string composition = 0
+  string size = 0
+  string preparationMethod = 0
+  string batchNumber = 0
+ }
+// A holder for Sample objects
+message SampleCollection
+ {
+ repeated  sample entries = 0
+ }
+// Controlled environment in which the sample is studied (operando research).
+message SampleEnvironment
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// The arrangement or location of samples within an experimental setup,  critical for ensuring accurate data collection and analysis. 
+message SamplePositioning
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// An individual involved in research activities, and their details that are important  to be referenced on experiments, projects, publivations, etc.
+message Scientist
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+  string primaryEmail = 0
+  date birthDate = 0
+  integer ageInYears = 0
+  genderEnum gender = 0
+ repeated  string hasEmploymentHistory = 0
+  string personId = 0
+  string orcidId = 0
+  string firstName = 0
+  string lastName = 0
+  string title = 0
+  string institution = 0
+  string department = 0
+  string role = 0
+  string researchFocus = 0
+  string laboratoryName = 0
+ repeated  project projects = 0
+ }
+// Catalyst type. Core properties of a thin film.
+message ThinFilmCatalyst
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+  string sampleId = 0
+  string sampleName = 0
+  string sampleDescription = 0
+  string phase = 0
+  string composition = 0
+  string size = 0
+  string preparationMethod = 0
+  string batchNumber = 0
+  string sampleELNId = 0
+  string elnName = 0
+  string creatorName = 0
+  string creatorInstitution = 0
+  string creatorRole = 0
+  string laboratoryName = 0
+  project projectSample = 0
+  string institutionName = 0
+  string institutionAbbreviation = 0
+  string catalystType = 0
+  string catalystPhase = 0
+  string catalystForm = 0
+  string catalystName = 0
+  string chemicalFormula = 0
+  string catalystComponents = 0
+  string catalystStructure = 0
+  string activeSite = 0
+  string support = 0
+  string loading = 0
+  string purity = 0
+  string synthesisMethod = 0
+  string characterizationMethod = 0
+  string surfaceArea = 0
+  string particleSize = 0
+  string morphology = 0
+  string poreSizeDistribution = 0
+  string crystallineStructure = 0
+  string chemicalComposition = 0
+  string surfaceChemistry = 0
+  string catalystStability = 0
+  string catalystActivity = 0
+ }
+// A structured sequence of tasks, activities, or processes designed to accomplish a  specific research objective or experimental goal.
+message Workflow
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
  }

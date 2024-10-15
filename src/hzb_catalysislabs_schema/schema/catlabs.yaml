@@ -28,6 +28,7 @@ classes:
     description: >-
       An individual involved in research activities, and their details that are important 
       to be referenced on experiments, projects, publivations, etc.
+    #category: "CatLabs"
     class_uri: 
     mixins:
       #- HasAliases
@@ -43,6 +44,132 @@ classes:
     is_a: Sample
     description: >-
       Core properties of a catalysis sample.
+    #category: "CatLabs"
+    attributes:
+        sample_ELN_id: 
+          description: The Identifier is a unique string that identifies a resource (i.e., DOI).
+          required: false
+          range: string
+        eln_name: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string
+        creator_name: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string
+        creator_institution: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string
+        creator_role: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string          
+        laboratory_name: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string
+        project_sample: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: Project          
+        institution_name: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string
+        institution_abbreviation: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string      
+        catalyst_type: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string                   
+        catalyst_phase: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string     
+        catalyst_form: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string     
+        catalyst_name: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string     
+        chemical_ formula: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string
+        catalyst_components: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string
+        catalyst_structure: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string    
+        active_site: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string    
+        support: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string    
+        loading: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string    
+        purity: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string    
+        synthesis_method: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string 
+        characterization_method: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string 
+        surface_area: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string 
+        particle_size: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string                     
+        morphology: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string  
+        pore_size_distribution: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string  
+        crystalline_structure: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string                      
+        chemical_composition: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string   
+        surface_chemistry: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string             
+        catalyst_stability: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string   
+        catalyst_activity: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string 
     class_uri: 
     mixins:
       #- HasAliases
@@ -59,6 +186,7 @@ classes:
     description: >-
       A substance or material that increases the rate of a chemical reaction. 
       Class including core properties of the synthesis characterization, and other experiments. 
+    #category: "CatLabs"
     class_uri: 
     mixins:
       #- HasAliases
@@ -74,6 +202,7 @@ classes:
     is_a: Catalyst
     description: >-
       Catalyst type. Core properties of a thin film.
+    #category: "CatLabs"
     class_uri: 
     mixins:
       #- HasAliases
@@ -89,6 +218,7 @@ classes:
     is_a: Catalyst
     description: >-
       Catalyst type. Core properties of a powder catalyst.
+    #category: "CatLabs"
     class_uri: 
     mixins:
       #- HasAliases
@@ -105,6 +235,7 @@ classes:
     description: >-
       A detailed set of instructions outlining the materials, quantities, and procedures 
       required to perform a specific chemical reaction or experimental process.
+    #category: "CatLabs"
     class_uri: 
     mixins:
       #- HasAliases
@@ -121,6 +252,7 @@ classes:
     description: >-
       A combination of two or more substances that are mixed together, 
       which may retain their individual properties or interact chemically. 
+    #category: "CatLabs"
     class_uri: 
     mixins:
       #- HasAliases
@@ -137,6 +269,7 @@ classes:
     description: >-
       A structured sequence of tasks, activities, or processes designed to accomplish a 
       specific research objective or experimental goal.
+    #category: "CatLabs"
     class_uri: 
     mixins:
       #- HasAliases
@@ -153,6 +286,7 @@ classes:
     description: >-
       A defined series of actions, steps, or operations undertaken to achieve a 
       specific scientific or experimental outcome (e.g. atomic layer deposition).
+    #category: "CatLabs"
     class_uri: 
     mixins:
     #- HasAliases
@@ -169,6 +303,44 @@ classes:
     description: >-
       A systematic investigation designed to test hypotheses, gather data, or explore 
       scientific principles through controlled conditions.
+    #category: "CatLabs"
+    attributes:
+        experiment_id: 
+          description: The Identifier is a unique string that identifies a resource (i.e., DOI).
+          required: false
+          range: string
+        experiment_name: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string
+        performed_by: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: Scientist
+        related_project: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: Project
+        catalyst: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: Catalyst
+        sample: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: Sample
+        reaction: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: Reaction
+        start_date: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string
+        end_date: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string                                                               
     class_uri: 
     mixins:
       #- HasAliases
@@ -184,6 +356,7 @@ classes:
     is_a: NamedEntity
     description: >-
       Storing and describing measurements to perform on a sample.
+    #category: "CatLabs"
     class_uri: 
     mixins:
       #- HasAliases
@@ -199,6 +372,7 @@ classes:
     is_a: NamedEntity
     description: >-
       Associates parameters on demand to a certain experiment or measurement.
+    #category: "CatLabs"
     class_uri: 
     mixins:
       #- HasAliases
@@ -214,6 +388,7 @@ classes:
     is_a: NamedEntity
     description: >-
       A chemical process in which one or more substances (reactants) undergo transformation to produce new substances (products). 
+    #category: "CatLabs"
     class_uri: 
     mixins:
       #- HasAliases
@@ -230,6 +405,7 @@ classes:
     description: >-
       A substance formed as a result of a chemical reaction, representing the end products 
       generated from the transformation of reactants.
+    #category: "CatLabs"
     class_uri: 
     mixins:
       #- HasAliases
@@ -246,6 +422,7 @@ classes:
     description: >-
       Equipment designed to facilitate and control chemical reactions under specified 
       conditions, such as temperature, pressure, and flow rates. 
+    #category: "CatLabs"
     class_uri: 
     mixins:
       #- HasAliases
@@ -262,7 +439,7 @@ classes:
 ###############    
   #CatalysisSample array
   CatalysisSampleCollection:
-    tree_root: true
+    #tree_root: true
     description: >-
       A holder for CatalysisSample objects
     attributes:
@@ -273,7 +450,7 @@ classes:
 
   #ReactionProduct array
   ReactionProductCollection:
-    tree_root: true
+    #tree_root: true
     description: >-
       A holder for ReactionProduct objects
     attributes:

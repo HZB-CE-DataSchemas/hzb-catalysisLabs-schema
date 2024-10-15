@@ -7,13 +7,17 @@
   ],
   "id": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema",
   "imports": [
-    "linkml:types"
+    "linkml:types",
+    "core",
+    "catlabs",
+    "BESSY",
+    "operandoCatalysis"
   ],
   "license": "MIT",
   "prefixes": [
     {
-      "prefix_prefix": "hzb_catalysislabs_schema",
-      "prefix_reference": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema/"
+      "prefix_prefix": "hzb_metadata_schema",
+      "prefix_reference": "https://w3id.org/anak-velazquez/hzb-metadata-schema/"
     },
     {
       "prefix_prefix": "linkml",
@@ -32,13 +36,37 @@
       "prefix_reference": "http://purl.obolibrary.org/obo/PATO_"
     },
     {
-      "prefix_prefix": "example",
-      "prefix_reference": "https://example.org/"
+      "prefix_prefix": "rdfs",
+      "prefix_reference": "http://www.w3.org/2000/01/rdf-schema#"
+    },
+    {
+      "prefix_prefix": "prov",
+      "prefix_reference": "http://www.w3.org/ns/prov#"
+    },
+    {
+      "prefix_prefix": "GSSO",
+      "prefix_reference": "http://purl.bioontology.org/ontology/GSSO/"
+    },
+    {
+      "prefix_prefix": "BFO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/BFO_"
     }
   ],
-  "default_prefix": "hzb_catalysislabs_schema",
+  "default_prefix": "hzb_metadata_schema",
   "default_range": "string",
   "types": [
+    {
+      "name": "chemical_formula_value",
+      "definition_uri": "https://w3id.org/anak-velazquez/hzb-metadata-schema/ChemicalFormulaValue",
+      "description": "A chemical formula",
+      "notes": [
+        "Should be implemented as a stronger type"
+      ],
+      "from_schema": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
     {
       "name": "string",
       "definition_uri": "https://w3id.org/linkml/String",
@@ -351,8 +379,8 @@
   "enums": [
     {
       "name": "PersonStatus",
-      "definition_uri": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema/PersonStatus",
-      "from_schema": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//PersonStatus",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
       "permissible_values": [
         {
           "text": "ALIVE",
@@ -372,64 +400,108 @@
           ]
         }
       ]
+    },
+    {
+      "name": "gender_enum",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//GenderEnum",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "permissible_values": [
+        {
+          "text": "Woman",
+          "description": "identified as woman",
+          "meaning": "GSSO:000369"
+        },
+        {
+          "text": "Masculine",
+          "description": "masculine",
+          "todos": [
+            "map this to an ontology"
+          ]
+        },
+        {
+          "text": "Diverse",
+          "description": "other",
+          "todos": [
+            "map this to an ontology"
+          ]
+        }
+      ]
     }
   ],
   "slots": [
     {
       "name": "id",
-      "definition_uri": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema/id",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//id",
       "description": "A unique identifier for a thing",
-      "from_schema": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
       "mappings": [
         "http://schema.org/identifier"
       ],
       "slot_uri": "http://schema.org/identifier",
       "identifier": true,
-      "owner": "NamedThing",
+      "owner": "Entity",
       "domain_of": [
-        "NamedThing"
+        "Entity"
       ],
       "range": "uriorcurie",
       "required": true,
       "@type": "SlotDefinition"
     },
     {
+      "name": "iri",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//iri",
+      "description": "Internationalized Resource Identifier",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/iri",
+      "owner": "Entity",
+      "domain_of": [
+        "Entity"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "category",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//category",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/category",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "name",
-      "definition_uri": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema/name",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//name",
       "description": "A human-readable name for a thing",
-      "from_schema": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
       "mappings": [
         "http://schema.org/name"
       ],
       "slot_uri": "http://schema.org/name",
-      "owner": "NamedThing",
+      "owner": "NamedEntity",
       "domain_of": [
-        "NamedThing"
+        "Entity",
+        "NamedEntity"
       ],
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
       "name": "description",
-      "definition_uri": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema/description",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//description",
       "description": "A human-readable description for a thing",
-      "from_schema": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
       "mappings": [
         "http://schema.org/description"
       ],
       "slot_uri": "http://schema.org/description",
-      "owner": "NamedThing",
-      "domain_of": [
-        "NamedThing"
-      ],
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
       "name": "primary_email",
-      "definition_uri": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema/primary_email",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//primary_email",
       "description": "The main email address of a person",
-      "from_schema": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
       "mappings": [
         "http://schema.org/email"
       ],
@@ -443,9 +515,9 @@
     },
     {
       "name": "birth_date",
-      "definition_uri": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema/birth_date",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//birth_date",
       "description": "Date on which a person is born",
-      "from_schema": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
       "mappings": [
         "http://schema.org/birthDate"
       ],
@@ -459,10 +531,10 @@
     },
     {
       "name": "age_in_years",
-      "definition_uri": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema/age_in_years",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//age_in_years",
       "description": "Number of years since birth",
-      "from_schema": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema",
-      "slot_uri": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema/age_in_years",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/age_in_years",
       "owner": "Person",
       "domain_of": [
         "Person"
@@ -472,125 +544,3124 @@
     },
     {
       "name": "vital_status",
-      "definition_uri": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema/vital_status",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//vital_status",
       "description": "living or dead status",
-      "from_schema": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema",
-      "slot_uri": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema/vital_status",
-      "owner": "Person",
-      "domain_of": [
-        "Person"
-      ],
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/vital_status",
       "range": "PersonStatus",
       "@type": "SlotDefinition"
     },
     {
-      "name": "personCollection__entries",
-      "from_schema": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema",
-      "slot_uri": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema/entries",
-      "alias": "entries",
-      "owner": "PersonCollection",
+      "name": "gender",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//gender",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "mappings": [
+        "http://schema.org/gender"
+      ],
+      "slot_uri": "http://schema.org/gender",
+      "owner": "Person",
       "domain_of": [
-        "PersonCollection"
+        "Person"
+      ],
+      "range": "gender_enum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_employment_history",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//has_employment_history",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/has_employment_history",
+      "owner": "Person",
+      "domain_of": [
+        "Person"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "current_address",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//current_address",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/current_address",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dataCite__identifier",
+      "description": "The Identifier is a unique string that identifies a resource (i.e., DOI).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/identifier",
+      "alias": "identifier",
+      "owner": "DataCite",
+      "domain_of": [
+        "DataCite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dataCite__identifierType",
+      "description": "type of identifier.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/identifierType",
+      "alias": "identifierType",
+      "owner": "DataCite",
+      "domain_of": [
+        "DataCite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dataCite__creators",
+      "description": "Creator(s) of the resource.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/creators",
+      "alias": "creators",
+      "owner": "DataCite",
+      "domain_of": [
+        "DataCite"
       ],
       "range": "Person",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dataCite__title",
+      "description": "Title of the resource/dataset.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/title",
+      "alias": "title",
+      "owner": "DataCite",
+      "domain_of": [
+        "DataCite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dataCite__Publisher",
+      "description": "lorem.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/Publisher",
+      "alias": "Publisher",
+      "owner": "DataCite",
+      "domain_of": [
+        "DataCite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dataCite__ResourceType",
+      "description": "lorem.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/ResourceType",
+      "alias": "ResourceType",
+      "owner": "DataCite",
+      "domain_of": [
+        "DataCite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dataCite__Subject",
+      "description": "lorem.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/Subject",
+      "alias": "Subject",
+      "owner": "DataCite",
+      "domain_of": [
+        "DataCite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dataCite__Contributor",
+      "description": "Creator of the resource.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/Contributor",
+      "alias": "Contributor",
+      "owner": "DataCite",
+      "domain_of": [
+        "DataCite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dataCite__Date",
+      "description": "Creator of the resource.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/Date",
+      "alias": "Date",
+      "owner": "DataCite",
+      "domain_of": [
+        "DataCite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dataCite__Language",
+      "description": "Creator of the resource.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/Language",
+      "alias": "Language",
+      "owner": "DataCite",
+      "domain_of": [
+        "DataCite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dataCite__AlternateIdentifier",
+      "description": "An identifier other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string which is unique within its domain of issue. May be used for local identifiers, a serial number of an instrument or an inventory number. The AlternateIdentifier should be an additional identifier for the same instance of the resource (i.e., same location, same file).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/AlternateIdentifier",
+      "alias": "AlternateIdentifier",
+      "owner": "DataCite",
+      "domain_of": [
+        "DataCite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dataCite__RelatedIdentifier",
+      "description": "Identifiers of related resources. These must be globally unique identifiers.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/RelatedIdentifier",
+      "alias": "RelatedIdentifier",
+      "owner": "DataCite",
+      "domain_of": [
+        "DataCite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dataCite__Size",
+      "description": "Size (e.g., bytes, pages, inches, etc.) or duration (extent), e.g., hours, minutes, days, etc., of a resource.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/Size",
+      "alias": "Size",
+      "owner": "DataCite",
+      "domain_of": [
+        "DataCite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dataCite__Format",
+      "description": "Technical format of the resource.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/Format",
+      "alias": "Format",
+      "owner": "DataCite",
+      "domain_of": [
+        "DataCite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dataCite__Version",
+      "description": "Creator of the resource.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/Version",
+      "alias": "Version",
+      "owner": "DataCite",
+      "domain_of": [
+        "DataCite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dataCite__Rights",
+      "description": "Creator of the resource.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/Rights",
+      "alias": "Rights",
+      "owner": "DataCite",
+      "domain_of": [
+        "DataCite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dataCite__Description",
+      "description": "Creator of the resource.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/Description",
+      "alias": "Description",
+      "owner": "DataCite",
+      "domain_of": [
+        "DataCite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dataCite__GeoLocation",
+      "description": "Creator of the resource.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/GeoLocation",
+      "alias": "GeoLocation",
+      "owner": "DataCite",
+      "domain_of": [
+        "DataCite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dataCite__FundingReference",
+      "description": "Creator of the resource.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/FundingReference",
+      "alias": "FundingReference",
+      "owner": "DataCite",
+      "domain_of": [
+        "DataCite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dataCite__RelatedItem",
+      "description": "Creator of the resource.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/RelatedItem",
+      "alias": "RelatedItem",
+      "owner": "DataCite",
+      "domain_of": [
+        "DataCite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "person__person_id",
+      "description": "The Identifier is a unique string that identifies a resource (i.e., DOI).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/person_id",
+      "alias": "person_id",
+      "owner": "Person",
+      "domain_of": [
+        "Person"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "person__orcid_id",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/orcid_id",
+      "alias": "orcid_id",
+      "owner": "Person",
+      "domain_of": [
+        "Person"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "person__first_name",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/first_name",
+      "alias": "first_name",
+      "owner": "Person",
+      "domain_of": [
+        "Person"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "person__last_name",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/last_name",
+      "alias": "last_name",
+      "owner": "Person",
+      "domain_of": [
+        "Person"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "person__title",
+      "description": "Academic or professional title of the researcher (e.g., \"Dr.\", \"Professor\").",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/title",
+      "alias": "title",
+      "owner": "Person",
+      "domain_of": [
+        "Person"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "person__institution",
+      "description": "Research institution or university the person is affiliated with (e.g., \"HZB\").",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/institution",
+      "alias": "institution",
+      "owner": "Person",
+      "domain_of": [
+        "Person"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "person__department",
+      "description": "Department or division the researcher belongs to (e.g., \"Chemical Energy\").",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/department",
+      "alias": "department",
+      "owner": "Person",
+      "domain_of": [
+        "Person"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "person__role",
+      "description": "Researcher's role in the department (e.g., \"Principal Investigator\", \"Research Assistant\", \"Postdoc\").",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/role",
+      "alias": "role",
+      "owner": "Person",
+      "domain_of": [
+        "Person"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "person__research_focus",
+      "description": "Area of expertise (e.g. \u201cThermo-Catalysis\u201d).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/research_focus",
+      "alias": "research_focus",
+      "owner": "Person",
+      "domain_of": [
+        "Person"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "person__laboratory_name",
+      "description": "Working group (e.g. Amkreutz lab).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/laboratory_name",
+      "alias": "laboratory_name",
+      "owner": "Person",
+      "domain_of": [
+        "Person"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "person__projects",
+      "description": "Project(s) that the researcher is involved in (e.g. CatLab)",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/projects",
+      "alias": "projects",
+      "owner": "Person",
+      "domain_of": [
+        "Person"
+      ],
+      "range": "Project",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "project__project_id",
+      "description": "The Identifier is a unique string that identifies a resource (i.e., DOI).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/project_id",
+      "alias": "project_id",
+      "owner": "Project",
+      "domain_of": [
+        "Project"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "project__project_code",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/project_code",
+      "alias": "project_code",
+      "owner": "Project",
+      "domain_of": [
+        "Project"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "project__project_name",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/project_name",
+      "alias": "project_name",
+      "owner": "Project",
+      "domain_of": [
+        "Project"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "project__acronym",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/acronym",
+      "alias": "acronym",
+      "owner": "Project",
+      "domain_of": [
+        "Project"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "project__start_date",
+      "description": "Academic or professional title of the researcher (e.g., \"Dr.\", \"Professor\").",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/start_date",
+      "alias": "start_date",
+      "owner": "Project",
+      "domain_of": [
+        "Project"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "project__end_date",
+      "description": "Research institution or university the person is affiliated with (e.g., \"HZB\").",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/end_date",
+      "alias": "end_date",
+      "owner": "Project",
+      "domain_of": [
+        "Project"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "project__status",
+      "description": "Department or division the researcher belongs to (e.g., \"Chemical Energy\").",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/status",
+      "alias": "status",
+      "owner": "Project",
+      "domain_of": [
+        "Project"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "project__institutions",
+      "description": "Researcher's role in the department (e.g., \"Principal Investigator\", \"Research Assistant\", \"Postdoc\").",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/institutions",
+      "alias": "institutions",
+      "owner": "Project",
+      "domain_of": [
+        "Project"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "project__principal_investigator",
+      "description": "Area of expertise (e.g. \u201cThermo-Catalysis\u201d).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/principal_investigator",
+      "alias": "principal_investigator",
+      "owner": "Project",
+      "domain_of": [
+        "Project"
+      ],
+      "range": "Scientist",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "project__assigned_lab",
+      "description": "Working group (e.g. Amkreutz lab).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/assigned_lab",
+      "alias": "assigned_lab",
+      "owner": "Project",
+      "domain_of": [
+        "Project"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "project__research_area",
+      "description": "Working group (e.g. Amkreutz lab).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/research_area",
+      "alias": "research_area",
+      "owner": "Project",
+      "domain_of": [
+        "Project"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "project__collaborators",
+      "description": "Project(s) that the researcher is involved in (e.g. CatLab)",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/collaborators",
+      "alias": "collaborators",
+      "owner": "Project",
+      "domain_of": [
+        "Project"
+      ],
+      "range": "Person",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "device__device_id",
+      "description": "The Identifier is a unique string that identifies a resource (i.e., DOI).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/device_id",
+      "alias": "device_id",
+      "owner": "Device",
+      "domain_of": [
+        "Device"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "device__serial_number",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/serial_number",
+      "alias": "serial_number",
+      "owner": "Device",
+      "domain_of": [
+        "Device"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "device__device_name",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/device_name",
+      "alias": "device_name",
+      "owner": "Device",
+      "domain_of": [
+        "Device"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "device__device_type",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/device_type",
+      "alias": "device_type",
+      "owner": "Device",
+      "domain_of": [
+        "Device"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "device__manufacturer",
+      "description": "Academic or professional title of the researcher (e.g., \"Dr.\", \"Professor\").",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/manufacturer",
+      "alias": "manufacturer",
+      "owner": "Device",
+      "domain_of": [
+        "Device"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "device__model_number",
+      "description": "Research institution or university the person is affiliated with (e.g., \"HZB\").",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/model_number",
+      "alias": "model_number",
+      "owner": "Device",
+      "domain_of": [
+        "Device"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "device__purchase_date",
+      "description": "Department or division the researcher belongs to (e.g., \"Chemical Energy\").",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/purchase_date",
+      "alias": "purchase_date",
+      "owner": "Device",
+      "domain_of": [
+        "Device"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "device__commission_date",
+      "description": "Researcher's role in the department (e.g., \"Principal Investigator\", \"Research Assistant\", \"Postdoc\").",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/commission_date",
+      "alias": "commission_date",
+      "owner": "Device",
+      "domain_of": [
+        "Device"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "device__warranty_expiration_date",
+      "description": "Area of expertise (e.g. \u201cThermo-Catalysis\u201d).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/warranty_expiration_date",
+      "alias": "warranty_expiration_date",
+      "owner": "Device",
+      "domain_of": [
+        "Device"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "device__operating_system",
+      "description": "Working group (e.g. Amkreutz lab).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/operating_system",
+      "alias": "operating_system",
+      "owner": "Device",
+      "domain_of": [
+        "Device"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "device__specifications",
+      "description": "Working group (e.g. Amkreutz lab).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/specifications",
+      "alias": "specifications",
+      "owner": "Device",
+      "domain_of": [
+        "Device"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "device__input_gases",
+      "description": "Working group (e.g. Amkreutz lab).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/input_gases",
+      "alias": "input_gases",
+      "owner": "Device",
+      "domain_of": [
+        "Device"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "device__catalyst_handling_capability",
+      "description": "Working group (e.g. Amkreutz lab).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/catalyst_handling_capability",
+      "alias": "catalyst_handling_capability",
+      "owner": "Device",
+      "domain_of": [
+        "Device"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "device__ip_address",
+      "description": "Working group (e.g. Amkreutz lab).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/ip_address",
+      "alias": "ip_address",
+      "owner": "Device",
+      "domain_of": [
+        "Device"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "device__mac_address",
+      "description": "Working group (e.g. Amkreutz lab).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/mac_address",
+      "alias": "mac_address",
+      "owner": "Device",
+      "domain_of": [
+        "Device"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "device__location",
+      "description": "Working group (e.g. Amkreutz lab).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/location",
+      "alias": "location",
+      "owner": "Device",
+      "domain_of": [
+        "Device"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "device__responsible_person",
+      "description": "Working group (e.g. Amkreutz lab).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/responsible_person",
+      "alias": "responsible_person",
+      "owner": "Device",
+      "domain_of": [
+        "Device"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "device__device_status",
+      "description": "Working group (e.g. Amkreutz lab).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/device_status",
+      "alias": "device_status",
+      "owner": "Device",
+      "domain_of": [
+        "Device"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "device__ownership",
+      "description": "Working group (e.g. Amkreutz lab).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/ownership",
+      "alias": "ownership",
+      "owner": "Device",
+      "domain_of": [
+        "Device"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sample__sample_id",
+      "description": "The Identifier is a unique string that identifies a resource (i.e., DOI).",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/sample_id",
+      "alias": "sample_id",
+      "owner": "Sample",
+      "domain_of": [
+        "Sample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sample__sample_name",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/sample_name",
+      "alias": "sample_name",
+      "owner": "Sample",
+      "domain_of": [
+        "Sample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sample__sample_description",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/sample_description",
+      "alias": "sample_description",
+      "owner": "Sample",
+      "domain_of": [
+        "Sample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sample__phase",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/phase",
+      "alias": "phase",
+      "owner": "Sample",
+      "domain_of": [
+        "Sample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sample__composition",
+      "description": "Academic or professional title of the researcher (e.g., \"Dr.\", \"Professor\").",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/composition",
+      "alias": "composition",
+      "owner": "Sample",
+      "domain_of": [
+        "Sample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sample__size",
+      "description": "Research institution or university the person is affiliated with (e.g., \"HZB\").",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/size",
+      "alias": "size",
+      "owner": "Sample",
+      "domain_of": [
+        "Sample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sample__preparation_method",
+      "description": "Research institution or university the person is affiliated with (e.g., \"HZB\").",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/preparation_method",
+      "alias": "preparation_method",
+      "owner": "Sample",
+      "domain_of": [
+        "Sample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sample__batch_number",
+      "description": "Research institution or university the person is affiliated with (e.g., \"HZB\").",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/batch_number",
+      "alias": "batch_number",
+      "owner": "Sample",
+      "domain_of": [
+        "Sample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sampleCollection__entries",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/entries",
+      "alias": "entries",
+      "owner": "SampleCollection",
+      "domain_of": [
+        "SampleCollection"
+      ],
+      "range": "Sample",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "Person_primary_email",
-      "definition_uri": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema/primary_email",
-      "description": "The main email address of a person",
-      "from_schema": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema",
-      "mappings": [
-        "http://schema.org/email"
-      ],
-      "is_a": "primary_email",
-      "domain": "Person",
-      "slot_uri": "http://schema.org/email",
-      "alias": "primary_email",
-      "owner": "Person",
+      "name": "catalysisSample__sample_ELN_id",
+      "description": "The Identifier is a unique string that identifies a resource (i.e., DOI).",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/sample_ELN_id",
+      "alias": "sample_ELN_id",
+      "owner": "CatalysisSample",
       "domain_of": [
-        "Person"
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__eln_name",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/eln_name",
+      "alias": "eln_name",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__creator_name",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/creator_name",
+      "alias": "creator_name",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__creator_institution",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/creator_institution",
+      "alias": "creator_institution",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__creator_role",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/creator_role",
+      "alias": "creator_role",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__laboratory_name",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/laboratory_name",
+      "alias": "laboratory_name",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__project_sample",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/project_sample",
+      "alias": "project_sample",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "Project",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__institution_name",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/institution_name",
+      "alias": "institution_name",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__institution_abbreviation",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/institution_abbreviation",
+      "alias": "institution_abbreviation",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__catalyst_type",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/catalyst_type",
+      "alias": "catalyst_type",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__catalyst_phase",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/catalyst_phase",
+      "alias": "catalyst_phase",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__catalyst_form",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/catalyst_form",
+      "alias": "catalyst_form",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__catalyst_name",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/catalyst_name",
+      "alias": "catalyst_name",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__chemical__formula",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/chemical__formula",
+      "alias": "chemical__formula",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__catalyst_components",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/catalyst_components",
+      "alias": "catalyst_components",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__catalyst_structure",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/catalyst_structure",
+      "alias": "catalyst_structure",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__active_site",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/active_site",
+      "alias": "active_site",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__support",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/support",
+      "alias": "support",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__loading",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/loading",
+      "alias": "loading",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__purity",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/purity",
+      "alias": "purity",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__synthesis_method",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/synthesis_method",
+      "alias": "synthesis_method",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__characterization_method",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/characterization_method",
+      "alias": "characterization_method",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__surface_area",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/surface_area",
+      "alias": "surface_area",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__particle_size",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/particle_size",
+      "alias": "particle_size",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__morphology",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/morphology",
+      "alias": "morphology",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__pore_size_distribution",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/pore_size_distribution",
+      "alias": "pore_size_distribution",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__crystalline_structure",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/crystalline_structure",
+      "alias": "crystalline_structure",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__chemical_composition",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/chemical_composition",
+      "alias": "chemical_composition",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__surface_chemistry",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/surface_chemistry",
+      "alias": "surface_chemistry",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__catalyst_stability",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/catalyst_stability",
+      "alias": "catalyst_stability",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSample__catalyst_activity",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/catalyst_activity",
+      "alias": "catalyst_activity",
+      "owner": "CatalysisSample",
+      "domain_of": [
+        "CatalysisSample"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "experiment__experiment_id",
+      "description": "The Identifier is a unique string that identifies a resource (i.e., DOI).",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/experiment_id",
+      "alias": "experiment_id",
+      "owner": "Experiment",
+      "domain_of": [
+        "Experiment"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "experiment__experiment_name",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/experiment_name",
+      "alias": "experiment_name",
+      "owner": "Experiment",
+      "domain_of": [
+        "Experiment"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "experiment__performed_by",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/performed_by",
+      "alias": "performed_by",
+      "owner": "Experiment",
+      "domain_of": [
+        "Experiment"
+      ],
+      "range": "Scientist",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "experiment__related_project",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/related_project",
+      "alias": "related_project",
+      "owner": "Experiment",
+      "domain_of": [
+        "Experiment"
+      ],
+      "range": "Project",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "experiment__catalyst",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/catalyst",
+      "alias": "catalyst",
+      "owner": "Experiment",
+      "domain_of": [
+        "Experiment"
+      ],
+      "range": "Catalyst",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "experiment__sample",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/sample",
+      "alias": "sample",
+      "owner": "Experiment",
+      "domain_of": [
+        "Experiment"
+      ],
+      "range": "Sample",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "experiment__reaction",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/reaction",
+      "alias": "reaction",
+      "owner": "Experiment",
+      "domain_of": [
+        "Experiment"
+      ],
+      "range": "Reaction",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "experiment__start_date",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/start_date",
+      "alias": "start_date",
+      "owner": "Experiment",
+      "domain_of": [
+        "Experiment"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "experiment__end_date",
+      "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/end_date",
+      "alias": "end_date",
+      "owner": "Experiment",
+      "domain_of": [
+        "Experiment"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "catalysisSampleCollection__entries",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/entries",
+      "alias": "entries",
+      "owner": "CatalysisSampleCollection",
+      "domain_of": [
+        "CatalysisSampleCollection"
+      ],
+      "range": "CatalysisSample",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "reactionProductCollection__entries",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/entries",
+      "alias": "entries",
+      "owner": "ReactionProductCollection",
+      "domain_of": [
+        "ReactionProductCollection"
+      ],
+      "range": "ReactionProduct",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "NamedEntity_category",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//category",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "is_a": "category",
+      "domain": "NamedEntity",
+      "slot_uri": "https://w3id.org/anak-velazquez/core/category",
+      "alias": "category",
+      "owner": "NamedEntity",
+      "domain_of": [
+        "NamedEntity"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "primary_email",
+      "usage_slot_name": "category",
       "range": "string",
-      "pattern": "^\\S+@[\\S+\\.]+\\S+",
       "@type": "SlotDefinition"
     }
   ],
   "classes": [
     {
-      "name": "NamedThing",
-      "definition_uri": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema/NamedThing",
-      "description": "A generic grouping for any identifiable entity",
+      "name": "ChemicalOrDrugOrTreatment",
+      "definition_uri": "https://w3id.org/anak-velazquez/hzb-metadata-schema/ChemicalOrDrugOrTreatment",
       "from_schema": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema",
-      "mappings": [
-        "schema:Thing"
+      "mixin": true,
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/hzb-metadata-schema/ChemicalOrDrugOrTreatment",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Entity",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//Entity",
+      "description": "An entity is anything that exists or has existed or will exist.  Model class for all things and informational relationships, real or imagined.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "exact_mappings": [
+        "BFO:0000001"
       ],
+      "abstract": true,
       "slots": [
         "id",
-        "name",
-        "description"
+        "iri",
+        "name"
       ],
       "slot_usage": {},
-      "class_uri": "http://schema.org/Thing",
+      "class_uri": "https://w3id.org/anak-velazquez/core/Entity",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NamedEntity",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//NamedEntity",
+      "description": "a databased entity or concept/class",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "exact_mappings": [
+        "BFO:0000001",
+        "WIKIDATA:Q35120",
+        "UMLSSG:OBJC",
+        "STY:T071",
+        "dcid:Thing"
+      ],
+      "is_a": "Entity",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/core/NamedEntity",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DataCite",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//DataCite",
+      "description": "Represents metadata for datasets according to DataCite standard. Core properties of DataCite standard (basics for citation/publications.) DataCite already considers DublinCore elements. ",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "is_a": "NamedEntity",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category",
+        "dataCite__identifier",
+        "dataCite__identifierType",
+        "dataCite__creators",
+        "dataCite__title",
+        "dataCite__Publisher",
+        "dataCite__ResourceType",
+        "dataCite__Subject",
+        "dataCite__Contributor",
+        "dataCite__Date",
+        "dataCite__Language",
+        "dataCite__AlternateIdentifier",
+        "dataCite__RelatedIdentifier",
+        "dataCite__Size",
+        "dataCite__Format",
+        "dataCite__Version",
+        "dataCite__Rights",
+        "dataCite__Description",
+        "dataCite__GeoLocation",
+        "dataCite__FundingReference",
+        "dataCite__RelatedItem"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "identifier",
+          "description": "The Identifier is a unique string that identifies a resource (i.e., DOI).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "identifierType",
+          "description": "type of identifier.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "creators",
+          "description": "Creator(s) of the resource.",
+          "range": "Person",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "title",
+          "description": "Title of the resource/dataset.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "Publisher",
+          "description": "lorem.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "ResourceType",
+          "description": "lorem.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "Subject",
+          "description": "lorem.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "Contributor",
+          "description": "Creator of the resource.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "Date",
+          "description": "Creator of the resource.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "Language",
+          "description": "Creator of the resource.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "AlternateIdentifier",
+          "description": "An identifier other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string which is unique within its domain of issue. May be used for local identifiers, a serial number of an instrument or an inventory number. The AlternateIdentifier should be an additional identifier for the same instance of the resource (i.e., same location, same file).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "RelatedIdentifier",
+          "description": "Identifiers of related resources. These must be globally unique identifiers.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "Size",
+          "description": "Size (e.g., bytes, pages, inches, etc.) or duration (extent), e.g., hours, minutes, days, etc., of a resource.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "Format",
+          "description": "Technical format of the resource.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "Version",
+          "description": "Creator of the resource.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "Rights",
+          "description": "Creator of the resource.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "Description",
+          "description": "Creator of the resource.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "GeoLocation",
+          "description": "Creator of the resource.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "FundingReference",
+          "description": "Creator of the resource.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "RelatedItem",
+          "description": "Creator of the resource.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://w3id.org/anak-velazquez/core/DataCite",
       "@type": "ClassDefinition"
     },
     {
       "name": "Person",
-      "definition_uri": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema/Person",
-      "description": "Represents a Person",
-      "from_schema": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema",
-      "is_a": "NamedThing",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//Person",
+      "description": "A basic/standard definition of a person, which later can be further defined as scientist, beam scientist, user, etc.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "aliases": [
+        "human being",
+        "individual"
+      ],
+      "mappings": [
+        "schema:Person"
+      ],
+      "is_a": "NamedEntity",
       "slots": [
         "id",
+        "iri",
         "name",
-        "description",
-        "Person_primary_email",
+        "NamedEntity_category",
+        "primary_email",
         "birth_date",
         "age_in_years",
-        "vital_status"
+        "gender",
+        "has_employment_history",
+        "person__person_id",
+        "person__orcid_id",
+        "person__first_name",
+        "person__last_name",
+        "person__title",
+        "person__institution",
+        "person__department",
+        "person__role",
+        "person__research_focus",
+        "person__laboratory_name",
+        "person__projects"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema/Person",
+      "attributes": [
+        {
+          "name": "person_id",
+          "description": "The Identifier is a unique string that identifies a resource (i.e., DOI).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "orcid_id",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "first_name",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "last_name",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "title",
+          "description": "Academic or professional title of the researcher (e.g., \"Dr.\", \"Professor\").",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "institution",
+          "description": "Research institution or university the person is affiliated with (e.g., \"HZB\").",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "department",
+          "description": "Department or division the researcher belongs to (e.g., \"Chemical Energy\").",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "role",
+          "description": "Researcher's role in the department (e.g., \"Principal Investigator\", \"Research Assistant\", \"Postdoc\").",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "research_focus",
+          "description": "Area of expertise (e.g. \u201cThermo-Catalysis\u201d).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "laboratory_name",
+          "description": "Working group (e.g. Amkreutz lab).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "projects",
+          "description": "Project(s) that the researcher is involved in (e.g. CatLab)",
+          "range": "Project",
+          "multivalued": true,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "http://schema.org/Person",
       "@type": "ClassDefinition"
     },
     {
-      "name": "PersonCollection",
-      "definition_uri": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema/PersonCollection",
-      "description": "A holder for Person objects",
-      "from_schema": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema",
+      "name": "Project",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//Project",
+      "description": "A research activity or initiative with defined objectives, funding, and timelines, involving one or more researchers, designed to generate data, publications, and other outputs. The project may involve multiple experiments, datasets, and contributors, and can be linked to specific funding sources and institutions.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "is_a": "NamedEntity",
       "slots": [
-        "personCollection__entries"
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category",
+        "project__project_id",
+        "project__project_code",
+        "project__project_name",
+        "project__acronym",
+        "project__start_date",
+        "project__end_date",
+        "project__status",
+        "project__institutions",
+        "project__principal_investigator",
+        "project__assigned_lab",
+        "project__research_area",
+        "project__collaborators"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "project_id",
+          "description": "The Identifier is a unique string that identifies a resource (i.e., DOI).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "project_code",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "project_name",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "acronym",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "start_date",
+          "description": "Academic or professional title of the researcher (e.g., \"Dr.\", \"Professor\").",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "end_date",
+          "description": "Research institution or university the person is affiliated with (e.g., \"HZB\").",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "status",
+          "description": "Department or division the researcher belongs to (e.g., \"Chemical Energy\").",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "institutions",
+          "description": "Researcher's role in the department (e.g., \"Principal Investigator\", \"Research Assistant\", \"Postdoc\").",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "principal_investigator",
+          "description": "Area of expertise (e.g. \u201cThermo-Catalysis\u201d).",
+          "range": "Scientist",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "assigned_lab",
+          "description": "Working group (e.g. Amkreutz lab).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "research_area",
+          "description": "Working group (e.g. Amkreutz lab).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "collaborators",
+          "description": "Project(s) that the researcher is involved in (e.g. CatLab)",
+          "range": "Person",
+          "multivalued": true,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://w3id.org/anak-velazquez/core/Project",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Device",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//Device",
+      "description": "A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "narrow_mappings": [
+        "UMLSSG:DEVI",
+        "STY:T074",
+        "STY:T075",
+        "STY:T203",
+        "STY:T122"
+      ],
+      "is_a": "NamedEntity",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category",
+        "device__device_id",
+        "device__serial_number",
+        "device__device_name",
+        "device__device_type",
+        "device__manufacturer",
+        "device__model_number",
+        "device__purchase_date",
+        "device__commission_date",
+        "device__warranty_expiration_date",
+        "device__operating_system",
+        "device__specifications",
+        "device__input_gases",
+        "device__catalyst_handling_capability",
+        "device__ip_address",
+        "device__mac_address",
+        "device__location",
+        "device__responsible_person",
+        "device__device_status",
+        "device__ownership"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "device_id",
+          "description": "The Identifier is a unique string that identifies a resource (i.e., DOI).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "serial_number",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "device_name",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "device_type",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "manufacturer",
+          "description": "Academic or professional title of the researcher (e.g., \"Dr.\", \"Professor\").",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "model_number",
+          "description": "Research institution or university the person is affiliated with (e.g., \"HZB\").",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "purchase_date",
+          "description": "Department or division the researcher belongs to (e.g., \"Chemical Energy\").",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "commission_date",
+          "description": "Researcher's role in the department (e.g., \"Principal Investigator\", \"Research Assistant\", \"Postdoc\").",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "warranty_expiration_date",
+          "description": "Area of expertise (e.g. \u201cThermo-Catalysis\u201d).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "operating_system",
+          "description": "Working group (e.g. Amkreutz lab).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "specifications",
+          "description": "Working group (e.g. Amkreutz lab).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "input_gases",
+          "description": "Working group (e.g. Amkreutz lab).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "catalyst_handling_capability",
+          "description": "Working group (e.g. Amkreutz lab).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "ip_address",
+          "description": "Working group (e.g. Amkreutz lab).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "mac_address",
+          "description": "Working group (e.g. Amkreutz lab).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "location",
+          "description": "Working group (e.g. Amkreutz lab).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "responsible_person",
+          "description": "Working group (e.g. Amkreutz lab).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "device_status",
+          "description": "Working group (e.g. Amkreutz lab).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "ownership",
+          "description": "Working group (e.g. Amkreutz lab).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://w3id.org/anak-velazquez/core/Device",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Sample",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//Sample",
+      "description": "Core properties of a sample, discipline agnostic.",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "is_a": "NamedEntity",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category",
+        "sample__sample_id",
+        "sample__sample_name",
+        "sample__sample_description",
+        "sample__phase",
+        "sample__composition",
+        "sample__size",
+        "sample__preparation_method",
+        "sample__batch_number"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "sample_id",
+          "description": "The Identifier is a unique string that identifies a resource (i.e., DOI).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "sample_name",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "sample_description",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "phase",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "composition",
+          "description": "Academic or professional title of the researcher (e.g., \"Dr.\", \"Professor\").",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "size",
+          "description": "Research institution or university the person is affiliated with (e.g., \"HZB\").",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "preparation_method",
+          "description": "Research institution or university the person is affiliated with (e.g., \"HZB\").",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "batch_number",
+          "description": "Research institution or university the person is affiliated with (e.g., \"HZB\").",
+          "range": "string",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://w3id.org/anak-velazquez/core/Sample",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SampleCollection",
+      "definition_uri": "https://w3id.org/anak-velazquez/core//SampleCollection",
+      "description": "A holder for Sample objects",
+      "from_schema": "https://w3id.org/anak-velazquez/core/",
+      "slots": [
+        "sampleCollection__entries"
       ],
       "slot_usage": {},
       "attributes": [
         {
           "name": "entries",
-          "range": "Person",
+          "range": "Sample",
           "multivalued": true,
           "inlined": true,
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema/PersonCollection",
+      "class_uri": "https://w3id.org/anak-velazquez/core/SampleCollection",
       "tree_root": true,
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Scientist",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//Scientist",
+      "description": "An individual involved in research activities, and their details that are important  to be referenced on experiments, projects, publivations, etc.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "Person",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category",
+        "primary_email",
+        "birth_date",
+        "age_in_years",
+        "gender",
+        "has_employment_history",
+        "person__person_id",
+        "person__orcid_id",
+        "person__first_name",
+        "person__last_name",
+        "person__title",
+        "person__institution",
+        "person__department",
+        "person__role",
+        "person__research_focus",
+        "person__laboratory_name",
+        "person__projects"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/Scientist",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CatalysisSample",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//CatalysisSample",
+      "description": "Core properties of a catalysis sample.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "Sample",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category",
+        "sample__sample_id",
+        "sample__sample_name",
+        "sample__sample_description",
+        "sample__phase",
+        "sample__composition",
+        "sample__size",
+        "sample__preparation_method",
+        "sample__batch_number",
+        "catalysisSample__sample_ELN_id",
+        "catalysisSample__eln_name",
+        "catalysisSample__creator_name",
+        "catalysisSample__creator_institution",
+        "catalysisSample__creator_role",
+        "catalysisSample__laboratory_name",
+        "catalysisSample__project_sample",
+        "catalysisSample__institution_name",
+        "catalysisSample__institution_abbreviation",
+        "catalysisSample__catalyst_type",
+        "catalysisSample__catalyst_phase",
+        "catalysisSample__catalyst_form",
+        "catalysisSample__catalyst_name",
+        "catalysisSample__chemical__formula",
+        "catalysisSample__catalyst_components",
+        "catalysisSample__catalyst_structure",
+        "catalysisSample__active_site",
+        "catalysisSample__support",
+        "catalysisSample__loading",
+        "catalysisSample__purity",
+        "catalysisSample__synthesis_method",
+        "catalysisSample__characterization_method",
+        "catalysisSample__surface_area",
+        "catalysisSample__particle_size",
+        "catalysisSample__morphology",
+        "catalysisSample__pore_size_distribution",
+        "catalysisSample__crystalline_structure",
+        "catalysisSample__chemical_composition",
+        "catalysisSample__surface_chemistry",
+        "catalysisSample__catalyst_stability",
+        "catalysisSample__catalyst_activity"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "sample_ELN_id",
+          "description": "The Identifier is a unique string that identifies a resource (i.e., DOI).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "eln_name",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "creator_name",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "creator_institution",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "creator_role",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "laboratory_name",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "project_sample",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "Project",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "institution_name",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "institution_abbreviation",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "catalyst_type",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "catalyst_phase",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "catalyst_form",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "catalyst_name",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "chemical__formula",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "catalyst_components",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "catalyst_structure",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "active_site",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "support",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "loading",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "purity",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "synthesis_method",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "characterization_method",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "surface_area",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "particle_size",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "morphology",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "pore_size_distribution",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "crystalline_structure",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "chemical_composition",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "surface_chemistry",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "catalyst_stability",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "catalyst_activity",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/CatalysisSample",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Catalyst",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//Catalyst",
+      "description": "A substance or material that increases the rate of a chemical reaction.  Class including core properties of the synthesis characterization, and other experiments. ",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "CatalysisSample",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category",
+        "sample__sample_id",
+        "sample__sample_name",
+        "sample__sample_description",
+        "sample__phase",
+        "sample__composition",
+        "sample__size",
+        "sample__preparation_method",
+        "sample__batch_number",
+        "catalysisSample__sample_ELN_id",
+        "catalysisSample__eln_name",
+        "catalysisSample__creator_name",
+        "catalysisSample__creator_institution",
+        "catalysisSample__creator_role",
+        "catalysisSample__laboratory_name",
+        "catalysisSample__project_sample",
+        "catalysisSample__institution_name",
+        "catalysisSample__institution_abbreviation",
+        "catalysisSample__catalyst_type",
+        "catalysisSample__catalyst_phase",
+        "catalysisSample__catalyst_form",
+        "catalysisSample__catalyst_name",
+        "catalysisSample__chemical__formula",
+        "catalysisSample__catalyst_components",
+        "catalysisSample__catalyst_structure",
+        "catalysisSample__active_site",
+        "catalysisSample__support",
+        "catalysisSample__loading",
+        "catalysisSample__purity",
+        "catalysisSample__synthesis_method",
+        "catalysisSample__characterization_method",
+        "catalysisSample__surface_area",
+        "catalysisSample__particle_size",
+        "catalysisSample__morphology",
+        "catalysisSample__pore_size_distribution",
+        "catalysisSample__crystalline_structure",
+        "catalysisSample__chemical_composition",
+        "catalysisSample__surface_chemistry",
+        "catalysisSample__catalyst_stability",
+        "catalysisSample__catalyst_activity"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/Catalyst",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ThinFilmCatalyst",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//ThinFilmCatalyst",
+      "description": "Catalyst type. Core properties of a thin film.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "Catalyst",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category",
+        "sample__sample_id",
+        "sample__sample_name",
+        "sample__sample_description",
+        "sample__phase",
+        "sample__composition",
+        "sample__size",
+        "sample__preparation_method",
+        "sample__batch_number",
+        "catalysisSample__sample_ELN_id",
+        "catalysisSample__eln_name",
+        "catalysisSample__creator_name",
+        "catalysisSample__creator_institution",
+        "catalysisSample__creator_role",
+        "catalysisSample__laboratory_name",
+        "catalysisSample__project_sample",
+        "catalysisSample__institution_name",
+        "catalysisSample__institution_abbreviation",
+        "catalysisSample__catalyst_type",
+        "catalysisSample__catalyst_phase",
+        "catalysisSample__catalyst_form",
+        "catalysisSample__catalyst_name",
+        "catalysisSample__chemical__formula",
+        "catalysisSample__catalyst_components",
+        "catalysisSample__catalyst_structure",
+        "catalysisSample__active_site",
+        "catalysisSample__support",
+        "catalysisSample__loading",
+        "catalysisSample__purity",
+        "catalysisSample__synthesis_method",
+        "catalysisSample__characterization_method",
+        "catalysisSample__surface_area",
+        "catalysisSample__particle_size",
+        "catalysisSample__morphology",
+        "catalysisSample__pore_size_distribution",
+        "catalysisSample__crystalline_structure",
+        "catalysisSample__chemical_composition",
+        "catalysisSample__surface_chemistry",
+        "catalysisSample__catalyst_stability",
+        "catalysisSample__catalyst_activity"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/ThinFilmCatalyst",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PowderCatalyst",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//PowderCatalyst",
+      "description": "Catalyst type. Core properties of a powder catalyst.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "Catalyst",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category",
+        "sample__sample_id",
+        "sample__sample_name",
+        "sample__sample_description",
+        "sample__phase",
+        "sample__composition",
+        "sample__size",
+        "sample__preparation_method",
+        "sample__batch_number",
+        "catalysisSample__sample_ELN_id",
+        "catalysisSample__eln_name",
+        "catalysisSample__creator_name",
+        "catalysisSample__creator_institution",
+        "catalysisSample__creator_role",
+        "catalysisSample__laboratory_name",
+        "catalysisSample__project_sample",
+        "catalysisSample__institution_name",
+        "catalysisSample__institution_abbreviation",
+        "catalysisSample__catalyst_type",
+        "catalysisSample__catalyst_phase",
+        "catalysisSample__catalyst_form",
+        "catalysisSample__catalyst_name",
+        "catalysisSample__chemical__formula",
+        "catalysisSample__catalyst_components",
+        "catalysisSample__catalyst_structure",
+        "catalysisSample__active_site",
+        "catalysisSample__support",
+        "catalysisSample__loading",
+        "catalysisSample__purity",
+        "catalysisSample__synthesis_method",
+        "catalysisSample__characterization_method",
+        "catalysisSample__surface_area",
+        "catalysisSample__particle_size",
+        "catalysisSample__morphology",
+        "catalysisSample__pore_size_distribution",
+        "catalysisSample__crystalline_structure",
+        "catalysisSample__chemical_composition",
+        "catalysisSample__surface_chemistry",
+        "catalysisSample__catalyst_stability",
+        "catalysisSample__catalyst_activity"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/PowderCatalyst",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Recipe",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//Recipe",
+      "description": "A detailed set of instructions outlining the materials, quantities, and procedures  required to perform a specific chemical reaction or experimental process.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "NamedEntity",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/Recipe",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Mixture",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//Mixture",
+      "description": "A combination of two or more substances that are mixed together,  which may retain their individual properties or interact chemically. ",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "NamedEntity",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/Mixture",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Workflow",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//Workflow",
+      "description": "A structured sequence of tasks, activities, or processes designed to accomplish a  specific research objective or experimental goal.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "NamedEntity",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/Workflow",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Process",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//Process",
+      "description": "A defined series of actions, steps, or operations undertaken to achieve a  specific scientific or experimental outcome (e.g. atomic layer deposition).",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "NamedEntity",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/Process",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Experiment",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//Experiment",
+      "description": "A systematic investigation designed to test hypotheses, gather data, or explore  scientific principles through controlled conditions.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "NamedEntity",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category",
+        "experiment__experiment_id",
+        "experiment__experiment_name",
+        "experiment__performed_by",
+        "experiment__related_project",
+        "experiment__catalyst",
+        "experiment__sample",
+        "experiment__reaction",
+        "experiment__start_date",
+        "experiment__end_date"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "experiment_id",
+          "description": "The Identifier is a unique string that identifies a resource (i.e., DOI).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "experiment_name",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "performed_by",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "Scientist",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "related_project",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "Project",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "catalyst",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "Catalyst",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "sample",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "Sample",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "reaction",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "Reaction",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "start_date",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "end_date",
+          "description": "The ORCID Identifier is a unique string that identifies a researcher.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/Experiment",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Measurement",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//Measurement",
+      "description": "Storing and describing measurements to perform on a sample.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "NamedEntity",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/Measurement",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Parameter",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//Parameter",
+      "description": "Associates parameters on demand to a certain experiment or measurement.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "NamedEntity",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/Parameter",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Reaction",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//Reaction",
+      "description": "A chemical process in which one or more substances (reactants) undergo transformation to produce new substances (products). ",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "NamedEntity",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/Reaction",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ReactionProduct",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//ReactionProduct",
+      "description": "A substance formed as a result of a chemical reaction, representing the end products  generated from the transformation of reactants.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "NamedEntity",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/ReactionProduct",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Reactor",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//Reactor",
+      "description": "Equipment designed to facilitate and control chemical reactions under specified  conditions, such as temperature, pressure, and flow rates. ",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "NamedEntity",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/Reactor",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CatalysisSampleCollection",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//CatalysisSampleCollection",
+      "description": "A holder for CatalysisSample objects",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slots": [
+        "catalysisSampleCollection__entries"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "entries",
+          "range": "CatalysisSample",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/CatalysisSampleCollection",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ReactionProductCollection",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//ReactionProductCollection",
+      "description": "A holder for ReactionProduct objects",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slots": [
+        "reactionProductCollection__entries"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "entries",
+          "range": "ReactionProduct",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/ReactionProductCollection",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Beamline",
+      "definition_uri": "https://w3id.org/anak-velazquez/BESSY//Beamline",
+      "description": "System within a facility designed to direct a beam of radiation toward a sample for  the purpose of analysis or experimentation.",
+      "from_schema": "https://w3id.org/anak-velazquez/BESSY/",
+      "is_a": "NamedEntity",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/BESSY/Beamline",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "BeamlineExperiment",
+      "definition_uri": "https://w3id.org/anak-velazquez/BESSY//BeamlineExperiment",
+      "description": "An experimental investigation conducted using a beamline.",
+      "from_schema": "https://w3id.org/anak-velazquez/BESSY/",
+      "is_a": "Experiment",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category",
+        "experiment__experiment_id",
+        "experiment__experiment_name",
+        "experiment__performed_by",
+        "experiment__related_project",
+        "experiment__catalyst",
+        "experiment__sample",
+        "experiment__reaction",
+        "experiment__start_date",
+        "experiment__end_date"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/BESSY/BeamlineExperiment",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "BeamlineScientist",
+      "definition_uri": "https://w3id.org/anak-velazquez/BESSY//BeamlineScientist",
+      "description": "An expert responsible for the operation and scientific application of beamlines  in a research facility.",
+      "from_schema": "https://w3id.org/anak-velazquez/BESSY/",
+      "is_a": "Person",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category",
+        "primary_email",
+        "birth_date",
+        "age_in_years",
+        "gender",
+        "has_employment_history",
+        "person__person_id",
+        "person__orcid_id",
+        "person__first_name",
+        "person__last_name",
+        "person__title",
+        "person__institution",
+        "person__department",
+        "person__role",
+        "person__research_focus",
+        "person__laboratory_name",
+        "person__projects"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/BESSY/BeamlineScientist",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MySpot",
+      "definition_uri": "https://w3id.org/anak-velazquez/BESSY//MySpot",
+      "description": "Myspot beamline description.",
+      "from_schema": "https://w3id.org/anak-velazquez/BESSY/",
+      "is_a": "Beamline",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/BESSY/MySpot",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "EMILPink",
+      "definition_uri": "https://w3id.org/anak-velazquez/BESSY//EMILPink",
+      "description": "Pink beamline description.",
+      "from_schema": "https://w3id.org/anak-velazquez/BESSY/",
+      "is_a": "Beamline",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/BESSY/EMILPink",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "EMILOAESE",
+      "definition_uri": "https://w3id.org/anak-velazquez/BESSY//EMILOAESE",
+      "description": "OAESE beamline description.",
+      "from_schema": "https://w3id.org/anak-velazquez/BESSY/",
+      "is_a": "Beamline",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/BESSY/EMILOAESE",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SampleEnvironment",
+      "definition_uri": "https://w3id.org/anak-velazquez/operandoCatalysis//SampleEnvironment",
+      "description": "Controlled environment in which the sample is studied (operando research).",
+      "from_schema": "https://w3id.org/anak-velazquez/operandoCatalysis/",
+      "is_a": "NamedEntity",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/operandoCatalysis/SampleEnvironment",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "EnvironmentDynamics",
+      "definition_uri": "https://w3id.org/anak-velazquez/operandoCatalysis//EnvironmentDynamics",
+      "description": "Dynamic or time-resolved environmental conditions during an  experiment (e.g.for in-situ measurements).",
+      "from_schema": "https://w3id.org/anak-velazquez/operandoCatalysis/",
+      "is_a": "NamedEntity",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/operandoCatalysis/EnvironmentDynamics",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SamplePositioning",
+      "definition_uri": "https://w3id.org/anak-velazquez/operandoCatalysis//SamplePositioning",
+      "description": "The arrangement or location of samples within an experimental setup,  critical for ensuring accurate data collection and analysis. ",
+      "from_schema": "https://w3id.org/anak-velazquez/operandoCatalysis/",
+      "is_a": "NamedEntity",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/operandoCatalysis/SamplePositioning",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "File",
+      "definition_uri": "https://w3id.org/anak-velazquez/operandoCatalysis//File",
+      "description": "Stores data related to the experiment (e.g. images, videos, or other files).",
+      "from_schema": "https://w3id.org/anak-velazquez/operandoCatalysis/",
+      "is_a": "NamedEntity",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/operandoCatalysis/File",
       "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "hzb_catalysislabs_schema.yaml",
-  "source_file_date": "2024-10-01T13:08:09",
-  "source_file_size": 2549,
-  "generation_date": "2024-10-01T14:59:27",
+  "source_file_date": "2024-10-01T15:18:38",
+  "source_file_size": 1950,
+  "generation_date": "2024-10-02T17:00:59",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/hzb_catalysislabs_schema.context.jsonld",
     "https://w3id.org/linkml/types.context.jsonld",
+    "core.context.jsonld",
+    "catlabs.context.jsonld",
+    "BESSY.context.jsonld",
+    "operandoCatalysis.context.jsonld",
     {
-      "@base": "https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema/"
+      "@base": "https://w3id.org/anak-velazquez/hzb-metadata-schema/"
     }
   ]
 }

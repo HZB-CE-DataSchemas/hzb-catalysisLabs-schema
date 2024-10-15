@@ -1,6 +1,6 @@
 # HZB (meta)data schema: operando catalysis
 
-(Meta)data schema for operando catalysis: A datamodel for describing entities and their semantic associations (vocabularies/ontologies) for scientific (particularly catalytic) data at HZB, particularly for operando and in situ characterization of catalytic materials.
+(Meta)data schema for operando catalysis: A datamodel for describing entities and their semantic associations (vocabularies/ontologies) for scientific (particularly catalytic) data at HZB, including operando and in situ characterization of catalytic materials.
 
 At the moment, this schema is organized into 2 separate modules:
 * catlabs definitions (catalysis lab-based)

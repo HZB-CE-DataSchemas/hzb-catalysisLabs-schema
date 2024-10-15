@@ -49,7 +49,7 @@ classes:
       #- synonym
     slot_usage:
       category:
-        required: true
+        required: false
     exact_mappings:
       - BFO:0000001
       - WIKIDATA:Q35120
@@ -66,10 +66,11 @@ classes:
     description: >-
       Represents metadata for datasets according to DataCite standard.
       Core properties of DataCite standard (basics for citation/publications.) DataCite already considers DublinCore elements. 
+    #category: Core
     attributes:
         identifier: 
           description: The Identifier is a unique string that identifies a resource (i.e., DOI).
-          required: true
+          required: false
          # identifier: true fix this cause theres already ID slot
           range: string
         identifierType: 
@@ -78,20 +79,20 @@ classes:
         creators: 
           description: Creator(s) of the resource.
           #multivalued: true
-          required: true
+          required: false
           range: Person 
         title: 
           description: Title of the resource/dataset.
-          required: true
+          required: false
           range: string 
         Publisher: 
-          description: Creator of the resource.
+          description: lorem.
           range: string 
         ResourceType: 
-          description: Creator of the resource.
+          description: lorem.
           range: string
         Subject: 
-          description: Creator of the resource.
+          description: lorem.
           range: string            
         Contributor: 
           description: Creator of the resource.
@@ -147,6 +148,53 @@ classes:
     is_a: NamedEntity
     description: >-
       A basic/standard definition of a person, which later can be further defined as scientist, beam scientist, user, etc.
+    #category: "Core"
+    attributes:
+        person_id: 
+          description: The Identifier is a unique string that identifies a resource (i.e., DOI).
+          required: false
+          range: string
+        orcid_id: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string
+        first_name: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string
+        last_name: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string
+        title: 
+          description: Academic or professional title of the researcher (e.g., "Dr.", "Professor").
+          required: false
+          range: string
+        institution: 
+          description: Research institution or university the person is affiliated with (e.g., "HZB").
+          required: false
+          range: string
+        department: 
+          description: Department or division the researcher belongs to (e.g., "Chemical Energy").
+          required: false
+          range: string
+        role: 
+          description: Researcher's role in the department (e.g., "Principal Investigator", "Research Assistant", "Postdoc").
+          required: false
+          range: string
+        research_focus: 
+          description: Area of expertise (e.g. “Thermo-Catalysis”).
+          required: false
+          range: string
+        laboratory_name: 
+          description: Working group (e.g. Amkreutz lab).
+          required: false
+          range: string
+        projects: 
+          description: Project(s) that the researcher is involved in (e.g. CatLab)
+          required: false
+          multivalued: true
+          range: Project
     class_uri: schema:Person
     mixins:
       #- HasAliases
@@ -177,7 +225,57 @@ classes:
     is_a: NamedEntity
     description: >-
       A research activity or initiative with defined objectives, funding, and timelines, involving one or more researchers, designed to generate data, publications, and other outputs. The project may involve multiple experiments, datasets, and contributors, and can be linked to specific funding sources and institutions.
-
+    #category: "Core"
+    attributes:
+        project_id: 
+          description: The Identifier is a unique string that identifies a resource (i.e., DOI).
+          required: false
+          range: string
+        project_code: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string
+        project_name: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string
+        acronym: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string
+        start_date: 
+          description: Academic or professional title of the researcher (e.g., "Dr.", "Professor").
+          required: false
+          range: string
+        end_date: 
+          description: Research institution or university the person is affiliated with (e.g., "HZB").
+          required: false
+          range: string
+        status: 
+          description: Department or division the researcher belongs to (e.g., "Chemical Energy").
+          required: false
+          range: string
+        institutions: 
+          description: Researcher's role in the department (e.g., "Principal Investigator", "Research Assistant", "Postdoc").
+          required: false
+          range: string
+        principal_investigator: 
+          description: Area of expertise (e.g. “Thermo-Catalysis”).
+          required: false
+          range: Scientist
+        assigned_lab: 
+          description: Working group (e.g. Amkreutz lab).
+          required: false
+          range: string
+        research_area: 
+          description: Working group (e.g. Amkreutz lab).
+          required: false
+          range: string
+        collaborators: 
+          description: Project(s) that the researcher is involved in (e.g. CatLab)
+          required: false
+          multivalued: true
+          range: Person
     class_uri: 
     mixins:
       #- HasAliases
@@ -193,6 +291,84 @@ classes:
     description: >-
       A thing made or adapted for a particular purpose, especially
       a piece of mechanical or electronic equipment.
+    #category: "Core"
+    attributes:
+        device_id: 
+          description: The Identifier is a unique string that identifies a resource (i.e., DOI).
+          required: false
+          range: string
+        serial_number: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string
+        device_name: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string
+        device_type: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string
+        manufacturer: 
+          description: Academic or professional title of the researcher (e.g., "Dr.", "Professor").
+          required: false
+          range: string
+        model_number: 
+          description: Research institution or university the person is affiliated with (e.g., "HZB").
+          required: false
+          range: string
+        purchase_date: 
+          description: Department or division the researcher belongs to (e.g., "Chemical Energy").
+          required: false
+          range: string
+        commission_date: 
+          description: Researcher's role in the department (e.g., "Principal Investigator", "Research Assistant", "Postdoc").
+          required: false
+          range: string
+        warranty_expiration_date: 
+          description: Area of expertise (e.g. “Thermo-Catalysis”).
+          required: false
+          range: string
+        operating_system: 
+          description: Working group (e.g. Amkreutz lab).
+          required: false
+          range: string
+        specifications: 
+          description: Working group (e.g. Amkreutz lab).
+          required: false
+          range: string
+        input_gases: 
+          description: Working group (e.g. Amkreutz lab).
+          required: false
+          range: string
+        catalyst_handling_capability: 
+          description: Working group (e.g. Amkreutz lab).
+          required: false
+          range: string
+        ip_address: 
+          description: Working group (e.g. Amkreutz lab).
+          required: false
+          range: string
+        mac_address: 
+          description: Working group (e.g. Amkreutz lab).
+          required: false
+          range: string
+        location: 
+          description: Working group (e.g. Amkreutz lab).
+          required: false
+          range: string
+        responsible_person: 
+          description: Working group (e.g. Amkreutz lab).
+          required: false
+          range: string                                        
+        device_status: 
+          description: Working group (e.g. Amkreutz lab).
+          required: false
+          range: string  
+        ownership: 
+          description: Working group (e.g. Amkreutz lab).
+          required: false
+          range: string            
     class_uri: 
     mixins:
       #- HasAliases
@@ -213,11 +389,45 @@ classes:
       - STY:T122    
 
 #####Sample
-#lorem ipsum
+#
   Sample:
     is_a: NamedEntity
     description: >-
       Core properties of a sample, discipline agnostic.
+    #category: "Core"
+    attributes:
+        sample id: 
+          description: The Identifier is a unique string that identifies a resource (i.e., DOI).
+          required: false
+          range: string
+        sample_name: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string
+        sample_description: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string
+        phase: 
+          description: The ORCID Identifier is a unique string that identifies a researcher.
+          required: false
+          range: string
+        composition: 
+          description: Academic or professional title of the researcher (e.g., "Dr.", "Professor").
+          required: false
+          range: string
+        size: 
+          description: Research institution or university the person is affiliated with (e.g., "HZB").
+          required: false
+          range: string
+        preparation_method: 
+          description: Research institution or university the person is affiliated with (e.g., "HZB").
+          required: false
+          range: string
+        batch_number: 
+          description: Research institution or university the person is affiliated with (e.g., "HZB").
+          required: false
+          range: string          
     class_uri: 
     mixins:
       #- HasAliases
@@ -228,6 +438,7 @@ classes:
 
 
   #sample array
+  #
   SampleCollection:
     tree_root: true
     description: >-

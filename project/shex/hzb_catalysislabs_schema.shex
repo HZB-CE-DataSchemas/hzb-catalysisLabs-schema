@@ -47,6 +47,24 @@ linkml:Jsonpath xsd:string
 
 linkml:Sparqlpath xsd:string
 
+<https://w3id.org/anak-velazquez/catlabs/ALD>  (
+    CLOSED {
+       (  $<https://w3id.org/anak-velazquez/catlabs/ALD_tes> (  &<https://w3id.org/anak-velazquez/catlabs/SynthesisProcess_tes> ;
+             rdf:type [ <https://w3id.org/anak-velazquez/catlabs/SynthesisProcess> ] ?
+          ) ;
+          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/ALD> ]
+       )
+    } OR @<https://w3id.org/anak-velazquez/catlabs/ALDBeneQ>
+)
+
+<https://w3id.org/anak-velazquez/catlabs/ALDBeneQ> CLOSED {
+    (  $<https://w3id.org/anak-velazquez/catlabs/ALDBeneQ_tes> (  &<https://w3id.org/anak-velazquez/catlabs/ALD_tes> ;
+          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/ALD> ] ?
+       ) ;
+       rdf:type [ <https://w3id.org/anak-velazquez/catlabs/ALDBeneQ> ]
+    )
+}
+
 <https://w3id.org/anak-velazquez/catlabs/AnalyticsProcess> CLOSED {
     (  $<https://w3id.org/anak-velazquez/catlabs/AnalyticsProcess_tes> (  &<https://w3id.org/anak-velazquez/catlabs/Process_tes> ;
           rdf:type [ <https://w3id.org/anak-velazquez/catlabs/Process> ] ?
@@ -548,19 +566,43 @@ linkml:Sparqlpath xsd:string
     )
 }
 
-<https://w3id.org/anak-velazquez/catlabs/Sputtering> CLOSED {
-    (  $<https://w3id.org/anak-velazquez/catlabs/Sputtering_tes> (  &<https://w3id.org/anak-velazquez/catlabs/SynthesisProcess_tes>
-          ;
-          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/SynthesisProcess> ] ?
-       ) ;
-       rdf:type [ <https://w3id.org/anak-velazquez/catlabs/Sputtering> ]
-    )
-}
+<https://w3id.org/anak-velazquez/catlabs/Sputtering>  (
+    CLOSED {
+       (  $<https://w3id.org/anak-velazquez/catlabs/Sputtering_tes> ( 
+             &<https://w3id.org/anak-velazquez/catlabs/SynthesisProcess_tes> ;
+             rdf:type [ <https://w3id.org/anak-velazquez/catlabs/SynthesisProcess> ] ?
+          ) ;
+          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/Sputtering> ]
+       )
+    } OR @<https://w3id.org/anak-velazquez/catlabs/SputteringPrevac> OR
+    @<https://w3id.org/anak-velazquez/catlabs/SputteringVonAdenne>
+)
 
 <https://w3id.org/anak-velazquez/catlabs/SputteringPrevac> CLOSED {
-    (  $<https://w3id.org/anak-velazquez/catlabs/SputteringPrevac_tes> ( 
-          &<https://w3id.org/anak-velazquez/catlabs/SynthesisProcess_tes> ;
-          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/SynthesisProcess> ] ?
+    (  $<https://w3id.org/anak-velazquez/catlabs/SputteringPrevac_tes> (  &<https://w3id.org/anak-velazquez/catlabs/Sputtering_tes>
+          ;
+          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/Sputtering> ] ? ;
+          <https://w3id.org/anak-velazquez/catlabs/sputtering_prevac_id> @linkml:String ? ;
+          <https://w3id.org/anak-velazquez/catlabs/substrate_id> @linkml:String ? ;
+          <https://w3id.org/anak-velazquez/catlabs/sample_owner> @linkml:String ? ;
+          <https://w3id.org/anak-velazquez/catlabs/process_user> @linkml:String ? ;
+          <https://w3id.org/anak-velazquez/catlabs/date> @linkml:String ? ;
+          <https://w3id.org/anak-velazquez/catlabs/holder> @linkml:String ? ;
+          <https://w3id.org/anak-velazquez/catlabs/notes> @linkml:String ? ;
+          <https://w3id.org/anak-velazquez/catlabs/step_number> @linkml:Integer ? ;
+          <https://w3id.org/anak-velazquez/catlabs/orientation> @linkml:String ? ;
+          <https://w3id.org/anak-velazquez/catlabs/sputter_pressure> @linkml:Float ? ;
+          <https://w3id.org/anak-velazquez/catlabs/substrate_temperature> @linkml:Float ? ;
+          <https://w3id.org/anak-velazquez/catlabs/ramp> @linkml:Float ? ;
+          <https://w3id.org/anak-velazquez/catlabs/rotation> @linkml:Float ? ;
+          <https://w3id.org/anak-velazquez/catlabs/z_position> @linkml:Float ? ;
+          <https://w3id.org/anak-velazquez/catlabs/gas> @linkml:String ? ;
+          <https://w3id.org/anak-velazquez/catlabs/flow_rate> @linkml:Float ? ;
+          <https://w3id.org/anak-velazquez/catlabs/target_position> @linkml:Integer ? ;
+          <https://w3id.org/anak-velazquez/catlabs/target> @linkml:String ? ;
+          <https://w3id.org/anak-velazquez/catlabs/target_power> @linkml:Float ? ;
+          <https://w3id.org/anak-velazquez/catlabs/DC_RF> @linkml:String ? ;
+          <https://w3id.org/anak-velazquez/catlabs/time> @linkml:String ?
        ) ;
        rdf:type [ <https://w3id.org/anak-velazquez/catlabs/SputteringPrevac> ]
     )
@@ -568,8 +610,8 @@ linkml:Sparqlpath xsd:string
 
 <https://w3id.org/anak-velazquez/catlabs/SputteringVonAdenne> CLOSED {
     (  $<https://w3id.org/anak-velazquez/catlabs/SputteringVonAdenne_tes> ( 
-          &<https://w3id.org/anak-velazquez/catlabs/SynthesisProcess_tes> ;
-          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/SynthesisProcess> ] ?
+          &<https://w3id.org/anak-velazquez/catlabs/Sputtering_tes> ;
+          rdf:type [ <https://w3id.org/anak-velazquez/catlabs/Sputtering> ] ?
        ) ;
        rdf:type [ <https://w3id.org/anak-velazquez/catlabs/SputteringVonAdenne> ]
     )
@@ -583,8 +625,8 @@ linkml:Sparqlpath xsd:string
           ) ;
           rdf:type [ <https://w3id.org/anak-velazquez/catlabs/SynthesisProcess> ]
        )
-    } OR @<https://w3id.org/anak-velazquez/catlabs/CVD> OR @<https://w3id.org/anak-velazquez/catlabs/Sputtering> OR
-    @<https://w3id.org/anak-velazquez/catlabs/SputteringPrevac> OR @<https://w3id.org/anak-velazquez/catlabs/SputteringVonAdenne>
+    } OR @<https://w3id.org/anak-velazquez/catlabs/ALD> OR @<https://w3id.org/anak-velazquez/catlabs/CVD> OR
+    @<https://w3id.org/anak-velazquez/catlabs/Sputtering>
 )
 
 <https://w3id.org/anak-velazquez/catlabs/ThinFilmCatalyst> CLOSED {

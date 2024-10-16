@@ -1,6 +1,22 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
+// Atomic Layer Deposition (ALD) is a thin-film deposition technique that enables precise control over film thickness at the atomic level.  This method is highly valued for its ability to deposit ultra-thin, conformal films with excellent uniformity, even on complex 3D surfaces.  
+message ALD
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
+// Atomic Layer Deposition (ALD) performed in BeneQ device.  
+message ALDBeneQ
+ {
+  uriorcurie id = 0
+  string iri = 0
+  string name = 0
+  string category = 0
+ }
 // A defined series of actions, steps, or operations undertaken to achieve a  analysis of a Catalysis sample process.
 message AnalyticsProcess
  {
@@ -577,6 +593,27 @@ message SputteringPrevac
   string iri = 0
   string name = 0
   string category = 0
+  string sputteringPrevacId = 0
+  string substrateId = 0
+  string sampleOwner = 0
+  string processUser = 0
+  string date = 0
+  string holder = 0
+  string notes = 0
+  integer stepNumber = 0
+  string orientation = 0
+  float sputterPressure = 0
+  float substrateTemperature = 0
+  float ramp = 0
+  float rotation = 0
+  float zPosition = 0
+  string gas = 0
+  float flowRate = 0
+  integer targetPosition = 0
+  string target = 0
+  float targetPower = 0
+  string dCRF = 0
+  string time = 0
  }
 // Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly  with the von Adenne (PC3 chamber) machine.  
 message SputteringVonAdenne

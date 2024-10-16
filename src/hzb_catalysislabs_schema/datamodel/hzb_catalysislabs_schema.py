@@ -1,5 +1,5 @@
 # Auto generated from hzb_catalysislabs_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-10-15T16:44:38
+# Generation date: 2024-10-16T11:38:38
 # Schema: hzb-catalysisLabs-schema
 #
 # id: https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema
@@ -22,7 +22,7 @@ from linkml_runtime.utils.formatutils import camelcase, underscore, sfx
 from linkml_runtime.utils.enumerations import EnumDefinitionImpl
 from rdflib import Namespace, URIRef
 from linkml_runtime.utils.curienamespace import CurieNamespace
-from linkml_runtime.linkml_model.types import Date, Integer, String, Uriorcurie
+from linkml_runtime.linkml_model.types import Date, Float, Integer, String, Uriorcurie
 from linkml_runtime.utils.metamodelcore import URIorCURIE, XSDDate
 
 metamodel_version = "1.7.0"
@@ -147,6 +147,14 @@ class OzoneCleaningId(CleaningProcessId):
     pass
 
 
+class ALDId(SynthesisProcessId):
+    pass
+
+
+class ALDBeneQId(ALDId):
+    pass
+
+
 class CVDId(SynthesisProcessId):
     pass
 
@@ -167,11 +175,11 @@ class SputteringId(SynthesisProcessId):
     pass
 
 
-class SputteringPrevacId(SynthesisProcessId):
+class SputteringPrevacId(SputteringId):
     pass
 
 
-class SputteringVonAdenneId(SynthesisProcessId):
+class SputteringVonAdenneId(SputteringId):
     pass
 
 
@@ -1232,6 +1240,54 @@ class OzoneCleaning(CleaningProcess):
 
 
 @dataclass(repr=False)
+class ALD(SynthesisProcess):
+    """
+    Atomic Layer Deposition (ALD) is a thin-film deposition technique that enables precise control over film thickness
+    at the atomic level. This method is highly valued for its ability to deposit ultra-thin, conformal films with
+    excellent uniformity, even on complex 3D surfaces.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/anak-velazquez/catlabs/ALD")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "ALD"
+    class_model_uri: ClassVar[URIRef] = HZB_METADATA_SCHEMA.ALD
+
+    id: Union[str, ALDId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ALDId):
+            self.id = ALDId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class ALDBeneQ(ALD):
+    """
+    Atomic Layer Deposition (ALD) performed in BeneQ device.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/anak-velazquez/catlabs/ALDBeneQ")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "ALD_BeneQ"
+    class_model_uri: ClassVar[URIRef] = HZB_METADATA_SCHEMA.ALDBeneQ
+
+    id: Union[str, ALDBeneQId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ALDBeneQId):
+            self.id = ALDBeneQId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
 class CVD(SynthesisProcess):
     """
     Chemical Vapor Deposition (CVD) is a process used to produce thin films and coatings by depositing material onto a
@@ -1335,7 +1391,7 @@ class Sputtering(SynthesisProcess):
 
     class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/anak-velazquez/catlabs/Sputtering")
     class_class_curie: ClassVar[str] = None
-    class_name: ClassVar[str] = "sputtering"
+    class_name: ClassVar[str] = "Sputtering"
     class_model_uri: ClassVar[URIRef] = HZB_METADATA_SCHEMA.Sputtering
 
     id: Union[str, SputteringId] = None
@@ -1350,7 +1406,7 @@ class Sputtering(SynthesisProcess):
 
 
 @dataclass(repr=False)
-class SputteringPrevac(SynthesisProcess):
+class SputteringPrevac(Sputtering):
     """
     Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly with the
     Prevac sputtering machine. In sputtering, high-energy ions (usually from a plasma) bombard a target material,
@@ -1361,10 +1417,31 @@ class SputteringPrevac(SynthesisProcess):
 
     class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/anak-velazquez/catlabs/SputteringPrevac")
     class_class_curie: ClassVar[str] = None
-    class_name: ClassVar[str] = "sputtering_prevac"
+    class_name: ClassVar[str] = "Sputtering_prevac"
     class_model_uri: ClassVar[URIRef] = HZB_METADATA_SCHEMA.SputteringPrevac
 
     id: Union[str, SputteringPrevacId] = None
+    sputtering_prevac_id: Optional[str] = None
+    substrate_id: Optional[str] = None
+    sample_owner: Optional[str] = None
+    process_user: Optional[str] = None
+    date: Optional[str] = None
+    holder: Optional[str] = None
+    notes: Optional[str] = None
+    step_number: Optional[int] = None
+    orientation: Optional[str] = None
+    sputter_pressure: Optional[float] = None
+    substrate_temperature: Optional[float] = None
+    ramp: Optional[float] = None
+    rotation: Optional[float] = None
+    z_position: Optional[float] = None
+    gas: Optional[str] = None
+    flow_rate: Optional[float] = None
+    target_position: Optional[int] = None
+    target: Optional[str] = None
+    target_power: Optional[float] = None
+    DC_RF: Optional[str] = None
+    time: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1372,11 +1449,74 @@ class SputteringPrevac(SynthesisProcess):
         if not isinstance(self.id, SputteringPrevacId):
             self.id = SputteringPrevacId(self.id)
 
+        if self.sputtering_prevac_id is not None and not isinstance(self.sputtering_prevac_id, str):
+            self.sputtering_prevac_id = str(self.sputtering_prevac_id)
+
+        if self.substrate_id is not None and not isinstance(self.substrate_id, str):
+            self.substrate_id = str(self.substrate_id)
+
+        if self.sample_owner is not None and not isinstance(self.sample_owner, str):
+            self.sample_owner = str(self.sample_owner)
+
+        if self.process_user is not None and not isinstance(self.process_user, str):
+            self.process_user = str(self.process_user)
+
+        if self.date is not None and not isinstance(self.date, str):
+            self.date = str(self.date)
+
+        if self.holder is not None and not isinstance(self.holder, str):
+            self.holder = str(self.holder)
+
+        if self.notes is not None and not isinstance(self.notes, str):
+            self.notes = str(self.notes)
+
+        if self.step_number is not None and not isinstance(self.step_number, int):
+            self.step_number = int(self.step_number)
+
+        if self.orientation is not None and not isinstance(self.orientation, str):
+            self.orientation = str(self.orientation)
+
+        if self.sputter_pressure is not None and not isinstance(self.sputter_pressure, float):
+            self.sputter_pressure = float(self.sputter_pressure)
+
+        if self.substrate_temperature is not None and not isinstance(self.substrate_temperature, float):
+            self.substrate_temperature = float(self.substrate_temperature)
+
+        if self.ramp is not None and not isinstance(self.ramp, float):
+            self.ramp = float(self.ramp)
+
+        if self.rotation is not None and not isinstance(self.rotation, float):
+            self.rotation = float(self.rotation)
+
+        if self.z_position is not None and not isinstance(self.z_position, float):
+            self.z_position = float(self.z_position)
+
+        if self.gas is not None and not isinstance(self.gas, str):
+            self.gas = str(self.gas)
+
+        if self.flow_rate is not None and not isinstance(self.flow_rate, float):
+            self.flow_rate = float(self.flow_rate)
+
+        if self.target_position is not None and not isinstance(self.target_position, int):
+            self.target_position = int(self.target_position)
+
+        if self.target is not None and not isinstance(self.target, str):
+            self.target = str(self.target)
+
+        if self.target_power is not None and not isinstance(self.target_power, float):
+            self.target_power = float(self.target_power)
+
+        if self.DC_RF is not None and not isinstance(self.DC_RF, str):
+            self.DC_RF = str(self.DC_RF)
+
+        if self.time is not None and not isinstance(self.time, str):
+            self.time = str(self.time)
+
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class SputteringVonAdenne(SynthesisProcess):
+class SputteringVonAdenne(Sputtering):
     """
     Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly with the von
     Adenne (PC3 chamber) machine.
@@ -2230,6 +2370,69 @@ slots.catalysisSample__catalyst_stability = Slot(uri="str(uriorcurie)", name="ca
 
 slots.catalysisSample__catalyst_activity = Slot(uri="str(uriorcurie)", name="catalysisSample__catalyst_activity", curie=None,
                    model_uri=HZB_METADATA_SCHEMA.catalysisSample__catalyst_activity, domain=None, range=Optional[str])
+
+slots.sputteringPrevac__sputtering_prevac_id = Slot(uri="str(uriorcurie)", name="sputteringPrevac__sputtering_prevac_id", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__sputtering_prevac_id, domain=None, range=Optional[str])
+
+slots.sputteringPrevac__substrate_id = Slot(uri="str(uriorcurie)", name="sputteringPrevac__substrate_id", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__substrate_id, domain=None, range=Optional[str])
+
+slots.sputteringPrevac__sample_owner = Slot(uri="str(uriorcurie)", name="sputteringPrevac__sample_owner", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__sample_owner, domain=None, range=Optional[str])
+
+slots.sputteringPrevac__process_user = Slot(uri="str(uriorcurie)", name="sputteringPrevac__process_user", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__process_user, domain=None, range=Optional[str])
+
+slots.sputteringPrevac__date = Slot(uri="str(uriorcurie)", name="sputteringPrevac__date", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__date, domain=None, range=Optional[str])
+
+slots.sputteringPrevac__holder = Slot(uri="str(uriorcurie)", name="sputteringPrevac__holder", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__holder, domain=None, range=Optional[str])
+
+slots.sputteringPrevac__notes = Slot(uri="str(uriorcurie)", name="sputteringPrevac__notes", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__notes, domain=None, range=Optional[str])
+
+slots.sputteringPrevac__step_number = Slot(uri="str(uriorcurie)", name="sputteringPrevac__step_number", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__step_number, domain=None, range=Optional[int])
+
+slots.sputteringPrevac__orientation = Slot(uri="str(uriorcurie)", name="sputteringPrevac__orientation", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__orientation, domain=None, range=Optional[str])
+
+slots.sputteringPrevac__sputter_pressure = Slot(uri="str(uriorcurie)", name="sputteringPrevac__sputter_pressure", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__sputter_pressure, domain=None, range=Optional[float])
+
+slots.sputteringPrevac__substrate_temperature = Slot(uri="str(uriorcurie)", name="sputteringPrevac__substrate_temperature", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__substrate_temperature, domain=None, range=Optional[float])
+
+slots.sputteringPrevac__ramp = Slot(uri="str(uriorcurie)", name="sputteringPrevac__ramp", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__ramp, domain=None, range=Optional[float])
+
+slots.sputteringPrevac__rotation = Slot(uri="str(uriorcurie)", name="sputteringPrevac__rotation", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__rotation, domain=None, range=Optional[float])
+
+slots.sputteringPrevac__z_position = Slot(uri="str(uriorcurie)", name="sputteringPrevac__z_position", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__z_position, domain=None, range=Optional[float])
+
+slots.sputteringPrevac__gas = Slot(uri="str(uriorcurie)", name="sputteringPrevac__gas", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__gas, domain=None, range=Optional[str])
+
+slots.sputteringPrevac__flow_rate = Slot(uri="str(uriorcurie)", name="sputteringPrevac__flow_rate", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__flow_rate, domain=None, range=Optional[float])
+
+slots.sputteringPrevac__target_position = Slot(uri="str(uriorcurie)", name="sputteringPrevac__target_position", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__target_position, domain=None, range=Optional[int])
+
+slots.sputteringPrevac__target = Slot(uri="str(uriorcurie)", name="sputteringPrevac__target", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__target, domain=None, range=Optional[str])
+
+slots.sputteringPrevac__target_power = Slot(uri="str(uriorcurie)", name="sputteringPrevac__target_power", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__target_power, domain=None, range=Optional[float])
+
+slots.sputteringPrevac__DC_RF = Slot(uri="str(uriorcurie)", name="sputteringPrevac__DC_RF", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__DC_RF, domain=None, range=Optional[str])
+
+slots.sputteringPrevac__time = Slot(uri="str(uriorcurie)", name="sputteringPrevac__time", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__time, domain=None, range=Optional[str])
 
 slots.experiment__experiment_id = Slot(uri="str(uriorcurie)", name="experiment__experiment_id", curie=None,
                    model_uri=HZB_METADATA_SCHEMA.experiment__experiment_id, domain=None, range=Optional[str])

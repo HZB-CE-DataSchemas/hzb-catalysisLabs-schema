@@ -334,6 +334,14 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: id Description: A unique identifier for a thing
 --     * Slot: iri Description: Internationalized Resource Identifier
+-- # Class: "ALD" Description: "Atomic Layer Deposition (ALD) is a thin-film deposition technique that enables precise control over film thickness at the atomic level.  This method is highly valued for its ability to deposit ultra-thin, conformal films with excellent uniformity, even on complex 3D surfaces.  "
+--     * Slot: name Description: A human-readable name for a thing
+--     * Slot: id Description: A unique identifier for a thing
+--     * Slot: iri Description: Internationalized Resource Identifier
+-- # Class: "ALD_BeneQ" Description: "Atomic Layer Deposition (ALD) performed in BeneQ device.  "
+--     * Slot: name Description: A human-readable name for a thing
+--     * Slot: id Description: A unique identifier for a thing
+--     * Slot: iri Description: Internationalized Resource Identifier
 -- # Class: "CVD" Description: "Chemical Vapor Deposition (CVD) is a process used to produce thin films and coatings by depositing  material onto a substrate through chemical reactions of vapor-phase precursors. "
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: id Description: A unique identifier for a thing
@@ -350,11 +358,32 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: id Description: A unique identifier for a thing
 --     * Slot: iri Description: Internationalized Resource Identifier
--- # Class: "sputtering" Description: "Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate. In sputtering, high-energy ions (usually from a plasma) bombard a target material,  causing atoms from the target to be ejected. These ejected atoms then travel through a vacuum chamber and settle on a substrate, forming a thin film. "
+-- # Class: "Sputtering" Description: "Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate. In sputtering, high-energy ions (usually from a plasma) bombard a target material,  causing atoms from the target to be ejected. These ejected atoms then travel through a vacuum chamber and settle on a substrate, forming a thin film. "
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: id Description: A unique identifier for a thing
 --     * Slot: iri Description: Internationalized Resource Identifier
--- # Class: "sputtering_prevac" Description: "Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly  with the Prevac sputtering machine.  In sputtering, high-energy ions (usually from a plasma) bombard a target material,  causing atoms from the target to be ejected. These ejected atoms then travel through a vacuum chamber and settle on a substrate, forming a thin film. "
+-- # Class: "Sputtering_prevac" Description: "Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly  with the Prevac sputtering machine.  In sputtering, high-energy ions (usually from a plasma) bombard a target material,  causing atoms from the target to be ejected. These ejected atoms then travel through a vacuum chamber and settle on a substrate, forming a thin film. "
+--     * Slot: sputtering_prevac_id Description: Identifier of the sputtering process in the prevac machine.
+--     * Slot: substrate_id Description: Identifier of the substrate material (usually Silicon).
+--     * Slot: sample_owner Description: Person owning the sample.
+--     * Slot: process_user Description: Person performing the process on the sample.
+--     * Slot: date Description: Date on which the process was performed.
+--     * Slot: holder Description: Type of sample holder.
+--     * Slot: notes Description: Any notes for supporting the documentation of the process.
+--     * Slot: step_number Description: Many consecutive processes or steps of sputtering can be performed to layer the materials. This parameter documents the number of step or id.
+--     * Slot: orientation Description: Refers to the spatial alignment and positioning of the target within the sputtering chamber. The target is typically positioned at an angle relative to the substrate. This angle can affect the trajectory of the sputtered atoms and the uniformity of deposition on the substrate.
+--     * Slot: sputter_pressure Description: Pressure of the gas (typically argon) inside the vacuum chamber during the sputtering process. This pressure is usually measured in millibars (mbar), and it plays a critical role in determining the behavior of the plasma, the ion bombardment, and the deposition quality.
+--     * Slot: substrate_temperature Description: Temperature of the substrate onto which the thin film is being deposited during the sputtering process. This parameter is crucial because it can significantly influence the properties of the deposited film, such as its microstructure, morphology, adhesion, and overall performance.
+--     * Slot: ramp Description: Controlled increase or decrease of temperature.
+--     * Slot: rotation Description: Angular velocity at which the target material (or in some cases, the substrate) is rotated during the sputtering process.
+--     * Slot: z_position Description: Vertical position of the substrate or the target material in the sputtering chamber.
+--     * Slot: gas Description: Gas used to ionize and bombard the target material (usually Argon).
+--     * Slot: flow_rate Description: Rate at which gases (typically inert gases like argon or reactive gases like oxygen or nitrogen) are introduced into the sputtering chamber. It plays a crucial role in controlling the plasma formation and the quality of the deposited thin film.
+--     * Slot: target_position Description: Position of the target source. In this machine case, from 1-8.
+--     * Slot: target Description: Target is the material that gets bombarded by ions and subsequently ejected (sputtered) onto a substrate to form a thin film. (e.g. Al, Ti, Pt, etc).
+--     * Slot: target_power Description: The amount of electrical power applied to the sputtering target to generate the plasma and eject atoms from the target surface.
+--     * Slot: DC_RF Description: DC (Direct Current) and RF (Radio Frequency) refer to the types of electrical power used to energize the sputtering target, and the choice between them depends on the properties of the target material.
+--     * Slot: time Description: Duration time of the sputtering step/process.
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: id Description: A unique identifier for a thing
 --     * Slot: iri Description: Internationalized Resource Identifier
@@ -630,6 +659,18 @@ CREATE TABLE "OzoneCleaning" (
 	iri TEXT, 
 	PRIMARY KEY (id)
 );
+CREATE TABLE "ALD" (
+	name TEXT, 
+	id TEXT NOT NULL, 
+	iri TEXT, 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "ALD_BeneQ" (
+	name TEXT, 
+	id TEXT NOT NULL, 
+	iri TEXT, 
+	PRIMARY KEY (id)
+);
 CREATE TABLE "CVD" (
 	name TEXT, 
 	id TEXT NOT NULL, 
@@ -654,13 +695,34 @@ CREATE TABLE "CVD_pc2" (
 	iri TEXT, 
 	PRIMARY KEY (id)
 );
-CREATE TABLE sputtering (
+CREATE TABLE "Sputtering" (
 	name TEXT, 
 	id TEXT NOT NULL, 
 	iri TEXT, 
 	PRIMARY KEY (id)
 );
-CREATE TABLE sputtering_prevac (
+CREATE TABLE "Sputtering_prevac" (
+	sputtering_prevac_id TEXT, 
+	substrate_id TEXT, 
+	sample_owner TEXT, 
+	process_user TEXT, 
+	date TEXT, 
+	holder TEXT, 
+	notes TEXT, 
+	step_number INTEGER, 
+	orientation TEXT, 
+	sputter_pressure FLOAT, 
+	substrate_temperature FLOAT, 
+	ramp FLOAT, 
+	rotation FLOAT, 
+	z_position FLOAT, 
+	gas TEXT, 
+	flow_rate FLOAT, 
+	target_position INTEGER, 
+	target TEXT, 
+	target_power FLOAT, 
+	"DC_RF" TEXT, 
+	time TEXT, 
 	name TEXT, 
 	id TEXT NOT NULL, 
 	iri TEXT, 

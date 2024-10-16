@@ -46,6 +46,13 @@
     skos:definition "Myspot beamline description." ;
     skos:inScheme <https://w3id.org/anak-velazquez/BESSY/> .
 
+<https://w3id.org/anak-velazquez/catlabs/:ALDBeneQ> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ALD_BeneQ" ;
+    rdfs:subClassOf <https://w3id.org/anak-velazquez/catlabs/:ALD> ;
+    skos:definition "Atomic Layer Deposition (ALD) performed in BeneQ device.  " ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
 <https://w3id.org/anak-velazquez/catlabs/:AnalyticsProcess> a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "AnalyticsProcess" ;
@@ -78,10 +85,10 @@
         linkml:ClassDefinition ;
     rdfs:label "CatalysisSampleCollection" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/anak-velazquez/catlabs/:CatalysisSample> ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:entries> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom <https://w3id.org/anak-velazquez/catlabs/:CatalysisSample> ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:entries> ] ;
     skos:definition "A holder for CatalysisSample objects" ;
     skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
@@ -139,10 +146,10 @@
         linkml:ClassDefinition ;
     rdfs:label "ReactionProductCollection" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom <https://w3id.org/anak-velazquez/catlabs/:ReactionProduct> ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:entries> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/anak-velazquez/catlabs/:ReactionProduct> ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:entries> ] ;
     skos:definition "A holder for ReactionProduct objects" ;
     skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
@@ -161,24 +168,206 @@
     skos:definition "A detailed set of instructions outlining the materials, quantities, and procedures  required to perform a specific chemical reaction or experimental process." ;
     skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
 
-<https://w3id.org/anak-velazquez/catlabs/:Sputtering> a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "sputtering" ;
-    rdfs:subClassOf <https://w3id.org/anak-velazquez/catlabs/:SynthesisProcess> ;
-    skos:definition "Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate. In sputtering, high-energy ions (usually from a plasma) bombard a target material,  causing atoms from the target to be ejected. These ejected atoms then travel through a vacuum chamber and settle on a substrate, forming a thin film. " ;
-    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
-
 <https://w3id.org/anak-velazquez/catlabs/:SputteringPrevac> a owl:Class,
         linkml:ClassDefinition ;
-    rdfs:label "sputtering_prevac" ;
-    rdfs:subClassOf <https://w3id.org/anak-velazquez/catlabs/:SynthesisProcess> ;
+    rdfs:label "Sputtering_prevac" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:process_user> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:step_number> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:time> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:notes> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Float ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:substrate_temperature> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:step_number> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:process_user> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:time> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:orientation> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Integer ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:target_position> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:target> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:holder> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:sample_owner> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:z_position> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:date> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:rotation> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:substrate_id> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:rotation> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:holder> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:target_power> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:ramp> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:sputter_pressure> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:holder> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:target> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:ramp> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:time> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:z_position> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:substrate_temperature> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:DC_RF> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:orientation> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:gas> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:notes> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Float ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:ramp> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:flow_rate> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:DC_RF> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:flow_rate> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:date> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:target_power> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:sample_owner> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:sputtering_prevac_id> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:substrate_id> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Float ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:target_power> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:sample_owner> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Float ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:flow_rate> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Integer ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:step_number> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:process_user> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:substrate_temperature> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:sputtering_prevac_id> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:target_position> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:orientation> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Float ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:z_position> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Float ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:sputter_pressure> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:sputter_pressure> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:date> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:substrate_id> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:sputtering_prevac_id> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:notes> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:target_position> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:gas> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:target> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Float ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:rotation> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:DC_RF> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:gas> ],
+        <https://w3id.org/anak-velazquez/catlabs/:Sputtering> ;
     skos:definition "Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly  with the Prevac sputtering machine.  In sputtering, high-energy ions (usually from a plasma) bombard a target material,  causing atoms from the target to be ejected. These ejected atoms then travel through a vacuum chamber and settle on a substrate, forming a thin film. " ;
     skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
 
 <https://w3id.org/anak-velazquez/catlabs/:SputteringVonAdenne> a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "sputtering_vonAdenne" ;
-    rdfs:subClassOf <https://w3id.org/anak-velazquez/catlabs/:SynthesisProcess> ;
+    rdfs:subClassOf <https://w3id.org/anak-velazquez/catlabs/:Sputtering> ;
     skos:definition "Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly  with the von Adenne (PC3 chamber) machine.  " ;
     skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
 
@@ -200,185 +389,185 @@
         linkml:ClassDefinition ;
     rdfs:label "DataCite" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:RelatedIdentifier> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:identifier> ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:FundingReference> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:ResourceType> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Publisher> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Size> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:title> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:RelatedIdentifier> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Publisher> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:Rights> ],
         [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:RelatedItem> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:title> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:RelatedItem> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Contributor> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Size> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:identifierType> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:ResourceType> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Language> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Language> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Date> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Description> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Date> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:ResourceType> ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:Subject> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Description> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Format> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:FundingReference> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:creators> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Format> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Description> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:RelatedIdentifier> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:RelatedItem> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/anak-velazquez/core/:Person> ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:creators> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Publisher> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Subject> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:FundingReference> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:creators> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Size> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:identifier> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:RelatedItem> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:identifier> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:GeoLocation> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Format> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:ResourceType> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:AlternateIdentifier> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Version> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:GeoLocation> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:title> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:Date> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:ResourceType> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:creators> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:FundingReference> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Size> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Description> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Subject> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:Contributor> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:identifier> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:RelatedItem> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:GeoLocation> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:AlternateIdentifier> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:title> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:FundingReference> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:identifier> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Description> ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:Rights> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:ResourceType> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Rights> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:identifier> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:AlternateIdentifier> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Version> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:RelatedIdentifier> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Format> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Rights> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:creators> ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Publisher> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Language> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Contributor> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Publisher> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:Version> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Size> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:GeoLocation> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:RelatedItem> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:title> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Date> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:identifierType> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Contributor> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Language> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Description> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Date> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Contributor> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Version> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:Subject> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Version> ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Language> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:RelatedIdentifier> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:GeoLocation> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:Size> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:identifierType> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Format> ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:GeoLocation> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:identifierType> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:identifierType> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Publisher> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:AlternateIdentifier> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Language> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:FundingReference> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:Format> ],
         <https://w3id.org/anak-velazquez/core/:NamedEntity> ;
     skos:definition "Represents metadata for datasets according to DataCite standard. Core properties of DataCite standard (basics for citation/publications.) DataCite already considers DublinCore elements. " ;
     skos:inScheme <https://w3id.org/anak-velazquez/core/> .
@@ -388,175 +577,175 @@
     rdfs:label "Device" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:warranty_expiration_date> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_name> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:manufacturer> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:responsible_person> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:input_gases> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:commission_date> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:commission_date> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:purchase_date> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:input_gases> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:ip_address> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:serial_number> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:ownership> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:warranty_expiration_date> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_id> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:ip_address> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:location> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_name> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:mac_address> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:operating_system> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_id> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:warranty_expiration_date> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_name> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_status> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:specifications> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:serial_number> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:purchase_date> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:specifications> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:manufacturer> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_status> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:input_gases> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:serial_number> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:location> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:catalyst_handling_capability> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:ownership> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:ip_address> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:manufacturer> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:model_number> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:model_number> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:location> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_status> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_type> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_type> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:catalyst_handling_capability> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:model_number> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:ownership> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:operating_system> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:mac_address> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_id> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:commission_date> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:ownership> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:model_number> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:operating_system> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:catalyst_handling_capability> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:ip_address> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:ip_address> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:responsible_person> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_id> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_status> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:specifications> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:responsible_person> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:mac_address> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:warranty_expiration_date> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:manufacturer> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:model_number> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:warranty_expiration_date> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_id> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_type> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:warranty_expiration_date> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:serial_number> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:purchase_date> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_status> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_name> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:purchase_date> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_name> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_name> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:specifications> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:responsible_person> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:ownership> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:operating_system> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:catalyst_handling_capability> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:specifications> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:input_gases> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:purchase_date> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:ownership> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:input_gases> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:model_number> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:location> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:location> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_type> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:location> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:input_gases> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:manufacturer> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:manufacturer> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_status> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_id> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:serial_number> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:catalyst_handling_capability> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:serial_number> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:operating_system> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:mac_address> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:mac_address> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:operating_system> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:responsible_person> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_type> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:specifications> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:responsible_person> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:device_type> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:commission_date> ],
         <https://w3id.org/anak-velazquez/core/:NamedEntity> ;
     skos:definition "A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment." ;
     skos:inScheme <https://w3id.org/anak-velazquez/core/> ;
@@ -629,6 +818,13 @@ hzb_metadata_schema:ChemicalOrDrugOrTreatment a owl:Class,
     skos:definition "The arrangement or location of samples within an experimental setup,  critical for ensuring accurate data collection and analysis. " ;
     skos:inScheme <https://w3id.org/anak-velazquez/operandoCatalysis/> .
 
+<https://w3id.org/anak-velazquez/catlabs/:ALD> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ALD" ;
+    rdfs:subClassOf <https://w3id.org/anak-velazquez/catlabs/:SynthesisProcess> ;
+    skos:definition "Atomic Layer Deposition (ALD) is a thin-film deposition technique that enables precise control over film thickness at the atomic level.  This method is highly valued for its ability to deposit ultra-thin, conformal films with excellent uniformity, even on complex 3D surfaces.  " ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
 <https://w3id.org/anak-velazquez/catlabs/:CleaningProcess> a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "CleaningProcess" ;
@@ -640,8 +836,32 @@ hzb_metadata_schema:ChemicalOrDrugOrTreatment a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Experiment" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:reaction> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:start_date> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst> ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:end_date> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:experiment_id> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:end_date> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:experiment_name> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:experiment_name> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:related_project> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:reaction> ],
@@ -650,55 +870,7 @@ hzb_metadata_schema:ChemicalOrDrugOrTreatment a owl:Class,
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:experiment_id> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:experiment_name> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:experiment_name> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/anak-velazquez/catlabs/:Catalyst> ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:end_date> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:experiment_id> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/anak-velazquez/catlabs/:Reaction> ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:reaction> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:end_date> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:sample> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:performed_by> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/anak-velazquez/core/:Project> ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:related_project> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:start_date> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/anak-velazquez/catlabs/:Scientist> ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:performed_by> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:related_project> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:start_date> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:start_date> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/anak-velazquez/core/:Sample> ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:sample> ],
@@ -706,20 +878,44 @@ hzb_metadata_schema:ChemicalOrDrugOrTreatment a owl:Class,
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:performed_by> ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:experiment_id> ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:experiment_name> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:sample> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:start_date> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/anak-velazquez/catlabs/:Catalyst> ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/anak-velazquez/catlabs/:Scientist> ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:performed_by> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/anak-velazquez/catlabs/:Reaction> ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:reaction> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
+            owl:allValuesFrom <https://w3id.org/anak-velazquez/core/:Project> ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:related_project> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:end_date> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:sample> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:related_project> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:start_date> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:experiment_name> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:related_project> ],
         <https://w3id.org/anak-velazquez/core/:NamedEntity> ;
     skos:definition "A systematic investigation designed to test hypotheses, gather data, or explore  scientific principles through controlled conditions." ;
     skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
@@ -742,32 +938,32 @@ hzb_metadata_schema:ChemicalOrDrugOrTreatment a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Entity" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:id> ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:name> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:name> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:iri> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:name> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:Uriorcurie ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:id> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:name> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:iri> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:iri> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:name> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:id> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:iri> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:iri> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:name> ] ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:id> ] ;
     skos:definition "An entity is anything that exists or has existed or will exist.  Model class for all things and informational relationships, real or imagined." ;
     skos:exactMatch BFO:0000001 ;
     skos:inScheme <https://w3id.org/anak-velazquez/core/> .
@@ -808,194 +1004,158 @@ PATO:0001422 a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "CatalysisSample" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_stability> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:surface_area> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:institution_abbreviation> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:eln_name> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_phase> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:pore_size_distribution> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:purity> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:chemical_composition> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:loading> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:sample_ELN_id> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_type> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:synthesis_method> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_phase> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:project_sample> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_components> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:surface_chemistry> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:pore_size_distribution> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:project_sample> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:eln_name> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:chemical__formula> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:support> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_activity> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:institution_abbreviation> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_type> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:synthesis_method> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_activity> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_name> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_structure> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:surface_area> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_components> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:loading> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_components> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:surface_chemistry> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:surface_area> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_type> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:creator_institution> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:support> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_activity> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:surface_area> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:particle_size> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:chemical__formula> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_name> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:purity> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:institution_name> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:creator_role> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:chemical_composition> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:creator_name> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:project_sample> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:eln_name> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:surface_chemistry> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:pore_size_distribution> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:chemical_composition> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_phase> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:laboratory_name> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_form> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:creator_institution> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_form> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_phase> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:institution_abbreviation> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_structure> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:loading> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:creator_role> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_stability> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_activity> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:synthesis_method> ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_structure> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/anak-velazquez/core/:Project> ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:project_sample> ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:project_sample> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:creator_role> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:active_site> ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:chemical__formula> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_name> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_components> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:purity> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_structure> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:creator_role> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_activity> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:morphology> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:institution_abbreviation> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:sample_ELN_id> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_stability> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_form> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:morphology> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:characterization_method> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:morphology> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_structure> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:creator_name> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:eln_name> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:surface_area> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:surface_chemistry> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:laboratory_name> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:support> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_type> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:characterization_method> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:loading> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:support> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:support> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_phase> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_stability> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:particle_size> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:chemical__formula> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:eln_name> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:eln_name> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:institution_name> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:crystalline_structure> ],
@@ -1004,88 +1164,124 @@ PATO:0001422 a owl:Class,
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:synthesis_method> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:loading> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:laboratory_name> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:active_site> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:support> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_name> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:characterization_method> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:laboratory_name> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:sample_ELN_id> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:surface_area> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:chemical_composition> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:crystalline_structure> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_name> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_type> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_stability> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:chemical__formula> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_form> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:purity> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:creator_name> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:creator_name> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:creator_institution> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:creator_name> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:chemical__formula> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:active_site> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:morphology> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:active_site> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_form> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_activity> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:laboratory_name> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:institution_name> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_stability> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:synthesis_method> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_form> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:characterization_method> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:laboratory_name> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:particle_size> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:pore_size_distribution> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:crystalline_structure> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:purity> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:creator_institution> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:creator_institution> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:active_site> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:characterization_method> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:chemical_composition> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_phase> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:institution_name> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_structure> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:particle_size> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:institution_name> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:active_site> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:creator_role> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:crystalline_structure> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:pore_size_distribution> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:crystalline_structure> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:particle_size> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:institution_name> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:loading> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:sample_ELN_id> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:pore_size_distribution> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:morphology> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:catalyst_components> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:institution_abbreviation> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:creator_name> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/catlabs/:sample_ELN_id> ],
         <https://w3id.org/anak-velazquez/core/:Sample> ;
     skos:definition "Core properties of a catalysis sample." ;
     skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
@@ -1095,6 +1291,13 @@ PATO:0001422 a owl:Class,
     rdfs:label "Scientist" ;
     rdfs:subClassOf <https://w3id.org/anak-velazquez/core/:Person> ;
     skos:definition "An individual involved in research activities, and their details that are important  to be referenced on experiments, projects, publivations, etc." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
+<https://w3id.org/anak-velazquez/catlabs/:Sputtering> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Sputtering" ;
+    rdfs:subClassOf <https://w3id.org/anak-velazquez/catlabs/:SynthesisProcess> ;
+    skos:definition "Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate. In sputtering, high-energy ions (usually from a plasma) bombard a target material,  causing atoms from the target to be ejected. These ejected atoms then travel through a vacuum chamber and settle on a substrate, forming a thin film. " ;
     skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
 
 <https://w3id.org/anak-velazquez/core/:collaborators> a owl:ObjectProperty,
@@ -1153,6 +1356,19 @@ PATO:0001422 a owl:Class,
     rdfs:label "Catalyst" ;
     rdfs:subClassOf <https://w3id.org/anak-velazquez/catlabs/:CatalysisSample> ;
     skos:definition "A substance or material that increases the rate of a chemical reaction.  Class including core properties of the synthesis characterization, and other experiments. " ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
+<https://w3id.org/anak-velazquez/catlabs/:DC_RF> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "DC_RF" ;
+    skos:definition "DC (Direct Current) and RF (Radio Frequency) refer to the types of electrical power used to energize the sputtering target, and the choice between them depends on the properties of the target material." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
+<https://w3id.org/anak-velazquez/catlabs/:SynthesisProcess> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "SynthesisProcess" ;
+    rdfs:subClassOf <https://w3id.org/anak-velazquez/catlabs/:Process> ;
+    skos:definition "A defined series of actions, steps, or operations undertaken to achieve a  synthesis process. Update this definition." ;
     skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
 
 <https://w3id.org/anak-velazquez/catlabs/:active_site> a owl:ObjectProperty,
@@ -1257,6 +1473,12 @@ PATO:0001422 a owl:Class,
     skos:definition "The ORCID Identifier is a unique string that identifies a researcher." ;
     skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
 
+<https://w3id.org/anak-velazquez/catlabs/:date> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "date" ;
+    skos:definition "Date on which the process was performed." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
 <https://w3id.org/anak-velazquez/catlabs/:eln_name> a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "eln_name" ;
@@ -1279,6 +1501,24 @@ PATO:0001422 a owl:Class,
         linkml:SlotDefinition ;
     rdfs:label "experiment_name" ;
     skos:definition "The ORCID Identifier is a unique string that identifies a researcher." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
+<https://w3id.org/anak-velazquez/catlabs/:flow_rate> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "flow_rate" ;
+    skos:definition "Rate at which gases (typically inert gases like argon or reactive gases like oxygen or nitrogen) are introduced into the sputtering chamber. It plays a crucial role in controlling the plasma formation and the quality of the deposited thin film." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
+<https://w3id.org/anak-velazquez/catlabs/:gas> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "gas" ;
+    skos:definition "Gas used to ionize and bombard the target material (usually Argon)." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
+<https://w3id.org/anak-velazquez/catlabs/:holder> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "holder" ;
+    skos:definition "Type of sample holder." ;
     skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
 
 <https://w3id.org/anak-velazquez/catlabs/:institution_abbreviation> a owl:ObjectProperty,
@@ -1311,6 +1551,18 @@ PATO:0001422 a owl:Class,
     skos:definition "The ORCID Identifier is a unique string that identifies a researcher." ;
     skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
 
+<https://w3id.org/anak-velazquez/catlabs/:notes> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "notes" ;
+    skos:definition "Any notes for supporting the documentation of the process." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
+<https://w3id.org/anak-velazquez/catlabs/:orientation> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "orientation" ;
+    skos:definition "Refers to the spatial alignment and positioning of the target within the sputtering chamber. The target is typically positioned at an angle relative to the substrate. This angle can affect the trajectory of the sputtered atoms and the uniformity of deposition on the substrate." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
 <https://w3id.org/anak-velazquez/catlabs/:particle_size> a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "particle_size" ;
@@ -1329,6 +1581,12 @@ PATO:0001422 a owl:Class,
     skos:definition "The ORCID Identifier is a unique string that identifies a researcher." ;
     skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
 
+<https://w3id.org/anak-velazquez/catlabs/:process_user> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "process_user" ;
+    skos:definition "Person performing the process on the sample." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
 <https://w3id.org/anak-velazquez/catlabs/:project_sample> a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "project_sample" ;
@@ -1339,6 +1597,12 @@ PATO:0001422 a owl:Class,
         linkml:SlotDefinition ;
     rdfs:label "purity" ;
     skos:definition "The ORCID Identifier is a unique string that identifies a researcher." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
+<https://w3id.org/anak-velazquez/catlabs/:ramp> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "ramp" ;
+    skos:definition "Controlled increase or decrease of temperature." ;
     skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
 
 <https://w3id.org/anak-velazquez/catlabs/:reaction> a owl:ObjectProperty,
@@ -1353,6 +1617,12 @@ PATO:0001422 a owl:Class,
     skos:definition "The ORCID Identifier is a unique string that identifies a researcher." ;
     skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
 
+<https://w3id.org/anak-velazquez/catlabs/:rotation> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "rotation" ;
+    skos:definition "Angular velocity at which the target material (or in some cases, the substrate) is rotated during the sputtering process." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
 <https://w3id.org/anak-velazquez/catlabs/:sample> a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "sample" ;
@@ -1365,10 +1635,46 @@ PATO:0001422 a owl:Class,
     skos:definition "The Identifier is a unique string that identifies a resource (i.e., DOI)." ;
     skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
 
+<https://w3id.org/anak-velazquez/catlabs/:sample_owner> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sample_owner" ;
+    skos:definition "Person owning the sample." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
+<https://w3id.org/anak-velazquez/catlabs/:sputter_pressure> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sputter_pressure" ;
+    skos:definition "Pressure of the gas (typically argon) inside the vacuum chamber during the sputtering process. This pressure is usually measured in millibars (mbar), and it plays a critical role in determining the behavior of the plasma, the ion bombardment, and the deposition quality." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
+<https://w3id.org/anak-velazquez/catlabs/:sputtering_prevac_id> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sputtering_prevac_id" ;
+    skos:definition "Identifier of the sputtering process in the prevac machine." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
 <https://w3id.org/anak-velazquez/catlabs/:start_date> a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "start_date" ;
     skos:definition "The ORCID Identifier is a unique string that identifies a researcher." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
+<https://w3id.org/anak-velazquez/catlabs/:step_number> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "step_number" ;
+    skos:definition "Many consecutive processes or steps of sputtering can be performed to layer the materials. This parameter documents the number of step or id." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
+<https://w3id.org/anak-velazquez/catlabs/:substrate_id> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "substrate_id" ;
+    skos:definition "Identifier of the substrate material (usually Silicon)." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
+<https://w3id.org/anak-velazquez/catlabs/:substrate_temperature> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "substrate_temperature" ;
+    skos:definition "Temperature of the substrate onto which the thin film is being deposited during the sputtering process. This parameter is crucial because it can significantly influence the properties of the deposited film, such as its microstructure, morphology, adhesion, and overall performance." ;
     skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
 
 <https://w3id.org/anak-velazquez/catlabs/:support> a owl:ObjectProperty,
@@ -1393,6 +1699,36 @@ PATO:0001422 a owl:Class,
         linkml:SlotDefinition ;
     rdfs:label "synthesis_method" ;
     skos:definition "The ORCID Identifier is a unique string that identifies a researcher." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
+<https://w3id.org/anak-velazquez/catlabs/:target> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "target" ;
+    skos:definition "Target is the material that gets bombarded by ions and subsequently ejected (sputtered) onto a substrate to form a thin film. (e.g. Al, Ti, Pt, etc)." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
+<https://w3id.org/anak-velazquez/catlabs/:target_position> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "target_position" ;
+    skos:definition "Position of the target source. In this machine case, from 1-8." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
+<https://w3id.org/anak-velazquez/catlabs/:target_power> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "target_power" ;
+    skos:definition "The amount of electrical power applied to the sputtering target to generate the plasma and eject atoms from the target surface." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
+<https://w3id.org/anak-velazquez/catlabs/:time> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "time" ;
+    skos:definition "Duration time of the sputtering step/process." ;
+    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
+
+<https://w3id.org/anak-velazquez/catlabs/:z_position> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "z_position" ;
+    skos:definition "Vertical position of the substrate or the target material in the sputtering chamber." ;
     skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
 
 <https://w3id.org/anak-velazquez/core/:AlternateIdentifier> a owl:ObjectProperty,
@@ -1448,109 +1784,109 @@ PATO:0001422 a owl:Class,
     rdfs:label "Project" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:acronym> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:assigned_lab> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:end_date> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:start_date> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:status> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:institutions> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:research_area> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:assigned_lab> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:start_date> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:research_area> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:project_name> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:end_date> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:research_area> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:project_id> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:project_code> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:project_id> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:assigned_lab> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:start_date> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:institutions> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:project_name> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:principal_investigator> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:acronym> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:project_name> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:status> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:status> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/anak-velazquez/catlabs/:Scientist> ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:principal_investigator> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:institutions> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:end_date> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:acronym> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:principal_investigator> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/anak-velazquez/core/:Person> ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:collaborators> ],
         [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:project_id> ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:project_name> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:acronym> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:institutions> ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:status> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:project_id> ],
+        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:start_date> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:research_area> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:project_code> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:project_id> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:principal_investigator> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:assigned_lab> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:project_name> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:end_date> ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:project_name> ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:project_code> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:start_date> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:start_date> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:acronym> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:project_code> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:research_area> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:assigned_lab> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/anak-velazquez/catlabs/:Scientist> ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:principal_investigator> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:status> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:research_area> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:collaborators> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:end_date> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:status> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:project_code> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:principal_investigator> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:assigned_lab> ],
         <https://w3id.org/anak-velazquez/core/:NamedEntity> ;
     skos:definition "A research activity or initiative with defined objectives, funding, and timelines, involving one or more researchers, designed to generate data, publications, and other outputs. The project may involve multiple experiments, datasets, and contributors, and can be linked to specific funding sources and institutions." ;
     skos:inScheme <https://w3id.org/anak-velazquez/core/> .
@@ -1589,47 +1925,41 @@ PATO:0001422 a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Sample" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:sample_name> ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:phase> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:size> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:composition> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:preparation_method> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:batch_number> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:phase> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:batch_number> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:sample_description> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:phase> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:size> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:batch_number> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:sample_id> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:sample_id> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:batch_number> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:sample_id> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:preparation_method> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:sample_name> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:composition> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:phase> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:preparation_method> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:size> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:phase> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:sample_name> ],
@@ -1638,28 +1968,34 @@ PATO:0001422 a owl:Class,
             owl:onProperty <https://w3id.org/anak-velazquez/core/:composition> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:sample_name> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:size> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:phase> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:sample_description> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:sample_name> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:batch_number> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:sample_description> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:size> ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:sample_id> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:composition> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:preparation_method> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:preparation_method> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:sample_description> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:sample_id> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:size> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:sample_description> ],
         <https://w3id.org/anak-velazquez/core/:NamedEntity> ;
     skos:definition "Core properties of a sample, discipline agnostic." ;
     skos:inScheme <https://w3id.org/anak-velazquez/core/> .
@@ -1710,7 +2046,7 @@ PATO:0001422 a owl:Class,
 <https://w3id.org/anak-velazquez/core/:birth_date> a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "birth_date" ;
-    rdfs:range linkml:Date ;
+    rdfs:range linkml:date ;
     skos:definition "Date on which a person is born" ;
     skos:inScheme <https://w3id.org/anak-velazquez/core/> .
 
@@ -2026,13 +2362,6 @@ PATO:0001422 a owl:Class,
     skos:definition "Area of expertise (e.g. “Thermo-Catalysis”)." ;
     skos:inScheme <https://w3id.org/anak-velazquez/core/> .
 
-<https://w3id.org/anak-velazquez/catlabs/:SynthesisProcess> a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "SynthesisProcess" ;
-    rdfs:subClassOf <https://w3id.org/anak-velazquez/catlabs/:Process> ;
-    skos:definition "A defined series of actions, steps, or operations undertaken to achieve a  synthesis process. Update this definition." ;
-    skos:inScheme <https://w3id.org/anak-velazquez/catlabs/> .
-
 <https://w3id.org/anak-velazquez/catlabs/:entries> a owl:ObjectProperty,
         linkml:SlotDefinition .
 
@@ -2040,140 +2369,140 @@ PATO:0001422 a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Person" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:title> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:gender> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:role> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:last_name> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:institution> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:primary_email> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:role> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:first_name> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:laboratory_name> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:projects> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:institution> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:birth_date> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:department> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:institution> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:orcid_id> ],
         [ a owl:Restriction ;
             owl:allValuesFrom hzb_metadata_schema:GenderEnum ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:gender> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:institution> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:age_in_years> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:laboratory_name> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:has_employment_history> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:person_id> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Date ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:birth_date> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:role> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:research_focus> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:last_name> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:orcid_id> ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:laboratory_name> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/anak-velazquez/core/:Project> ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:projects> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:title> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
+            owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:first_name> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:laboratory_name> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:research_focus> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:department> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:person_id> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:first_name> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:birth_date> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:primary_email> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:birth_date> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:laboratory_name> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:department> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:person_id> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:research_focus> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:department> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:age_in_years> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:projects> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:title> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:research_focus> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:first_name> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:gender> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:orcid_id> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:orcid_id> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:title> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:last_name> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:research_focus> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:primary_email> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:first_name> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:institution> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:Integer ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:age_in_years> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:has_employment_history> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:primary_email> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:has_employment_history> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:person_id> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:laboratory_name> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:last_name> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:date ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:birth_date> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:orcid_id> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:title> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:department> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:person_id> ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:orcid_id> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:primary_email> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:role> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:institution> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:gender> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:age_in_years> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:birth_date> ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:last_name> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:research_focus> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:title> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:role> ],
@@ -2219,7 +2548,7 @@ hzb_metadata_schema:GenderEnum a owl:Class,
     rdfs:label "NamedEntity" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:name> ],
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:category> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:name> ],
@@ -2227,14 +2556,14 @@ hzb_metadata_schema:GenderEnum a owl:Class,
             owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:category> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:category> ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:name> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/anak-velazquez/core/:category> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
             owl:onProperty <https://w3id.org/anak-velazquez/core/:name> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/anak-velazquez/core/:category> ],
         <https://w3id.org/anak-velazquez/core/:Entity> ;
     skos:definition "a databased entity or concept/class" ;
     skos:exactMatch <STY:T071>,

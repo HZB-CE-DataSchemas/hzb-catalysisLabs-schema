@@ -1918,6 +1918,279 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "sputteringPrevac__sputtering_prevac_id",
+      "description": "Identifier of the sputtering process in the prevac machine.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/sputtering_prevac_id",
+      "alias": "sputtering_prevac_id",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__substrate_id",
+      "description": "Identifier of the substrate material (usually Silicon).",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/substrate_id",
+      "alias": "substrate_id",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__sample_owner",
+      "description": "Person owning the sample.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/sample_owner",
+      "alias": "sample_owner",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__process_user",
+      "description": "Person performing the process on the sample.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/process_user",
+      "alias": "process_user",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__date",
+      "description": "Date on which the process was performed.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/date",
+      "alias": "date",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__holder",
+      "description": "Type of sample holder.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/holder",
+      "alias": "holder",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__notes",
+      "description": "Any notes for supporting the documentation of the process.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/notes",
+      "alias": "notes",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__step_number",
+      "description": "Many consecutive processes or steps of sputtering can be performed to layer the materials. This parameter documents the number of step or id.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/step_number",
+      "alias": "step_number",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__orientation",
+      "description": "Refers to the spatial alignment and positioning of the target within the sputtering chamber. The target is typically positioned at an angle relative to the substrate. This angle can affect the trajectory of the sputtered atoms and the uniformity of deposition on the substrate.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/orientation",
+      "alias": "orientation",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__sputter_pressure",
+      "description": "Pressure of the gas (typically argon) inside the vacuum chamber during the sputtering process. This pressure is usually measured in millibars (mbar), and it plays a critical role in determining the behavior of the plasma, the ion bombardment, and the deposition quality.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/sputter_pressure",
+      "alias": "sputter_pressure",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__substrate_temperature",
+      "description": "Temperature of the substrate onto which the thin film is being deposited during the sputtering process. This parameter is crucial because it can significantly influence the properties of the deposited film, such as its microstructure, morphology, adhesion, and overall performance.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/substrate_temperature",
+      "alias": "substrate_temperature",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__ramp",
+      "description": "Controlled increase or decrease of temperature.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/ramp",
+      "alias": "ramp",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__rotation",
+      "description": "Angular velocity at which the target material (or in some cases, the substrate) is rotated during the sputtering process.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/rotation",
+      "alias": "rotation",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__z_position",
+      "description": "Vertical position of the substrate or the target material in the sputtering chamber.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/z_position",
+      "alias": "z_position",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__gas",
+      "description": "Gas used to ionize and bombard the target material (usually Argon).",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/gas",
+      "alias": "gas",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__flow_rate",
+      "description": "Rate at which gases (typically inert gases like argon or reactive gases like oxygen or nitrogen) are introduced into the sputtering chamber. It plays a crucial role in controlling the plasma formation and the quality of the deposited thin film.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/flow_rate",
+      "alias": "flow_rate",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__target_position",
+      "description": "Position of the target source. In this machine case, from 1-8.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/target_position",
+      "alias": "target_position",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__target",
+      "description": "Target is the material that gets bombarded by ions and subsequently ejected (sputtered) onto a substrate to form a thin film. (e.g. Al, Ti, Pt, etc).",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/target",
+      "alias": "target",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__target_power",
+      "description": "The amount of electrical power applied to the sputtering target to generate the plasma and eject atoms from the target surface.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/target_power",
+      "alias": "target_power",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__DC_RF",
+      "description": "DC (Direct Current) and RF (Radio Frequency) refer to the types of electrical power used to energize the sputtering target, and the choice between them depends on the properties of the target material.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/DC_RF",
+      "alias": "DC_RF",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__time",
+      "description": "Duration time of the sputtering step/process.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/time",
+      "alias": "time",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "experiment__experiment_id",
       "description": "The Identifier is a unique string that identifies a resource (i.e., DOI).",
       "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
@@ -3355,6 +3628,38 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "ALD",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//ALD",
+      "description": "Atomic Layer Deposition (ALD) is a thin-film deposition technique that enables precise control over film thickness at the atomic level.  This method is highly valued for its ability to deposit ultra-thin, conformal films with excellent uniformity, even on complex 3D surfaces.  ",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "SynthesisProcess",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/ALD",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ALDBeneQ",
+      "definition_uri": "https://w3id.org/anak-velazquez/catlabs//ALDBeneQ",
+      "description": "Atomic Layer Deposition (ALD) performed in BeneQ device.  ",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "is_a": "ALD",
+      "slots": [
+        "id",
+        "iri",
+        "name",
+        "NamedEntity_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/anak-velazquez/catlabs/ALDBeneQ",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "CVD",
       "definition_uri": "https://w3id.org/anak-velazquez/catlabs//CVD",
       "description": "Chemical Vapor Deposition (CVD) is a process used to produce thin films and coatings by depositing  material onto a substrate through chemical reactions of vapor-phase precursors. ",
@@ -3439,14 +3744,163 @@
       "definition_uri": "https://w3id.org/anak-velazquez/catlabs//SputteringPrevac",
       "description": "Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly  with the Prevac sputtering machine.  In sputtering, high-energy ions (usually from a plasma) bombard a target material,  causing atoms from the target to be ejected. These ejected atoms then travel through a vacuum chamber and settle on a substrate, forming a thin film. ",
       "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
-      "is_a": "SynthesisProcess",
+      "is_a": "Sputtering",
       "slots": [
         "id",
         "iri",
         "name",
-        "NamedEntity_category"
+        "NamedEntity_category",
+        "sputteringPrevac__sputtering_prevac_id",
+        "sputteringPrevac__substrate_id",
+        "sputteringPrevac__sample_owner",
+        "sputteringPrevac__process_user",
+        "sputteringPrevac__date",
+        "sputteringPrevac__holder",
+        "sputteringPrevac__notes",
+        "sputteringPrevac__step_number",
+        "sputteringPrevac__orientation",
+        "sputteringPrevac__sputter_pressure",
+        "sputteringPrevac__substrate_temperature",
+        "sputteringPrevac__ramp",
+        "sputteringPrevac__rotation",
+        "sputteringPrevac__z_position",
+        "sputteringPrevac__gas",
+        "sputteringPrevac__flow_rate",
+        "sputteringPrevac__target_position",
+        "sputteringPrevac__target",
+        "sputteringPrevac__target_power",
+        "sputteringPrevac__DC_RF",
+        "sputteringPrevac__time"
       ],
       "slot_usage": {},
+      "attributes": [
+        {
+          "name": "sputtering_prevac_id",
+          "description": "Identifier of the sputtering process in the prevac machine.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "substrate_id",
+          "description": "Identifier of the substrate material (usually Silicon).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "sample_owner",
+          "description": "Person owning the sample.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "process_user",
+          "description": "Person performing the process on the sample.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "date",
+          "description": "Date on which the process was performed.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "holder",
+          "description": "Type of sample holder.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "notes",
+          "description": "Any notes for supporting the documentation of the process.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "step_number",
+          "description": "Many consecutive processes or steps of sputtering can be performed to layer the materials. This parameter documents the number of step or id.",
+          "range": "integer",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "orientation",
+          "description": "Refers to the spatial alignment and positioning of the target within the sputtering chamber. The target is typically positioned at an angle relative to the substrate. This angle can affect the trajectory of the sputtered atoms and the uniformity of deposition on the substrate.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "sputter_pressure",
+          "description": "Pressure of the gas (typically argon) inside the vacuum chamber during the sputtering process. This pressure is usually measured in millibars (mbar), and it plays a critical role in determining the behavior of the plasma, the ion bombardment, and the deposition quality.",
+          "range": "float",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "substrate_temperature",
+          "description": "Temperature of the substrate onto which the thin film is being deposited during the sputtering process. This parameter is crucial because it can significantly influence the properties of the deposited film, such as its microstructure, morphology, adhesion, and overall performance.",
+          "range": "float",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "ramp",
+          "description": "Controlled increase or decrease of temperature.",
+          "range": "float",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "rotation",
+          "description": "Angular velocity at which the target material (or in some cases, the substrate) is rotated during the sputtering process.",
+          "range": "float",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "z_position",
+          "description": "Vertical position of the substrate or the target material in the sputtering chamber.",
+          "range": "float",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "gas",
+          "description": "Gas used to ionize and bombard the target material (usually Argon).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "flow_rate",
+          "description": "Rate at which gases (typically inert gases like argon or reactive gases like oxygen or nitrogen) are introduced into the sputtering chamber. It plays a crucial role in controlling the plasma formation and the quality of the deposited thin film.",
+          "range": "float",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "target_position",
+          "description": "Position of the target source. In this machine case, from 1-8.",
+          "range": "integer",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "target",
+          "description": "Target is the material that gets bombarded by ions and subsequently ejected (sputtered) onto a substrate to form a thin film. (e.g. Al, Ti, Pt, etc).",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "target_power",
+          "description": "The amount of electrical power applied to the sputtering target to generate the plasma and eject atoms from the target surface.",
+          "range": "float",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "DC_RF",
+          "description": "DC (Direct Current) and RF (Radio Frequency) refer to the types of electrical power used to energize the sputtering target, and the choice between them depends on the properties of the target material.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "time",
+          "description": "Duration time of the sputtering step/process.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        }
+      ],
       "class_uri": "https://w3id.org/anak-velazquez/catlabs/SputteringPrevac",
       "@type": "ClassDefinition"
     },
@@ -3455,7 +3909,7 @@
       "definition_uri": "https://w3id.org/anak-velazquez/catlabs//SputteringVonAdenne",
       "description": "Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly  with the von Adenne (PC3 chamber) machine.  ",
       "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
-      "is_a": "SynthesisProcess",
+      "is_a": "Sputtering",
       "slots": [
         "id",
         "iri",
@@ -3859,7 +4313,7 @@
   "source_file": "hzb_catalysislabs_schema.yaml",
   "source_file_date": "2024-10-01T15:18:38",
   "source_file_size": 1950,
-  "generation_date": "2024-10-15T16:44:36",
+  "generation_date": "2024-10-16T11:38:35",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/hzb_catalysislabs_schema.context.jsonld",

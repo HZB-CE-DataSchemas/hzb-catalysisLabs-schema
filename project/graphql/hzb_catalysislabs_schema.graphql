@@ -1,4 +1,20 @@
 # metamodel_version: 1.7.0
+type ALD
+  {
+    id: Uriorcurie!
+    iri: String
+    name: String
+    category: String
+  }
+
+type ALDBeneQ
+  {
+    id: Uriorcurie!
+    iri: String
+    name: String
+    category: String
+  }
+
 type AnalyticsProcess
   {
     id: Uriorcurie!
@@ -585,6 +601,27 @@ type SputteringPrevac
     iri: String
     name: String
     category: String
+    sputteringPrevacId: String
+    substrateId: String
+    sampleOwner: String
+    processUser: String
+    date: String
+    holder: String
+    notes: String
+    stepNumber: Integer
+    orientation: String
+    sputterPressure: Float
+    substrateTemperature: Float
+    ramp: Float
+    rotation: Float
+    zPosition: Float
+    gas: String
+    flowRate: Float
+    targetPosition: Integer
+    target: String
+    targetPower: Float
+    dCRF: String
+    time: String
   }
 
 type SputteringVonAdenne

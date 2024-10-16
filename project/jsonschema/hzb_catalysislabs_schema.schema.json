@@ -1,5 +1,63 @@
 {
     "$defs": {
+        "ALD": {
+            "additionalProperties": false,
+            "description": "Atomic Layer Deposition (ALD) is a thin-film deposition technique that enables precise control over film thickness at the atomic level.  This method is highly valued for its ability to deposit ultra-thin, conformal films with excellent uniformity, even on complex 3D surfaces.",
+            "properties": {
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "iri": {
+                    "description": "Internationalized Resource Identifier",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "ALD",
+            "type": "object"
+        },
+        "ALDBeneQ": {
+            "additionalProperties": false,
+            "description": "Atomic Layer Deposition (ALD) performed in BeneQ device.",
+            "properties": {
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "iri": {
+                    "description": "Internationalized Resource Identifier",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "ALDBeneQ",
+            "type": "object"
+        },
         "AnalyticsProcess": {
             "additionalProperties": false,
             "description": "A defined series of actions, steps, or operations undertaken to achieve a  analysis of a Catalysis sample process.",
@@ -3343,6 +3401,41 @@
             "additionalProperties": false,
             "description": "Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly  with the Prevac sputtering machine.  In sputtering, high-energy ions (usually from a plasma) bombard a target material,  causing atoms from the target to be ejected. These ejected atoms then travel through a vacuum chamber and settle on a substrate, forming a thin film.",
             "properties": {
+                "DC_RF": {
+                    "description": "DC (Direct Current) and RF (Radio Frequency) refer to the types of electrical power used to energize the sputtering target, and the choice between them depends on the properties of the target material.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "date": {
+                    "description": "Date on which the process was performed.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "flow_rate": {
+                    "description": "Rate at which gases (typically inert gases like argon or reactive gases like oxygen or nitrogen) are introduced into the sputtering chamber. It plays a crucial role in controlling the plasma formation and the quality of the deposited thin film.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "gas": {
+                    "description": "Gas used to ionize and bombard the target material (usually Argon).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "holder": {
+                    "description": "Type of sample holder.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "id": {
                     "description": "A unique identifier for a thing",
                     "type": "string"
@@ -3358,6 +3451,118 @@
                     "description": "A human-readable name for a thing",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "notes": {
+                    "description": "Any notes for supporting the documentation of the process.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "orientation": {
+                    "description": "Refers to the spatial alignment and positioning of the target within the sputtering chamber. The target is typically positioned at an angle relative to the substrate. This angle can affect the trajectory of the sputtered atoms and the uniformity of deposition on the substrate.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "process_user": {
+                    "description": "Person performing the process on the sample.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ramp": {
+                    "description": "Controlled increase or decrease of temperature.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "rotation": {
+                    "description": "Angular velocity at which the target material (or in some cases, the substrate) is rotated during the sputtering process.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "sample_owner": {
+                    "description": "Person owning the sample.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sputter_pressure": {
+                    "description": "Pressure of the gas (typically argon) inside the vacuum chamber during the sputtering process. This pressure is usually measured in millibars (mbar), and it plays a critical role in determining the behavior of the plasma, the ion bombardment, and the deposition quality.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "sputtering_prevac_id": {
+                    "description": "Identifier of the sputtering process in the prevac machine.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "step_number": {
+                    "description": "Many consecutive processes or steps of sputtering can be performed to layer the materials. This parameter documents the number of step or id.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "substrate_id": {
+                    "description": "Identifier of the substrate material (usually Silicon).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "substrate_temperature": {
+                    "description": "Temperature of the substrate onto which the thin film is being deposited during the sputtering process. This parameter is crucial because it can significantly influence the properties of the deposited film, such as its microstructure, morphology, adhesion, and overall performance.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "target": {
+                    "description": "Target is the material that gets bombarded by ions and subsequently ejected (sputtered) onto a substrate to form a thin film. (e.g. Al, Ti, Pt, etc).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "target_position": {
+                    "description": "Position of the target source. In this machine case, from 1-8.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "target_power": {
+                    "description": "The amount of electrical power applied to the sputtering target to generate the plasma and eject atoms from the target surface.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "time": {
+                    "description": "Duration time of the sputtering step/process.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "z_position": {
+                    "description": "Vertical position of the substrate or the target material in the sputtering chamber.",
+                    "type": [
+                        "number",
                         "null"
                     ]
                 }

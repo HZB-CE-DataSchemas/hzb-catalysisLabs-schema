@@ -208,11 +208,53 @@
       Sputtering &lt;|-- SputteringPrevac
         click Sputtering href "../Sputtering"
 
+      SputteringPrevac : date
+
+      SputteringPrevac : DC_RF
+
+      SputteringPrevac : flow_rate
+
+      SputteringPrevac : gas
+
+      SputteringPrevac : holder
+
       SputteringPrevac : id
 
       SputteringPrevac : iri
 
       SputteringPrevac : name
+
+      SputteringPrevac : notes
+
+      SputteringPrevac : orientation
+
+      SputteringPrevac : process_user
+
+      SputteringPrevac : ramp
+
+      SputteringPrevac : rotation
+
+      SputteringPrevac : sample_owner
+
+      SputteringPrevac : sputter_pressure
+
+      SputteringPrevac : sputtering_prevac_id
+
+      SputteringPrevac : step_number
+
+      SputteringPrevac : substrate_id
+
+      SputteringPrevac : substrate_temperature
+
+      SputteringPrevac : target
+
+      SputteringPrevac : target_position
+
+      SputteringPrevac : target_power
+
+      SputteringPrevac : time
+
+      SputteringPrevac : z_position
 
 
 </div>
@@ -246,6 +288,132 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../sputtering_prevac_id/">sputtering_prevac_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Identifier of the sputtering process in the prevac machine</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../substrate_id/">substrate_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Identifier of the substrate material (usually Silicon)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sample_owner/">sample_owner</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Person owning the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../process_user/">process_user</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Person performing the process on the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../date/">date</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Date on which the process was performed</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../holder/">holder</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Type of sample holder</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../notes/">notes</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Any notes for supporting the documentation of the process</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../step_number/">step_number</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Many consecutive processes or steps of sputtering can be performed to layer t...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../orientation/">orientation</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Refers to the spatial alignment and positioning of the target within the sput...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sputter_pressure/">sputter_pressure</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Pressure of the gas (typically argon) inside the vacuum chamber during the sp...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../substrate_temperature/">substrate_temperature</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Temperature of the substrate onto which the thin film is being deposited duri...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ramp/">ramp</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Controlled increase or decrease of temperature</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rotation/">rotation</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Angular velocity at which the target material (or in some cases, the substrat...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../z_position/">z_position</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Vertical position of the substrate or the target material in the sputtering c...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../gas/">gas</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Gas used to ionize and bombard the target material (usually Argon)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../flow_rate/">flow_rate</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Rate at which gases (typically inert gases like argon or reactive gases like ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../target_position/">target_position</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Position of the target source</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../target/">target</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Target is the material that gets bombarded by ions and subsequently ejected (...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../target_power/">target_power</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>The amount of electrical power applied to the sputtering target to generate t...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../DC_RF/">DC_RF</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>DC (Direct Current) and RF (Radio Frequency) refer to the types of electrical...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../time/">time</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Duration time of the sputtering step/process</td>
+<td>direct</td>
+</tr>
 <tr>
 <td><a href="../name/">name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
@@ -302,6 +470,203 @@ description: 'Physical vapor deposition (PVD) technique used to deposit thin fil
   chamber and settle on a substrate, forming a thin film. '
 from_schema: https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema
 is_a: Sputtering
+attributes:
+  sputtering_prevac_id:
+    name: sputtering_prevac_id
+    description: Identifier of the sputtering process in the prevac machine.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: string
+    required: false
+  substrate_id:
+    name: substrate_id
+    description: Identifier of the substrate material (usually Silicon).
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: string
+    required: false
+  sample_owner:
+    name: sample_owner
+    description: Person owning the sample.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: string
+    required: false
+  process_user:
+    name: process_user
+    description: Person performing the process on the sample.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: string
+    required: false
+  date:
+    name: date
+    description: Date on which the process was performed.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: string
+    required: false
+  holder:
+    name: holder
+    description: Type of sample holder.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: string
+    required: false
+  notes:
+    name: notes
+    description: Any notes for supporting the documentation of the process.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: string
+    required: false
+  step_number:
+    name: step_number
+    description: Many consecutive processes or steps of sputtering can be performed
+      to layer the materials. This parameter documents the number of step or id.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: integer
+    required: false
+  orientation:
+    name: orientation
+    description: Refers to the spatial alignment and positioning of the target within
+      the sputtering chamber. The target is typically positioned at an angle relative
+      to the substrate. This angle can affect the trajectory of the sputtered atoms
+      and the uniformity of deposition on the substrate.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: string
+  sputter_pressure:
+    name: sputter_pressure
+    description: Pressure of the gas (typically argon) inside the vacuum chamber during
+      the sputtering process. This pressure is usually measured in millibars (mbar),
+      and it plays a critical role in determining the behavior of the plasma, the
+      ion bombardment, and the deposition quality.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: float
+  substrate_temperature:
+    name: substrate_temperature
+    description: Temperature of the substrate onto which the thin film is being deposited
+      during the sputtering process. This parameter is crucial because it can significantly
+      influence the properties of the deposited film, such as its microstructure,
+      morphology, adhesion, and overall performance.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: float
+  ramp:
+    name: ramp
+    description: Controlled increase or decrease of temperature.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: float
+  rotation:
+    name: rotation
+    description: Angular velocity at which the target material (or in some cases,
+      the substrate) is rotated during the sputtering process.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: float
+  z_position:
+    name: z_position
+    description: Vertical position of the substrate or the target material in the
+      sputtering chamber.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: float
+  gas:
+    name: gas
+    description: Gas used to ionize and bombard the target material (usually Argon).
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: string
+  flow_rate:
+    name: flow_rate
+    description: Rate at which gases (typically inert gases like argon or reactive
+      gases like oxygen or nitrogen) are introduced into the sputtering chamber. It
+      plays a crucial role in controlling the plasma formation and the quality of
+      the deposited thin film.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: float
+  target_position:
+    name: target_position
+    description: Position of the target source. In this machine case, from 1-8.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: integer
+  target:
+    name: target
+    description: Target is the material that gets bombarded by ions and subsequently
+      ejected (sputtered) onto a substrate to form a thin film. (e.g. Al, Ti, Pt,
+      etc).
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: string
+  target_power:
+    name: target_power
+    description: The amount of electrical power applied to the sputtering target to
+      generate the plasma and eject atoms from the target surface.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: float
+  DC_RF:
+    name: DC_RF
+    description: DC (Direct Current) and RF (Radio Frequency) refer to the types of
+      electrical power used to energize the sputtering target, and the choice between
+      them depends on the properties of the target material.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: string
+  time:
+    name: time
+    description: Duration time of the sputtering step/process.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: string
 
 </code></pre>
 </details>
@@ -316,6 +681,244 @@ description: 'Physical vapor deposition (PVD) technique used to deposit thin fil
 from_schema: https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema
 is_a: Sputtering
 attributes:
+  sputtering_prevac_id:
+    name: sputtering_prevac_id
+    description: Identifier of the sputtering process in the prevac machine.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: sputtering_prevac_id
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: string
+    required: false
+  substrate_id:
+    name: substrate_id
+    description: Identifier of the substrate material (usually Silicon).
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: substrate_id
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: string
+    required: false
+  sample_owner:
+    name: sample_owner
+    description: Person owning the sample.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: sample_owner
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: string
+    required: false
+  process_user:
+    name: process_user
+    description: Person performing the process on the sample.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: process_user
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: string
+    required: false
+  date:
+    name: date
+    description: Date on which the process was performed.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: date
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: string
+    required: false
+  holder:
+    name: holder
+    description: Type of sample holder.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: holder
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: string
+    required: false
+  notes:
+    name: notes
+    description: Any notes for supporting the documentation of the process.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: notes
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: string
+    required: false
+  step_number:
+    name: step_number
+    description: Many consecutive processes or steps of sputtering can be performed
+      to layer the materials. This parameter documents the number of step or id.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: step_number
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: integer
+    required: false
+  orientation:
+    name: orientation
+    description: Refers to the spatial alignment and positioning of the target within
+      the sputtering chamber. The target is typically positioned at an angle relative
+      to the substrate. This angle can affect the trajectory of the sputtered atoms
+      and the uniformity of deposition on the substrate.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: orientation
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: string
+  sputter_pressure:
+    name: sputter_pressure
+    description: Pressure of the gas (typically argon) inside the vacuum chamber during
+      the sputtering process. This pressure is usually measured in millibars (mbar),
+      and it plays a critical role in determining the behavior of the plasma, the
+      ion bombardment, and the deposition quality.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: sputter_pressure
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: float
+  substrate_temperature:
+    name: substrate_temperature
+    description: Temperature of the substrate onto which the thin film is being deposited
+      during the sputtering process. This parameter is crucial because it can significantly
+      influence the properties of the deposited film, such as its microstructure,
+      morphology, adhesion, and overall performance.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: substrate_temperature
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: float
+  ramp:
+    name: ramp
+    description: Controlled increase or decrease of temperature.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: ramp
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: float
+  rotation:
+    name: rotation
+    description: Angular velocity at which the target material (or in some cases,
+      the substrate) is rotated during the sputtering process.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: rotation
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: float
+  z_position:
+    name: z_position
+    description: Vertical position of the substrate or the target material in the
+      sputtering chamber.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: z_position
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: float
+  gas:
+    name: gas
+    description: Gas used to ionize and bombard the target material (usually Argon).
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: gas
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: string
+  flow_rate:
+    name: flow_rate
+    description: Rate at which gases (typically inert gases like argon or reactive
+      gases like oxygen or nitrogen) are introduced into the sputtering chamber. It
+      plays a crucial role in controlling the plasma formation and the quality of
+      the deposited thin film.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: flow_rate
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: float
+  target_position:
+    name: target_position
+    description: Position of the target source. In this machine case, from 1-8.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: target_position
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: integer
+  target:
+    name: target
+    description: Target is the material that gets bombarded by ions and subsequently
+      ejected (sputtered) onto a substrate to form a thin film. (e.g. Al, Ti, Pt,
+      etc).
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: target
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: string
+  target_power:
+    name: target_power
+    description: The amount of electrical power applied to the sputtering target to
+      generate the plasma and eject atoms from the target surface.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: target_power
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: float
+  DC_RF:
+    name: DC_RF
+    description: DC (Direct Current) and RF (Radio Frequency) refer to the types of
+      electrical power used to energize the sputtering target, and the choice between
+      them depends on the properties of the target material.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: DC_RF
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: string
+  time:
+    name: time
+    description: Duration time of the sputtering step/process.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: time
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: string
   name:
     name: name
     description: A human-readable name for a thing

@@ -208,6 +208,8 @@
       Sputtering &lt;|-- SputteringPrevac
         click Sputtering href "../Sputtering"
 
+      SputteringPrevac : base_pressure
+
       SputteringPrevac : date
 
       SputteringPrevac : DC_RF
@@ -240,6 +242,8 @@
 
       SputteringPrevac : sputtering_prevac_id
 
+      SputteringPrevac : step_notes
+
       SputteringPrevac : step_number
 
       SputteringPrevac : substrate_id
@@ -251,6 +255,8 @@
       SputteringPrevac : target_position
 
       SputteringPrevac : target_power
+
+      SputteringPrevac : temperature
 
       SputteringPrevac : time
 
@@ -415,10 +421,28 @@
 <td>direct</td>
 </tr>
 <tr>
+<td><a href="../base_pressure/">base_pressure</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Pressure inside the vacuum chamber before the introduction of the working gas...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../temperature/">temperature</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Temperature inside the vacuum chamber before the introduction of the working ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../step_notes/">step_notes</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>To add any notes regarding to the observations on that exact step on the whol...</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../name/">name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable name for a thing</td>
-<td><a href="../NamedEntity/">NamedEntity</a>, <a href="../Entity/">Entity</a></td>
+<td><a href="../Entity/">Entity</a>, <a href="../NamedEntity/">NamedEntity</a></td>
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
@@ -662,6 +686,33 @@ attributes:
   time:
     name: time
     description: Duration time of the sputtering step/process.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: string
+  base_pressure:
+    name: base_pressure
+    description: Pressure inside the vacuum chamber before the introduction of the
+      working gas (usually argon) for the sputtering process.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: float
+  temperature:
+    name: temperature
+    description: Temperature inside the vacuum chamber before the introduction of
+      the working gas (usually argon) for the sputtering process.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    domain_of:
+    - Sputtering_prevac
+    range: float
+  step_notes:
+    name: step_notes
+    description: To add any notes regarding to the observations on that exact step
+      on the whole process. For example, inhomogeneous, detached, dirty sample.
     from_schema: https://w3id.org/anak-velazquez/catlabs/
     rank: 1000
     domain_of:
@@ -915,6 +966,39 @@ attributes:
     from_schema: https://w3id.org/anak-velazquez/catlabs/
     rank: 1000
     alias: time
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: string
+  base_pressure:
+    name: base_pressure
+    description: Pressure inside the vacuum chamber before the introduction of the
+      working gas (usually argon) for the sputtering process.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: base_pressure
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: float
+  temperature:
+    name: temperature
+    description: Temperature inside the vacuum chamber before the introduction of
+      the working gas (usually argon) for the sputtering process.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: temperature
+    owner: Sputtering_prevac
+    domain_of:
+    - Sputtering_prevac
+    range: float
+  step_notes:
+    name: step_notes
+    description: To add any notes regarding to the observations on that exact step
+      on the whole process. For example, inhomogeneous, detached, dirty sample.
+    from_schema: https://w3id.org/anak-velazquez/catlabs/
+    rank: 1000
+    alias: step_notes
     owner: Sputtering_prevac
     domain_of:
     - Sputtering_prevac

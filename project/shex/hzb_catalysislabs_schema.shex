@@ -602,7 +602,10 @@ linkml:Sparqlpath xsd:string
           <https://w3id.org/anak-velazquez/catlabs/target> @linkml:String ? ;
           <https://w3id.org/anak-velazquez/catlabs/target_power> @linkml:Float ? ;
           <https://w3id.org/anak-velazquez/catlabs/DC_RF> @linkml:String ? ;
-          <https://w3id.org/anak-velazquez/catlabs/time> @linkml:String ?
+          <https://w3id.org/anak-velazquez/catlabs/time> @linkml:String ? ;
+          <https://w3id.org/anak-velazquez/catlabs/base_pressure> @linkml:Float ? ;
+          <https://w3id.org/anak-velazquez/catlabs/temperature> @linkml:Float ? ;
+          <https://w3id.org/anak-velazquez/catlabs/step_notes> @linkml:String ?
        ) ;
        rdf:type [ <https://w3id.org/anak-velazquez/catlabs/SputteringPrevac> ]
     )

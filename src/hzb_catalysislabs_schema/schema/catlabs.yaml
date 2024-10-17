@@ -606,6 +606,15 @@ classes:
         time:
           description: Duration time of the sputtering step/process.
           range: string
+        base_pressure:
+          description: Pressure inside the vacuum chamber before the introduction of the working gas (usually argon) for the sputtering process.
+          range: float
+        temperature:
+          description: Temperature inside the vacuum chamber before the introduction of the working gas (usually argon) for the sputtering process.
+          range: float
+        step_notes:
+          description: To add any notes regarding to the observations on that exact step on the whole process. For example, inhomogeneous, detached, dirty sample.
+          range: string              
     class_uri: 
     mixins:
     #- HasAliases

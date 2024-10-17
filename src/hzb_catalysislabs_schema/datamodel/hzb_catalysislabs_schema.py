@@ -1,5 +1,5 @@
 # Auto generated from hzb_catalysislabs_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-10-16T11:38:38
+# Generation date: 2024-10-17T11:20:19
 # Schema: hzb-catalysisLabs-schema
 #
 # id: https://w3id.org/https://github.com/HZB-CE-DataSchemas//hzb-catalysisLabs-schema
@@ -1442,6 +1442,9 @@ class SputteringPrevac(Sputtering):
     target_power: Optional[float] = None
     DC_RF: Optional[str] = None
     time: Optional[str] = None
+    base_pressure: Optional[float] = None
+    temperature: Optional[float] = None
+    step_notes: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1511,6 +1514,15 @@ class SputteringPrevac(Sputtering):
 
         if self.time is not None and not isinstance(self.time, str):
             self.time = str(self.time)
+
+        if self.base_pressure is not None and not isinstance(self.base_pressure, float):
+            self.base_pressure = float(self.base_pressure)
+
+        if self.temperature is not None and not isinstance(self.temperature, float):
+            self.temperature = float(self.temperature)
+
+        if self.step_notes is not None and not isinstance(self.step_notes, str):
+            self.step_notes = str(self.step_notes)
 
         super().__post_init__(**kwargs)
 
@@ -2433,6 +2445,15 @@ slots.sputteringPrevac__DC_RF = Slot(uri="str(uriorcurie)", name="sputteringPrev
 
 slots.sputteringPrevac__time = Slot(uri="str(uriorcurie)", name="sputteringPrevac__time", curie=None,
                    model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__time, domain=None, range=Optional[str])
+
+slots.sputteringPrevac__base_pressure = Slot(uri="str(uriorcurie)", name="sputteringPrevac__base_pressure", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__base_pressure, domain=None, range=Optional[float])
+
+slots.sputteringPrevac__temperature = Slot(uri="str(uriorcurie)", name="sputteringPrevac__temperature", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__temperature, domain=None, range=Optional[float])
+
+slots.sputteringPrevac__step_notes = Slot(uri="str(uriorcurie)", name="sputteringPrevac__step_notes", curie=None,
+                   model_uri=HZB_METADATA_SCHEMA.sputteringPrevac__step_notes, domain=None, range=Optional[str])
 
 slots.experiment__experiment_id = Slot(uri="str(uriorcurie)", name="experiment__experiment_id", curie=None,
                    model_uri=HZB_METADATA_SCHEMA.experiment__experiment_id, domain=None, range=Optional[str])

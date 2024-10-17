@@ -3408,6 +3408,13 @@
                         "null"
                     ]
                 },
+                "base_pressure": {
+                    "description": "Pressure inside the vacuum chamber before the introduction of the working gas (usually argon) for the sputtering process.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
                 "date": {
                     "description": "Date on which the process was performed.",
                     "type": [
@@ -3510,6 +3517,13 @@
                         "null"
                     ]
                 },
+                "step_notes": {
+                    "description": "To add any notes regarding to the observations on that exact step on the whole process. For example, inhomogeneous, detached, dirty sample.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "step_number": {
                     "description": "Many consecutive processes or steps of sputtering can be performed to layer the materials. This parameter documents the number of step or id.",
                     "type": [
@@ -3547,6 +3561,13 @@
                 },
                 "target_power": {
                     "description": "The amount of electrical power applied to the sputtering target to generate the plasma and eject atoms from the target surface.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "temperature": {
+                    "description": "Temperature inside the vacuum chamber before the introduction of the working gas (usually argon) for the sputtering process.",
                     "type": [
                         "number",
                         "null"

@@ -622,6 +622,9 @@ type SputteringPrevac
     targetPower: Float
     dCRF: String
     time: String
+    basePressure: Float
+    temperature: Float
+    stepNotes: String
   }
 
 type SputteringVonAdenne

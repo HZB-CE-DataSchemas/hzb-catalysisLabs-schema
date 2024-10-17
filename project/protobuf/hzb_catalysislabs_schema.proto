@@ -614,6 +614,9 @@ message SputteringPrevac
   float targetPower = 0
   string dCRF = 0
   string time = 0
+  float basePressure = 0
+  float temperature = 0
+  string stepNotes = 0
  }
 // Physical vapor deposition (PVD) technique used to deposit thin films onto a substrate, particularly  with the von Adenne (PC3 chamber) machine.  
 message SputteringVonAdenne

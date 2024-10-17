@@ -2191,6 +2191,45 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "sputteringPrevac__base_pressure",
+      "description": "Pressure inside the vacuum chamber before the introduction of the working gas (usually argon) for the sputtering process.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/base_pressure",
+      "alias": "base_pressure",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__temperature",
+      "description": "Temperature inside the vacuum chamber before the introduction of the working gas (usually argon) for the sputtering process.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/temperature",
+      "alias": "temperature",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sputteringPrevac__step_notes",
+      "description": "To add any notes regarding to the observations on that exact step on the whole process. For example, inhomogeneous, detached, dirty sample.",
+      "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
+      "slot_uri": "https://w3id.org/anak-velazquez/catlabs/step_notes",
+      "alias": "step_notes",
+      "owner": "SputteringPrevac",
+      "domain_of": [
+        "SputteringPrevac"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "experiment__experiment_id",
       "description": "The Identifier is a unique string that identifies a resource (i.e., DOI).",
       "from_schema": "https://w3id.org/anak-velazquez/catlabs/",
@@ -3770,7 +3809,10 @@
         "sputteringPrevac__target",
         "sputteringPrevac__target_power",
         "sputteringPrevac__DC_RF",
-        "sputteringPrevac__time"
+        "sputteringPrevac__time",
+        "sputteringPrevac__base_pressure",
+        "sputteringPrevac__temperature",
+        "sputteringPrevac__step_notes"
       ],
       "slot_usage": {},
       "attributes": [
@@ -3897,6 +3939,24 @@
         {
           "name": "time",
           "description": "Duration time of the sputtering step/process.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "base_pressure",
+          "description": "Pressure inside the vacuum chamber before the introduction of the working gas (usually argon) for the sputtering process.",
+          "range": "float",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "temperature",
+          "description": "Temperature inside the vacuum chamber before the introduction of the working gas (usually argon) for the sputtering process.",
+          "range": "float",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "step_notes",
+          "description": "To add any notes regarding to the observations on that exact step on the whole process. For example, inhomogeneous, detached, dirty sample.",
           "range": "string",
           "@type": "SlotDefinition"
         }
@@ -4313,7 +4373,7 @@
   "source_file": "hzb_catalysislabs_schema.yaml",
   "source_file_date": "2024-10-01T15:18:38",
   "source_file_size": 1950,
-  "generation_date": "2024-10-16T11:38:35",
+  "generation_date": "2024-10-17T11:20:16",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/hzb_catalysislabs_schema.context.jsonld",

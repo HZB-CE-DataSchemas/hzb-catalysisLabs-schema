@@ -384,6 +384,9 @@
 --     * Slot: target_power Description: The amount of electrical power applied to the sputtering target to generate the plasma and eject atoms from the target surface.
 --     * Slot: DC_RF Description: DC (Direct Current) and RF (Radio Frequency) refer to the types of electrical power used to energize the sputtering target, and the choice between them depends on the properties of the target material.
 --     * Slot: time Description: Duration time of the sputtering step/process.
+--     * Slot: base_pressure Description: Pressure inside the vacuum chamber before the introduction of the working gas (usually argon) for the sputtering process.
+--     * Slot: temperature Description: Temperature inside the vacuum chamber before the introduction of the working gas (usually argon) for the sputtering process.
+--     * Slot: step_notes Description: To add any notes regarding to the observations on that exact step on the whole process. For example, inhomogeneous, detached, dirty sample.
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: id Description: A unique identifier for a thing
 --     * Slot: iri Description: Internationalized Resource Identifier
@@ -723,6 +726,9 @@ CREATE TABLE "Sputtering_prevac" (
 	target_power FLOAT, 
 	"DC_RF" TEXT, 
 	time TEXT, 
+	base_pressure FLOAT, 
+	temperature FLOAT, 
+	step_notes TEXT, 
 	name TEXT, 
 	id TEXT NOT NULL, 
 	iri TEXT, 
